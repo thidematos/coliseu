@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>O Coliseu</title>
+    <link rel="stylesheet" href="../dist/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="lightbox.css" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"
+    ></script>
+    <script defer src="lightbox-plus-jquery.js"></script>
+
+    <script defer src="main.js"></script>
+  </head>
+  <body
+    class="min-h-screen bg-sixty flex flex-col justify-start items-center box-border"
+  >
+    <nav
+      id="nav"
+      class="w-screen max-h-20 z-50 flex flex-row justify-center items-stretch mt-2 mb-6 md:mb-8 lg:mb-10 lg:mt-6"
+    >
+      <div
+        class="logo flex flex-row justify-start ml-2 gap-6 md:w-4/5 md:gap-40 lg:ml-6 lg:gap-6 xl:w-2/5 xl:justify-center"
+      >
+        <img src="../assets/logo.png" alt="" class="drop-shadow-md" />
+        <div class="flex flex-col justify-center items-center">
+          <h2
+            class="font-garamond text-contrast drop-shadow-md font-bold lg:text-xl xl:text-2xl"
+          >
+            Marmoraria
+          </h2>
+          <h1
+            class="font-bodoni font-bold text-2xl text-ten drop-shadow-md xl:text-4xl"
+          >
+            O COLISEU
+          </h1>
+        </div>
+      </div>
+      <li
+        class="hamb_container list-none font-montserrat hidden lg:flex lg:flex-row md:w-1/5 lg:w-4/5 lg:justify-center lg:items-center lg:gap-8 lg:text-lg lg:mr-6 lg:text-contrast xl:w-3/5 xl:text-2xl"
+      >
+        <ul class="hamb_list">
+          <a href="#section-2" class="nav__link">Features</a>
+        </ul>
+        <ul class="hamb_list">
+          <a href="#section-3" class="nav__link">História</a>
+        </ul>
+        <ul class="hamb_list">
+          <a href="#section-4" class="nav__link">Mármores</a>
+        </ul>
+        <ul class="hamb_list">
+          <a href="#section-5" class="nav__link">Serviços</a>
+        </ul>
+        <ul class="hamb_list-last">
+          <a href="#section-6" class="nav__link">Contato</a>
+        </ul>
+      </li>
+      <img
+        src="../assets/menu-hamb.png"
+        alt=""
+        class="hamb scale-[0.8] mr-4 self-center lg:hidden"
+      />
+    </nav>
+    <main
+      class="main flex flex-col justify-center items-center border-solid border-t border-t-contrasts w-9/12"
+    >
+      <section
+        id="section-1"
+        class="section section--hidden flex flex-col justify-center items-center font-garamond text-xl mt-8 mb-14 gap-8 md:flex-row md:w-screen md:my-[5.2rem] md:px-7 lg:my-[6.8rem] lg:gap-20 lg:px-20 xl:my-[6.3rem] xl:px-26"
+      >
+        <div
+          class="flex flex-col justify-center items-center gap-8 mb-6 text-contrast md:w-2/5 md:order-2 md:gap-6 md:mr-6 lg:text-2xl xl:w-3/12 xl:text-4xl xl:gap-10"
+        >
+          <h2 class="drop-shadow-md">TRADIÇÃO,</h2>
+          <h2 class="drop-shadow-md">QUALIDADE,</h2>
+          <h2
+            class="block text-3xl text-ten bg-white p-4 shadow-md drop-shadow-md md:text-2xl lg:text-3xl xl:text-5xl"
+          >
+            Perfeição Atemporal.
+          </h2>
+          <button
+            class="btn__knowMore hidden p-4 border border-solid border-contrast font-montserrat text-ten shadow-md md:block lg:text-3xl xl:text-5xl"
+            data-href="#section-2"
+          >
+            SAIBA MAIS
+          </button>
+        </div>
+        <picture
+          class="w-screen shadow-md mb-3 md:mb-0 md:w-3/5 md:ml-8 xl:w-[33%]"
+        >
+          <source
+            media="(max-width: 450px)"
+            srcset="../assets/inicial2-p.jpg"
+          />
+          <source
+            media="(max-width: 900px)"
+            srcset="../assets/inicial2-p.jpg"
+          />
+          <source
+            media="(max-width: 1050px)"
+            srcset="../assets/inicial2-p.jpg"
+          />
+          <img src="../assets/inicial2.jpg" alt="" />
+        </picture>
+        <button
+          id="btn__knowMore"
+          class="p-4 border border-solid border-contrast font-montserrat text-ten shadow-md md:hidden"
+          data-href="#section-2"
+        >
+          SAIBA MAIS
+        </button>
+      </section>
+      <section
+        id="section-2"
+        class="bg-white section section--hidden w-screen min-h-screen py-14 flex flex-col justify-start items-center gap-6 md:min-h-fit lg:flex-row lg:min-h-screen lg:px-10 lg:justify-center lg:items-center xl:px-20"
+      >
+        <div
+          class="flex flex-col justify-center items-center gap-6 w-screen text-contrast lg:w-3/5"
+        >
+          <div
+            class="font-bodoni px-6 flex flex-col gap-3 justify-center items-center"
+          >
+            <h3 class="text-2xl md:text-3xl xl:text-5xl">Lapidamos sonhos,</h3>
+            <h3
+              class="bg-sixty w-fit py-2 text-3xl shadow-md drop-shadow-md md:text-4xl xl:text-6xl"
+            >
+              Damos vida a projetos.
+            </h3>
+          </div>
+          <p
+            class="px-8 font-montserrat indent-6 text-justify text-md xl:text-xl"
+          >
+            Na Marmoraria O Coliseu, entendemos a importância de cada projeto e
+            nos dedicamos a criar resultados que sejam duradouros e
+            impressionantes. Valorizamos a satisfação do cliente e buscamos
+            superar suas expectativas em todos os aspectos do nosso trabalho.
+          </p>
+          <p
+            class="px-8 font-montserrat indent-6 text-justify text-md xl:text-xl"
+          >
+            Seja para projetos residenciais ou comerciais, conte com a
+            Marmoraria O Coliseu para oferecer soluções personalizadas e de alta
+            qualidade em pedras naturais. Estamos aqui para transformar suas
+            ideias em realidade, de acordo com a tradição, requintes de
+            modernidade, qualidade e perfeição atemporal.
+          </p>
+        </div>
+        <!-- Slider main container -->
+        <div class="swiper shadow-md w-[90%] md:w-3/5 md:mb-8 lg:mb-0">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <img src="../assets/features-1.jpg" alt="" class="xl:w-full" />
+            </div>
+            <div class="swiper-slide">
+              <img src="../assets/features-2.jpg" alt="" class="xl:w-full" />
+            </div>
+            <div class="swiper-slide">
+              <img src="../assets/features-3.jpg" alt="" class="xl:w-full" />
+            </div>
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </section>
+      <section
+        id="section-3"
+        class="bg-sixty section section--hidden w-screen min-h-screen py-14 flex flex-col justify-start items-center gap-6 md:min-h-fit xl:min-h-screen"
+      >
+        <div class="flex flex-col justify-center items-center px-8 gap-8">
+          <h3
+            class="text-3xl bg-white p-3 font-garamond text-ten drop-shadow-md md:text-4xl md:mb-6 lg:text-4xl xl:text-6xl"
+          >
+            Nossa História
+          </h3>
+          <div
+            class="flex flex-col justify-center items-center gap-8 md:flex-row md:mb-6 lg:px-16 xl:px-56"
+          >
+            <p
+              class="text-md text-justify indent-6 font-montserrat md:w-6/12 xl:text-xl"
+            >
+              A Marmoraria O Coliseu foi idealizada por Du, Daniel Eduardo
+              Salviano, um profissional com mais de 35 anos de experiência no
+              ramo. Desde a sua inauguração em 2004, em São Sebastião, nosso
+              objetivo tem sido alcançar um padrão de qualidade excepcional,
+              capaz de superar as expectativas dos nossos clientes.
+            </p>
+            <div
+              class="flex flex-col justify-center items-center gap-3 md:w-1/2 xl:w-3/12"
+            >
+              <img src="../assets/du.jpg" alt="" class="shadow-md md:rounded" />
+              <p class="font-bodoni italic md:text-lg xl:text-xl">
+                Du Salviano e Bob
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="px-8 operations flex flex-col justify-center items-center md:w-4/5 xl:px-56"
+        >
+          <div
+            class="mb-3 font-garamond text-xl operations__tab-container flex flex-row justify-around w-4/5 gap-3"
+          >
+            <button
+              class="border-solid border border-contrast p-3 rounded-md btn operations__tab operations__tab--1 shadow-md operations__tab--active md:text-2xl xl:text-3xl"
+              data-tab="1"
+            >
+              EXPERIÊNCIA
+            </button>
+            <button
+              class="border-solid border border-contrast p-3 rounded-md btn operations__tab operations__tab--2 shadow-md md:text-2xl xl:text-3xl"
+              data-tab="2"
+            >
+              SATISFAÇÃO
+            </button>
+          </div>
+          <div
+            class="hidden operations__content operations__content--1 operations__content--active px-4 rounded shadow-md xl:p-8"
+          >
+            <p class="text-md text-justify indent-6 font-montserrat xl:text-xl">
+              Nosso diferencial está na mão-de-obra altamente qualificada e
+              dedicada, composta por uma equipe experiente de profissionais do
+              ramo. Cada membro da nossa equipe possui um profundo conhecimento
+              das melhores práticas e técnicas de trabalho em mármore, granito e
+              outras pedras naturais, garantindo acabamentos perfeitos e
+              durabilidade excepcional em cada projeto.
+            </p>
+          </div>
+          <div
+            class="hidden operations__content operations__content--2 px-4 rounded shadow-md xl:p-8"
+          >
+            <p class="text-md text-justify indent-6 font-montserrat xl:text-xl">
+              Valorizamos a satisfação dos nossos clientes acima de tudo. Por
+              isso, buscamos entender suas necessidades e desejos individuais,
+              oferecendo um atendimento personalizado desde o primeiro contato
+              até a conclusão do projeto. Trabalhamos de forma colaborativa,
+              ouvindo atentamente suas ideias e proporcionando orientação
+              especializada para transformá-las em realidade.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section
+        id="section-4"
+        class="bg-white section section--hidden w-screen min-h-screen py-14 flex flex-col justify-start items-center gap-6 md:min-h-fit md:flex-row md:justify-center lg:min-h-screen lg:px-24 xl:px-48"
+      >
+        <div
+          class="px-8 flex flex-col justify-center items-center gap-8 md:w-6/12 md:gap-8 lg:w-1/2 xl:w-7/12"
+        >
+          <div class="flex flex-col gap-3 md:self-start">
+            <h3
+              class="font-garamond text-contrast text-2xl lg:text-xl xl:text-2xl"
+            >
+              O mármore e a sua
+            </h3>
+
+            <h3
+              class="text-3xl bg-sixty p-3 font-garamond text-contrast drop-shadow-md w-fit lg:text-4xl xl:text-5xl"
+            >
+              Beleza Natural.
+            </h3>
+          </div>
+          <p class="text-md text-justify indent-6 font-montserrat xl:text-xl">
+            O mármore é formado a partir do calcário, uma rocha composta por
+            minerais de calcita. Ao longo de milhões de anos, o calcário é
+            submetido a altas temperaturas e pressões, o que provoca
+            transformações em sua estrutura. Essas mudanças levam à
+            recristalização dos minerais de calcita, resultando no mármore, uma
+            rocha metamórfica com textura cristalina e brilho característico.
+            Diferentes sedimentos presentes no calcário podem contribuir para
+            diferentes cores e padrões no mármore.
+          </p>
+        </div>
+        <!-- Slider main container -->
+        <div
+          class="swiper shadow-md w-[90%] rockSlider md:w-4/12 md:mr-6 lg:mr-0 lg:w-1/2 xl:w-4/12"
+        >
+          <h3
+            class="font-garamond text-center text-lg lg:mb-3 lg:text-xl xl:text-2xl"
+          >
+            Nossos mármores:
+          </h3>
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <p
+                class="bg-white font-bodoni absolute text-left top-5 left-6 px-8 py-4 scale-x-0 duration-500 origin-left lg:text-xl xl:text-2xl"
+              >
+                Preto São Gabriel
+              </p>
+              <img
+                src="../assets/sao-gabriel.jpg"
+                alt=""
+                class="w-full rockSlide"
+              />
+            </div>
+            <div class="swiper-slide">
+              <p
+                class="bg-white font-bodoni absolute text-left top-5 left-6 px-8 py-4 scale-x-0 duration-500 origin-left lg:text-xl xl:text-2xl"
+              >
+                Itaúnas Branco
+              </p>
+              <img
+                src="../assets/branco-itaunas.jpg"
+                alt=""
+                class="w-full rockSlide"
+              />
+            </div>
+            <div class="swiper-slide">
+              <p
+                class="bg-white font-bodoni absolute text-left top-5 left-6 px-8 py-4 scale-x-0 duration-500 origin-left lg:text-xl xl:text-2xl"
+              >
+                Mármore Branco
+              </p>
+              <img
+                src="../assets/marmore-branco.jpg"
+                alt=""
+                class="w-full rockSlide"
+              />
+            </div>
+            <div class="swiper-slide">
+              <p
+                class="bg-white font-bodoni absolute text-left top-5 left-6 px-8 py-4 scale-x-0 duration-500 origin-left lg:text-xl xl:text-2xl"
+              >
+                Quartzo Branco
+              </p>
+              <img
+                src="../assets/quartzo-branco.jpg"
+                alt=""
+                class="w-full rockSlide"
+              />
+            </div>
+            <div class="swiper-slide">
+              <p
+                class="bg-white font-bodoni absolute text-left top-5 left-6 px-8 py-4 scale-x-0 duration-500 origin-left lg:text-xl xl:text-2xl"
+              >
+                Quartzo Bege
+              </p>
+              <img
+                src="../assets/quartzo-bege.jpg"
+                alt=""
+                class="w-full rockSlide"
+              />
+            </div>
+            <div class="swiper-slide">
+              <p
+                class="bg-white font-bodoni absolute text-left top-5 left-6 px-8 py-4 scale-x-0 duration-500 origin-left lg:text-xl xl:text-2xl"
+              >
+                Mármore Travertino
+              </p>
+              <img
+                src="../assets/travertino.jpg"
+                alt=""
+                class="w-full rockSlide"
+              />
+            </div>
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </section>
+      <section
+        id="section-5"
+        class="bg-sixty section section--hidden w-screen min-h-screen py-14 flex flex-col justify-start items-center gap-6 md:flex-row md:min-h-fit md:px-14 md:gap-8 lg:min-h-screen lg:px-24 xl:px-48 xl:justify-center"
+      >
+        <div
+          class="flex flex-col justify-center items-center md:items-start md:gap-6 md:w-4/6 md:order-2 lg:w-1/2 xl:w-6/12"
+        >
+          <div class="flex flex-col justify-center gap-3 items-start md:mb-8">
+            <h3
+              class="font-garamond text-2xl text-contrast lg:mb-3 lg:text-xl xl:text-2xl"
+            >
+              Nossos trabalhos:
+            </h3>
+            <h3
+              class="font-garamond text-3xl bg-white text-ten px-4 py-2 drop-shadow-md shadow-md lg:text-4xl xl:text6xl"
+            >
+              Beleza Lapidada.
+            </h3>
+          </div>
+          <div class="hidden md:flex md:flex-col">
+            <p
+              class="font-montserrat text-md text-contrast text-justify indent-6 xl:text-xl"
+            >
+              Na Marmoraria O Coliseu, oferecemos uma ampla variedade de opções
+              em pedras naturais, desde mármores elegantes e sofisticados até
+              granitos exóticos e quartzitos de beleza singular. Cada peça é
+              cuidadosamente selecionada para garantir a mais alta qualidade e
+              estética impressionante em cada projeto.
+            </p>
+            <p
+              class="font-montserrat text-md text-contrast text-justify indent-6 xl:text-xl"
+            >
+              Estamos ansiosos para tornar seu projeto em realidade, adicionando
+              um toque de beleza e sofisticação através das nossas pedras
+              naturais de qualidade incomparável.
+            </p>
+          </div>
+        </div>
+        <!-- Slider main container -->
+        <div
+          class="swiper shadow-md w-[75%] md:w-2/5 md:mr-6 lg:mr-0 lg:w-2/6 xl:w-3/12"
+        >
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <a href="../assets/gallery.jpg" data-lightbox="Serviços">
+                <img src="../assets/gallery.jpg" class="mb-4" alt="" />
+              </a>
+              <a href="../assets/gallery1.jpg" data-lightbox="Serviços">
+                <img src="../assets/gallery1.jpg" alt="" />
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="../assets/gallery2.jpg" data-lightbox="Serviços">
+                <img src="../assets/gallery2.jpg" class="mb-4" alt="" />
+              </a>
+              <a href="../assets/gallery3.jpg" data-lightbox="Serviços">
+                <img src="../assets/gallery3.jpg" alt="" />
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="../assets/gallery4.jpg" data-lightbox="Serviços">
+                <img src="../assets/gallery4.jpg" class="mb-4" alt="" />
+              </a>
+              <a href="../assets/gallery6.jpg" data-lightbox="Serviços">
+                <img src="../assets/gallery6.jpg" alt="" />
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="../assets/gallery7.jpg" data-lightbox="Serviços">
+                <img src="../assets/gallery7.jpg" alt="" class="mb-4" />
+              </a>
+              <a href="../assets/gallery8.jpg" data-lightbox="Serviços">
+                <img src="../assets/gallery8.jpg" alt="" />
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="../assets/gallery9.jpg" data-lightbox="Serviços">
+                <img src="../assets/gallery9.jpg" alt="" class="mb-4" />
+              </a>
+              <a href="../assets/gallery10.jpg" data-lightbox="Serviços">
+                <img src="../assets/gallery10.jpg" alt="" />
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="../assets/gallery11.jpg" data-lightbox="Serviços">
+                <img src="../assets/gallery11.jpg" class="mb-4" alt="" />
+              </a>
+              <a href="../assets/gallery12.jpg" data-lightbox="Serviços">
+                <img src="../assets/gallery12.jpg" alt="" />
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="../assets/gallery13.jpg" data-lightbox="Serviços">
+                <img src="../assets/gallery13.jpg" alt="" class="mb-4" />
+              </a>
+              <a href="../assets/gallery14.jpg" data-lightbox="Serviços">
+                <img src="../assets/gallery14.jpg" alt="" />
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="../assets/gallery15.jpg" data-lightbox="Serviços">
+                <img src="../assets/gallery15.jpg" alt="" class="mb-4" />
+              </a>
+              <a href="../assets/gallery16.jpg" data-lightbox="Serviços">
+                <img src="../assets/gallery16.jpg" alt="" />
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="../assets/gallery17.jpg" data-lightbox="Serviços">
+                <img src="../assets/gallery17.jpg" alt="" class="mb-4" />
+              </a>
+              <a href="../assets/gallery18.jpg" data-lightbox="Serviços">
+                <img src="../assets/gallery18.jpg" alt="" />
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="../assets/gallery19.jpg" data-lightbox="Serviços">
+                <img src="../assets/gallery19.jpg" alt="" class="mb-4" />
+              </a>
+              <a href="../assets/gallery20.jpg" data-lightbox="Serviços">
+                <img src="../assets/gallery20.jpg" alt="" />
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="../assets/gallery21.jpg" data-lightbox="Serviços">
+                <img src="../assets/gallery21.jpg" alt="" class="mb-4" />
+              </a>
+              <a href="../assets/gallery22.jpg" data-lightbox="Serviços">
+                <img src="../assets/gallery22.jpg" alt="" />
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="../assets/gallery23.jpg" data-lightbox="Serviços">
+                <img src="../assets/gallery23.jpg" alt="" class="mb-4" />
+              </a>
+              <a href="../assets/gallery24.jpg" data-lightbox="Serviços">
+                <img src="../assets/gallery24.jpg" alt="" />
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="../assets/gallery25.jpg" data-lightbox="Serviços">
+                <img src="../assets/gallery25.jpg" alt="" class="mb-4" />
+              </a>
+              <a href="../assets/gallery26.jpg" data-lightbox="Serviços">
+                <img src="../assets/gallery26.jpg" alt="" />
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="../assets/gallery27.jpg" data-lightbox="Serviços">
+                <img src="../assets/gallery27.jpg" alt="" class="mb-4" />
+              </a>
+              <a href="../assets/gallery28.jpg" data-lightbox="Serviços">
+                <img src="../assets/gallery28.jpg" alt="" />
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="../assets/gallery29.jpg" data-lightbox="Serviços">
+                <img src="../assets/gallery29.jpg" alt="" class="mb-4" />
+              </a>
+              <a href="../assets/gallery30.jpg" data-lightbox="Serviços">
+                <img src="../assets/gallery30.jpg" alt="" />
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="../assets/gallery31.jpg" data-lightbox="Serviços">
+                <img src="../assets/gallery31.jpg" alt="" class="mb-4" />
+              </a>
+              <a href="../assets/gallery32.jpg" data-lightbox="Serviços">
+                <img src="../assets/gallery32.jpg" alt="" />
+              </a>
+            </div>
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </section>
+    </main>
+    <footer
+      id="section-6"
+      class="bg-white section w-screen min-h-screen py-14 flex flex-col justify-start items-center gap-6 pb-10 md:flex-row md:min-h-fit md:justify-center xl:pb-0 xl:items-center lg:min-h-screen"
+    >
+      <div
+        class="flex flex-col justify-center items-center px-10 text-contrast md:w-2/5 md:pr-0"
+      >
+        <h3
+          class="font-garamond py-4 text-3xl text-center border-b border-solid border-ten w-[80%] drop-shadow-md xl:text-4xl"
+        >
+          Entre em contato
+        </h3>
+        <ul class="flex flex-col justify-center items-start gap-6 mt-8">
+          <li class="flex flex-col justify-center items-start gap-3">
+            <h3 class="font-bodoni font-bold text-lg drop-shadow-md xl:text-xl">
+              Endereço
+            </h3>
+            <p class="font-montserrat">
+              Av.Emilio Granato, nº 6274 - Enseada, São Sebastião, São Paulo
+            </p>
+          </li>
+          <li class="flex flex-col justify-center items-start gap-3">
+            <h3 class="font-bodoni font-bold text-lg drop-shadow-md xl:text-xl">
+              Telefone
+            </h3>
+            <a href="tel:012991592479 " class="font-montserrat">
+              (12) 99159-2479
+            </a>
+          </li>
+          <li class="flex flex-col justify-center items-start gap-3">
+            <h3 class="font-bodoni font-bold text-lg drop-shadow-md xl:text-xl">
+              Email
+            </h3>
+            <a
+              href="mailto:marmorariaocoliseu@hotmail.com"
+              class="font-montserrat"
+              >marmorariaocoliseu@hotmail.com</a
+            >
+          </li>
+          <li class="flex flex-col justify-center items-start gap-3">
+            <h3 class="font-bodoni font-bold text-lg drop-shadow-md xl:text-xl">
+              Social
+            </h3>
+            <a
+              href="https://www.instagram.com/marmorariaocoliseu/"
+              target="_blank"
+              rel="author"
+              class="w-[10%]"
+              ><img src="../assets/instagram.png" alt="" class="w-full"
+            /></a>
+          </li>
+        </ul>
+      </div>
+      <div
+        class="w-screen flex flex-col items-start justify-center gap-4 md:w-2/5"
+      >
+        <h3
+          class="self-start px-10 font-bodoni font-bold text-lg text-contrast drop-shadow-md xl:text-3xl xl:font-normal"
+        >
+          Localização
+        </h3>
+        <div id="map" class="w-[90%] h-96 drop-shadow-md self-center"></div>
+      </div>
+    </footer>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCi-32bsWKVSK00v_aiYmTQlnzm5BgiJFA&callback=initMap&v=weekly"
+      defer
+    ></script>
+    <script src="maps.js"></script>
+  </body>
+</html>

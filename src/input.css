@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400;1,700&family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hamb_open {
+  @apply absolute bg-thirty right-5 top-16 text-center  drop-shadow duration-500;
+}
+
+.hamb_list {
+  @apply border-solid border-t border-x p-2 border-contrast lg:border-none;
+}
+
+.hamb_list-last {
+  @apply border-solid border p-2 border-contrast  lg:border-none;
+}
+
+.operations__content {
+  @apply border border-solid border-ten py-3;
+}
+
+.operations__content--active {
+  display: flex;
+}
+
+.operations__tab--active {
+  @apply bg-thirty -translate-y-2 duration-500;
+}
+
+.scale {
+  @apply scale-x-100;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-gap: 30px;
+}
+
+.gallery img {
+  width: 100%;
+}
+
+.opacity20 {
+  @apply opacity-20;
+}
+
+.map {
+  @apply h-full;
+}
+
+.sticky {
+  @apply fixed bg-thirty;
+}
+
+.sticky_hamb {
+  @apply fixed opacity-80 right-10;
+}
+
+#section-1,
+#section-2,
+#section-3,
+#section-4,
+#section-5,
+#section-6 {
+  @apply duration-1000;
+}
+
+.section--hidden {
+  @apply opacity-0 translate-y-32;
+}
+
+.hamb_container-style {
+  @apply absolute z-50 right-7 top-16 text-center bg-thirty opacity-100;
+}
