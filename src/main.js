@@ -21,6 +21,25 @@ const swiper = new Swiper('.swiper', {
   },
 });
 
+const swiperServices = new Swiper('.swiperServices', {
+  effect: 'cards',
+  rotate: true,
+  // Optional parameters
+  direction: 'horizontal',
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
+
 //Tabbed Component
 const componentContainer = document.querySelector('.operations');
 
@@ -47,7 +66,7 @@ componentContainer.addEventListener('click', (e) => {
 });
 
 //Rocks Slide
-const rockSlider = document.querySelector('.rockSlider');
+const rockSliders = document.querySelectorAll('.rockSlider');
 
 const handleHover = function (e) {
   if (!e.target.classList.contains('rockSlide')) return;
@@ -55,8 +74,10 @@ const handleHover = function (e) {
   e.target.previousElementSibling.classList.toggle('scale');
 };
 
-rockSlider.addEventListener('mouseover', handleHover);
-rockSlider.addEventListener('mouseout', handleHover);
+rockSliders.forEach((e) => {
+  e.addEventListener('mouseover', handleHover);
+  e.addEventListener('mouseout', handleHover);
+});
 
 //Fade
 const handleNav = function (e) {
