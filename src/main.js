@@ -24,6 +24,7 @@ const swiper = new Swiper('.swiper', {
 const swiperServices = new Swiper('.swiperServices', {
   effect: 'cards',
   rotate: true,
+
   // Optional parameters
   direction: 'horizontal',
   loop: true,
@@ -115,6 +116,7 @@ const smoothScroll = function (e) {
   if (!e.target.classList.contains('nav__link')) return;
 
   e.preventDefault();
+
   document
     .querySelector(e.target.getAttribute('href'))
     .scrollIntoView({ behavior: 'smooth' });
@@ -187,8 +189,24 @@ const sectionObserver = new IntersectionObserver(revealSection, {
 sections.forEach((e) => sectionObserver.observe(e));
 
 // Hamb
+let statusHamb = false;
 
 hamb.addEventListener('click', (e) => {
+  statusHamb = !statusHamb;
+
+  if (statusHamb) {
+    hamb.src = '../assets/xmark.png';
+  } else {
+    hamb.src = '../assets/menu-hamb.png';
+  }
+
   hambContainer.classList.toggle('hidden');
   hambContainer.classList.toggle('hamb_container-style');
+});
+
+// Flip Card
+const cardContainer = document.querySelector('.cards');
+
+cardContainer.addEventListener('click', (e) => {
+  e.target.closest('.card')?.classList.toggle('flipCard');
 });

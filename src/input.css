@@ -52,6 +52,14 @@
   @apply opacity-20;
 }
 
+.opacity80 {
+  @apply opacity-80;
+}
+
+.opacity100 {
+  @apply opacity-100;
+}
+
 .map {
   @apply h-full;
 }
@@ -73,5 +81,37 @@
 }
 
 .hamb_container-style {
-  @apply absolute z-50 right-7 top-16 text-center bg-thirty opacity-100;
+  @apply absolute z-50 right-6 top-20 text-center bg-thirty opacity-100;
+}
+
+.card {
+  position: relative;
+  width: 40%;
+  height: 220px;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  transition: all 0.8s ease;
+  box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+}
+
+.card__front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.card__back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  transform: rotateY(180deg);
+}
+
+.flipCard {
+  transform: rotateY(180deg);
 }
