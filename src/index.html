@@ -90,6 +90,7 @@
     <main
       class="main flex flex-col justify-center items-center border-solid border-t border-t-contrasts w-9/12"
     >
+      <!------Header------>
       <section
         id="section-1"
         class="section section--hidden flex flex-col justify-center items-center font-garamond text-xl mt-8 mb-14 gap-8 md:flex-row md:w-screen md:my-[5.2rem] md:px-7 lg:my-[6.8rem] lg:gap-20 lg:px-20 xl:my-[6.3rem] xl:px-26"
@@ -136,6 +137,8 @@
           SAIBA MAIS
         </button>
       </section>
+
+      <!-----Features----->
       <section
         id="section-2"
         class="bg-white section section--hidden w-screen min-h-screen py-14 flex flex-col justify-start items-center gap-6 md:min-h-fit lg:flex-row lg:min-h-screen lg:px-10 lg:justify-center lg:items-center xl:px-20"
@@ -146,15 +149,17 @@
           <div
             class="font-bodoni px-6 flex flex-col gap-3 justify-center items-center"
           >
-            <h3 class="text-2xl md:text-3xl xl:text-3xl">Lapidamos sonhos,</h3>
+            <h3 class="text-2xl md:text-xl lg:text-xl xl:text-2xl">
+              Lapidamos sonhos,
+            </h3>
             <h3
-              class="bg-sixty w-fit py-2 text-3xl shadow-md drop-shadow-md md:text-4xl xl:text-4xl"
+              class="bg-sixty w-fit py-2 text-3xl shadow-md drop-shadow-md md:text-2xl lg:text-4xl xl:text-4xl"
             >
-              Damos vida a projetos.
+              Damos vida a projetos
             </h3>
           </div>
           <p
-            class="px-8 font-montserrat indent-6 text-justify text-md xl:text-lg"
+            class="px-8 font-montserrat indent-6 text-justify text-md md:px-16 xl:text-lg"
           >
             Na Marmoraria O Coliseu, entendemos a importância de cada projeto e
             nos dedicamos a criar resultados que sejam duradouros e
@@ -162,7 +167,7 @@
             superar suas expectativas em todos os aspectos do nosso trabalho.
           </p>
           <p
-            class="px-8 font-montserrat indent-6 text-justify text-md xl:text-lg"
+            class="px-8 font-montserrat indent-6 text-justify text-md md:px-16 xl:text-lg"
           >
             Seja para projetos residenciais ou comerciais, conte com a
             Marmoraria O Coliseu para oferecer soluções personalizadas e de alta
@@ -194,11 +199,15 @@
           <div class="swiper-button-next"></div>
         </div>
       </section>
+
+      <!--Nossa História-->
       <section
         id="section-3"
         class="bg-sixty section section--hidden w-screen min-h-screen py-14 flex flex-col justify-start items-center gap-6 md:min-h-fit xl:min-h-screen"
       >
-        <div class="flex flex-col justify-center items-center px-8 gap-8">
+        <div
+          class="flex flex-col justify-center items-center px-8 gap-8 md:px-16"
+        >
           <h3
             class="text-3xl bg-white p-3 font-garamond text-ten drop-shadow-md md:text-4xl md:mb-6 lg:text-4xl xl:text-4xl"
           >
@@ -219,10 +228,12 @@
             <div
               class="flex flex-col justify-center items-center gap-3 md:w-1/2 xl:w-3/12"
             >
-              <img src="../assets/du.jpg" alt="" class="shadow-md md:rounded" />
-              <p class="font-bodoni italic md:text-lg xl:text-xl">
-                Du Salviano e Bob
-              </p>
+              <img
+                src="../assets/coliseu.jpg"
+                alt=""
+                class="shadow-md md:rounded"
+              />
+              <p class="font-bodoni italic md:text-lg xl:text-xl">O Coliseu</p>
             </div>
           </div>
         </div>
@@ -271,12 +282,14 @@
           </div>
         </div>
       </section>
+
+      <!----Mármores 1---->
       <section
         id="section-4"
-        class="bg-white section section--hidden w-screen min-h-screen py-14 flex flex-col justify-start items-center gap-6 md:min-h-fit md:flex-row md:justify-center lg:min-h-screen lg:px-24 xl:px-48"
+        class="bg-white section section--hidden w-screen min-h-screen py-14 flex flex-col justify-start items-center gap-6 md:min-h-fit md:flex-row md:justify-center md:gap-0 lg:gap-6 lg:min-h-screen lg:px-24 xl:px-48"
       >
         <div
-          class="px-8 flex flex-col justify-center items-center gap-8 md:w-6/12 md:gap-8 lg:w-1/2 xl:w-7/12"
+          class="px-8 flex flex-col justify-center items-center gap-8 md:px-16 md:w-7/12 md:gap-8 lg:w-1/2 xl:w-7/12"
         >
           <div class="flex flex-col gap-3 md:self-start">
             <h3
@@ -396,12 +409,13 @@
         </div>
       </section>
 
+      <!----Mármores 2---->
       <section
         id="section-44"
-        class="bg-sixty section section--hidden w-screen min-h-screen py-14 flex flex-col justify-start items-center gap-6 md:min-h-fit md:flex-row md:justify-center lg:min-h-screen lg:px-24 xl:px-48"
+        class="bg-sixty section section--hidden w-screen min-h-screen py-14 flex flex-col justify-start items-center gap-6 md:min-h-fit md:flex-row md:justify-center md:gap-0 lg:gap-6 lg:min-h-screen lg:px-24 xl:px-48"
       >
         <div
-          class="px-8 flex flex-col justify-center items-center gap-8 md:w-6/12 md:gap-8 lg:w-1/2 xl:w-7/12"
+          class="px-8 flex flex-col justify-center items-center gap-8 md:order-last md:flex md:w-5/12 md:pr-16 md:pl-0 md:gap-8 lg:w-1/2 xl:w-7/12"
         >
           <div class="flex flex-col gap-3 md:self-start">
             <h3
@@ -427,161 +441,174 @@
             duráveis e de fácil manutenção.
           </p>
         </div>
-        <!-- Slider main container -->
-        <div
-          class="swiper shadow-md w-[90%] rockSlider md:w-4/12 md:mr-6 lg:mr-0 lg:w-1/2 xl:w-4/12"
-        >
-          <h3
-            class="font-garamond drop-shadow-md text-ten text-center text-lg lg:mb-3 lg:text-xl xl:text-2xl"
-          >
-            MODERNIDADE
-          </h3>
-          <!-- Additional required wrapper -->
-          <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div class="swiper-slide">
-              <p
-                class="bg-white font-bodoni absolute text-left top-5 left-6 px-8 py-4 scale-x-0 duration-500 origin-left lg:text-xl xl:text-2xl"
-              >
-                Agata Blue
-              </p>
-              <img
-                src="../assets/agata-blue.png"
-                alt=""
-                class="w-full rockSlide"
-              />
-            </div>
-            <div class="swiper-slide">
-              <p
-                class="bg-white font-bodoni absolute text-left top-5 left-6 px-8 py-4 scale-x-0 duration-500 origin-left lg:text-xl xl:text-2xl"
-              >
-                Avatar
-              </p>
-              <img src="../assets/avatar.png" alt="" class="w-full rockSlide" />
-            </div>
-            <div class="swiper-slide">
-              <p
-                class="bg-white font-bodoni absolute text-left top-5 left-6 px-8 py-4 scale-x-0 duration-500 origin-left lg:text-xl xl:text-2xl"
-              >
-                Belatrix
-              </p>
-              <img
-                src="../assets/belatrix.png"
-                alt=""
-                class="w-full rockSlide"
-              />
-            </div>
-            <div class="swiper-slide">
-              <p
-                class="bg-white font-bodoni absolute text-left top-5 left-6 px-8 py-4 scale-x-0 duration-500 origin-left lg:text-xl xl:text-2xl"
-              >
-                Copacabana Polido
-              </p>
-              <img
-                src="../assets/copacabana-polido.png"
-                alt=""
-                class="w-full rockSlide"
-              />
-            </div>
-            <div class="swiper-slide">
-              <p
-                class="bg-white font-bodoni absolute text-left top-5 left-6 px-8 py-4 scale-x-0 duration-500 origin-left lg:text-xl xl:text-2xl"
-              >
-                Azul Imperial
-              </p>
-              <img
-                src="../assets/quartzito-azul-imperial.png"
-                alt=""
-                class="w-full rockSlide"
-              />
-            </div>
-            <div class="swiper-slide">
-              <p
-                class="bg-white font-bodoni absolute text-left top-5 left-6 px-8 py-4 scale-x-0 duration-500 origin-left lg:text-xl xl:text-2xl"
-              >
-                Vermelho Acrópolis
-              </p>
-              <img
-                src="../assets/vermelho-acropolis.png"
-                alt=""
-                class="w-full rockSlide"
-              />
-            </div>
-            <div class="swiper-slide">
-              <p
-                class="bg-white font-bodoni absolute text-left top-5 left-6 px-8 py-4 scale-x-0 duration-500 origin-left lg:text-xl xl:text-2xl"
-              >
-                Avôhai (Taj)
-              </p>
-              <img
-                src="../assets/quartzito-avohai.png"
-                alt=""
-                class="w-full rockSlide"
-              />
-            </div>
-            <div class="swiper-slide">
-              <p
-                class="bg-white font-bodoni absolute text-left top-5 left-6 px-8 py-4 scale-x-0 duration-500 origin-left lg:text-xl xl:text-2xl"
-              >
-                Dolomítico Rafaello
-              </p>
-              <img
-                src="../assets/dolomitico-rafaello.png"
-                alt=""
-                class="w-full rockSlide"
-              />
-            </div>
-          </div>
-          <!-- If we need pagination -->
-          <div class="swiper-pagination"></div>
 
-          <!-- If we need navigation buttons -->
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-        </div>
         <div
-          class="px-8 flex flex-col justify-center items-center w-full gap-4 md:w-6/12 md:gap-8 lg:w-1/2 xl:w-7/12"
+          class="flex flex-col justify-center items-center w-full gap-6 md:flex md:flex-col md:justify-center md:items-center md:w-7/12"
         >
-          <p class="text-md text-center text-contrast font-garamond xl:text-lg">
-            TRANSFORME SEUS PROJETOS EM VERDADEIRAS
-          </p>
-          <h3
-            class="text-2xl bg-white p-3 font-garamond text-ten drop-shadow-md w-fit lg:text-4xl xl:text-4xl"
+          <div
+            class="swiper shadow-md w-[90%] rockSlider md:w-[60%] lg:mr-0 lg:w-1/2 xl:w-4/12"
           >
-            OBRAS DE ARTE
-          </h3>
-          <p class="text-xl text-center text-contrast font-garamond xl:text-lg">
-            Consulte nosso catálogo:
-          </p>
-          <a
-            class="w-1/2 p-4 rounded-md shadow-2xl bg-white flex flex-col justify-center items-center border border-solid border-ten"
-            href="../assets/Catálogo VITIELLOS Atualizado.pdf"
-            target="_blank"
+            <h3
+              class="font-garamond drop-shadow-md text-ten text-center text-lg lg:mb-3 lg:text-xl xl:text-2xl"
+            >
+              MODERNIDADE
+            </h3>
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">
+                <p
+                  class="bg-white font-bodoni absolute text-left top-5 left-6 px-8 py-4 scale-x-0 duration-500 origin-left lg:text-xl xl:text-2xl"
+                >
+                  Agata Blue
+                </p>
+                <img
+                  src="../assets/agata-blue.png"
+                  alt=""
+                  class="w-full rockSlide"
+                />
+              </div>
+              <div class="swiper-slide">
+                <p
+                  class="bg-white font-bodoni absolute text-left top-5 left-6 px-8 py-4 scale-x-0 duration-500 origin-left lg:text-xl xl:text-2xl"
+                >
+                  Avatar
+                </p>
+                <img
+                  src="../assets/avatar.png"
+                  alt=""
+                  class="w-full rockSlide"
+                />
+              </div>
+              <div class="swiper-slide">
+                <p
+                  class="bg-white font-bodoni absolute text-left top-5 left-6 px-8 py-4 scale-x-0 duration-500 origin-left lg:text-xl xl:text-2xl"
+                >
+                  Belatrix
+                </p>
+                <img
+                  src="../assets/belatrix.png"
+                  alt=""
+                  class="w-full rockSlide"
+                />
+              </div>
+              <div class="swiper-slide">
+                <p
+                  class="bg-white font-bodoni absolute text-left top-5 left-6 px-8 py-4 scale-x-0 duration-500 origin-left lg:text-xl xl:text-2xl"
+                >
+                  Copacabana Polido
+                </p>
+                <img
+                  src="../assets/copacabana-polido.png"
+                  alt=""
+                  class="w-full rockSlide"
+                />
+              </div>
+              <div class="swiper-slide">
+                <p
+                  class="bg-white font-bodoni absolute text-left top-5 left-6 px-8 py-4 scale-x-0 duration-500 origin-left lg:text-xl xl:text-2xl"
+                >
+                  Azul Imperial
+                </p>
+                <img
+                  src="../assets/quartzito-azul-imperial.png"
+                  alt=""
+                  class="w-full rockSlide"
+                />
+              </div>
+              <div class="swiper-slide">
+                <p
+                  class="bg-white font-bodoni absolute text-left top-5 left-6 px-8 py-4 scale-x-0 duration-500 origin-left lg:text-xl xl:text-2xl"
+                >
+                  Vermelho Acrópolis
+                </p>
+                <img
+                  src="../assets/vermelho-acropolis.png"
+                  alt=""
+                  class="w-full rockSlide"
+                />
+              </div>
+              <div class="swiper-slide">
+                <p
+                  class="bg-white font-bodoni absolute text-left top-5 left-6 px-8 py-4 scale-x-0 duration-500 origin-left lg:text-xl xl:text-2xl"
+                >
+                  Avôhai (Taj)
+                </p>
+                <img
+                  src="../assets/quartzito-avohai.png"
+                  alt=""
+                  class="w-full rockSlide"
+                />
+              </div>
+              <div class="swiper-slide">
+                <p
+                  class="bg-white font-bodoni absolute text-left top-5 left-6 px-8 py-4 scale-x-0 duration-500 origin-left lg:text-xl xl:text-2xl"
+                >
+                  Dolomítico Rafaello
+                </p>
+                <img
+                  src="../assets/dolomitico-rafaello.png"
+                  alt=""
+                  class="w-full rockSlide"
+                />
+              </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+          <div
+            class="px-8 flex flex-col justify-center items-center w-full gap-4 md:px-0 md:gap-3 md:w-6/12 lg:w-1/2 xl:w-7/12"
           >
-            <img
-              src="../assets/vitiellos.png"
-              alt=""
-              class="w-full drop-shadow-lg"
-            />
-          </a>
+            <p
+              class="text-md text-center text-contrast font-garamond xl:text-lg"
+            >
+              TRANSFORME SEUS PROJETOS EM VERDADEIRAS
+            </p>
+            <h3
+              class="text-2xl bg-white p-3 font-garamond text-ten drop-shadow-md w-fit lg:text-4xl xl:text-4xl"
+            >
+              OBRAS DE ARTE
+            </h3>
+            <p
+              class="text-xl text-center text-contrast font-garamond xl:text-lg"
+            >
+              Consulte nosso catálogo:
+            </p>
+            <a
+              class="w-1/2 p-4 rounded-md shadow-2xl bg-white flex flex-col justify-center items-center border border-solid border-ten"
+              href="../assets/Catálogo VITIELLOS Atualizado.pdf"
+              target="_blank"
+            >
+              <img
+                src="../assets/vitiellos.png"
+                alt=""
+                class="w-full drop-shadow-lg"
+              />
+            </a>
+          </div>
         </div>
       </section>
 
+      <!--Colaboradores-->
       <section
         id="section-45"
-        class="bg-white section section--hidden w-screen min-h-screen py-14 flex flex-col justify-start items-center gap-6 md:min-h-fit md:flex-row md:justify-center lg:min-h-screen lg:px-24 xl:px-48"
+        class="bg-white section section--hidden w-screen min-h-screen py-14 flex flex-col justify-start items-center gap-6 md:min-h-fit md:justify-center lg:min-h-screen lg:px-24 xl:px-48"
       >
         <div
           class="px-8 flex flex-col justify-center items-center gap-8 md:w-6/12 md:gap-8 lg:w-1/2 xl:w-7/12"
         >
-          <div class="flex flex-col gap-3 md:self-start">
-            <h3
-              class="text-3xl bg-sixty p-3 font-garamond text-ten drop-shadow-md w-fit lg:text-4xl xl:text-4xl"
-            >
-              Colaboradores
-            </h3>
-          </div>
-          <p class="text-lg text-center text-contrast font-garamond xl:text-lg">
+          <h3
+            class="text-3xl bg-sixty p-3 font-garamond text-ten text-center drop-shadow-md w-fit lg:text-4xl xl:text-4xl"
+          >
+            Colaboradores
+          </h3>
+
+          <p
+            class="text-lg text-center text-contrast font-garamond md:text-xl xl:text-lg"
+          >
             Juntos, continuamos a construir um legado de
             <strong class="text-ten">EXCELÊNCIA</strong> e
             <strong class="text-ten">SATISFAÇÃO</strong>
@@ -659,239 +686,171 @@
         </div>
       </section>
 
+      <!-----Serviços----->
       <section
         id="section-5"
-        class="bg-sixty section section--hidden w-screen min-h-screen py-14 flex flex-col justify-start items-center overflow-hidden gap-6 md:flex-row md:min-h-fit md:px-14 md:gap-8 lg:min-h-screen lg:px-24 xl:px-48 xl:justify-center"
+        class="bg-sixty section section--hidden w-screen min-h-screen py-14 flex flex-col justify-start items-center overflow-hidden gap-6 md:flex-row md:min-h-fit md:px-16 md:gap-8 lg:min-h-screen lg:px-24 xl:px-48 xl:justify-center"
       >
         <div
-          class="flex flex-col justify-center items-center gap-8 px-8 md:items-start md:gap-6 md:w-4/6 md:order-2 lg:w-1/2 xl:w-6/12"
+          class="flex flex-col justify-center items-center w-full gap-6 md:w-1/2 md:gap-8"
         >
-          <div class="flex flex-col justify-center gap-3 items-start md:mb-8">
-            <h3
-              class="font-garamond text-2xl text-contrast lg:mb-3 lg:text-xl xl:text-2xl"
+          <div
+            class="flex flex-col justify-center items-center gap-8 px-8 md:gap-6 md:px-0 md:order-2 lg:w-1/2 xl:w-6/12"
+          >
+            <div
+              class="flex flex-col justify-center gap-3 items-start md:items-center md:mb-8"
             >
-              Nossos trabalhos:
-            </h3>
-            <h3
-              class="font-garamond text-3xl bg-white text-ten px-4 py-2 drop-shadow-md shadow-md lg:text-4xl xl:text6xl"
-            >
-              Beleza Lapidada.
-            </h3>
+              <h3
+                class="font-garamond text-2xl text-contrast lg:mb-3 lg:text-xl xl:text-2xl"
+              >
+                Nossos trabalhos:
+              </h3>
+              <h3
+                class="font-garamond text-3xl bg-white text-ten px-4 py-2 drop-shadow-md shadow-md lg:text-4xl xl:text6xl"
+              >
+                Beleza Lapidada.
+              </h3>
+            </div>
+            <div class="flex flex-col">
+              <p
+                class="font-montserrat text-md text-contrast text-justify indent-6 xl:text-lg"
+              >
+                Na Marmoraria O Coliseu, oferecemos uma ampla variedade de
+                opções em pedras naturais, desde mármores elegantes e
+                sofisticados até granitos exóticos e quartzitos de beleza
+                singular. Cada peça é cuidadosamente selecionada para garantir a
+                mais alta qualidade e estética impressionante em cada projeto.
+              </p>
+            </div>
           </div>
-          <div class="md:flex md:flex-col">
+          <!-- Slider main container -->
+          <div
+            class="swiperServices shadow-md w-[70%] md:order-last lg:mr-0 lg:w-2/6 xl:w-3/12"
+          >
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide rounded-md shadow-lg">
+                <a href="../assets/gallery.jpg" data-lightbox="Serviços">
+                  <img src="../assets/gallery.jpg" class="" alt="" />
+                </a>
+              </div>
+              <div class="swiper-slide rounded-md shadow-lg">
+                <a href="../assets/gallery1.jpg" data-lightbox="Serviços">
+                  <img src="../assets/gallery1.jpg" class="" alt="" />
+                </a>
+              </div>
+              <div class="swiper-slide rounded-md shadow-lg">
+                <a href="../assets/gallery6.jpg" data-lightbox="Serviços">
+                  <img src="../assets/gallery6.jpg" class="" alt="" />
+                </a>
+              </div>
+              <div class="swiper-slide rounded-md shadow-lg">
+                <a href="../assets/gallery10.jpg" data-lightbox="Serviços">
+                  <img src="../assets/gallery10.jpg" class="" alt="" />
+                </a>
+              </div>
+              <div class="swiper-slide rounded-md shadow-lg">
+                <a href="../assets/gallery13.jpg" data-lightbox="Serviços">
+                  <img src="../assets/gallery13.jpg" class="" alt="" />
+                </a>
+              </div>
+              <div class="swiper-slide rounded-md shadow-lg">
+                <a href="../assets/gallery17.jpg" data-lightbox="Serviços">
+                  <img src="../assets/gallery17.jpg" class="" alt="" />
+                </a>
+              </div>
+              <div class="swiper-slide rounded-md shadow-lg">
+                <a href="../assets/gallery21.jpg" data-lightbox="Serviços">
+                  <img src="../assets/gallery21.jpg" class="" alt="" />
+                </a>
+              </div>
+              <div class="swiper-slide rounded-md shadow-lg">
+                <a href="../assets/gallery16.jpg" data-lightbox="Serviços">
+                  <img src="../assets/gallery16.jpg" class="" alt="" />
+                </a>
+              </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+        <div
+          class="flex flex-col justify-center items-center w-full gap-6 md:justify-evenly md:w-1/2 md:gap-24"
+        >
+          <div
+            class="flex flex-col justify-center items-center gap-8 px-8 md:gap-6 md:bg-white md:shadow-md md:p-4 md:order-2 lg:w-1/2 xl:w-6/12"
+          >
             <p
-              class="font-montserrat text-md text-contrast text-justify indent-6 xl:text-lg"
+              class="font-montserrat text-md text-contrast text-center md:drop-shadow-md md:text-xl xl:text-lg"
             >
-              Na Marmoraria O Coliseu, oferecemos uma ampla variedade de opções
-              em pedras naturais, desde mármores elegantes e sofisticados até
-              granitos exóticos e quartzitos de beleza singular. Cada peça é
-              cuidadosamente selecionada para garantir a mais alta qualidade e
-              estética impressionante em cada projeto.
+              Exploramos as veias e os padrões únicos da pedra, trazendo à tona
+              formas
+              <strong class="font-garamond text-ten">DELICADAS</strong> ou
+              <strong class="font-garamond text-ten">IMPONENTES</strong>
             </p>
           </div>
-        </div>
-        <!-- Slider main container -->
-        <div
-          class="swiperServices shadow-md w-[70%] md:w-2/5 md:mr-6 lg:mr-0 lg:w-2/6 xl:w-3/12"
-        >
-          <!-- Additional required wrapper -->
-          <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div class="swiper-slide rounded-md shadow-lg">
-              <a href="../assets/gallery.jpg" data-lightbox="Serviços">
-                <img src="../assets/gallery.jpg" class="" alt="" />
-              </a>
-            </div>
-            <div class="swiper-slide rounded-md shadow-lg">
-              <a href="../assets/gallery2.jpg" data-lightbox="Serviços">
-                <img src="../assets/gallery2.jpg" class="" alt="" />
-              </a>
-            </div>
-            <div class="swiper-slide rounded-md shadow-lg">
-              <a href="../assets/gallery3.jpg" data-lightbox="Serviços">
-                <img src="../assets/gallery3.jpg" class="" alt="" />
-              </a>
-            </div>
-            <div class="swiper-slide rounded-md shadow-lg">
-              <a href="../assets/gallery4.jpg" data-lightbox="Serviços">
-                <img src="../assets/gallery4.jpg" class="" alt="" />
-              </a>
-            </div>
-            <div class="swiper-slide rounded-md shadow-lg">
-              <a href="../assets/gallery5.jpg" data-lightbox="Serviços">
-                <img src="../assets/gallery5.jpg" class="" alt="" />
-              </a>
-            </div>
-            <div class="swiper-slide rounded-md shadow-lg">
-              <a href="../assets/gallery6.jpg" data-lightbox="Serviços">
-                <img src="../assets/gallery6.jpg" class="" alt="" />
-              </a>
-            </div>
-            <div class="swiper-slide rounded-md shadow-lg">
-              <a href="../assets/gallery7.jpg" data-lightbox="Serviços">
-                <img src="../assets/gallery7.jpg" class="" alt="" />
-              </a>
-            </div>
-            <div class="swiper-slide rounded-md shadow-lg">
-              <a href="../assets/gallery8.jpg" data-lightbox="Serviços">
-                <img src="../assets/gallery8.jpg" class="" alt="" />
-              </a>
-            </div>
-            <div class="swiper-slide rounded-md shadow-lg">
-              <a href="../assets/gallery9.jpg" data-lightbox="Serviços">
-                <img src="../assets/gallery9.jpg" class="" alt="" />
-              </a>
-            </div>
-            <div class="swiper-slide rounded-md shadow-lg">
-              <a href="../assets/gallery10.jpg" data-lightbox="Serviços">
-                <img src="../assets/gallery10.jpg" class="" alt="" />
-              </a>
-            </div>
-            <div class="swiper-slide rounded-md shadow-lg">
-              <a href="../assets/gallery11.jpg" data-lightbox="Serviços">
-                <img src="../assets/gallery11.jpg" class="" alt="" />
-              </a>
-            </div>
-            <div class="swiper-slide rounded-md shadow-lg">
-              <a href="../assets/gallery12.jpg" data-lightbox="Serviços">
-                <img src="../assets/gallery12.jpg" class="" alt="" />
-              </a>
-            </div>
-            <div class="swiper-slide rounded-md shadow-lg">
-              <a href="../assets/gallery13.jpg" data-lightbox="Serviços">
-                <img src="../assets/gallery13.jpg" class="" alt="" />
-              </a>
-            </div>
-            <div class="swiper-slide rounded-md shadow-lg">
-              <a href="../assets/gallery14.jpg" data-lightbox="Serviços">
-                <img src="../assets/gallery14.jpg" class="" alt="" />
-              </a>
-            </div>
-            <div class="swiper-slide rounded-md shadow-lg">
-              <a href="../assets/gallery15.jpg" data-lightbox="Serviços">
-                <img src="../assets/gallery15.jpg" class="" alt="" />
-              </a>
-            </div>
-            <div class="swiper-slide rounded-md shadow-lg">
-              <a href="../assets/gallery16.jpg" data-lightbox="Serviços">
-                <img src="../assets/gallery16.jpg" class="" alt="" />
-              </a>
-            </div>
-          </div>
-          <!-- If we need pagination -->
-          <div class="swiper-pagination"></div>
-
-          <!-- If we need navigation buttons -->
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-        </div>
-        <div
-          class="flex flex-col justify-center items-center gap-8 px-8 md:items-start md:gap-6 md:w-4/6 md:order-2 lg:w-1/2 xl:w-6/12"
-        >
-          <p
-            class="font-montserrat text-md text-contrast text-center xl:text-lg"
+          <div
+            class="swiperServices shadow-md w-[70%] lg:mr-0 lg:w-2/6 xl:w-3/12"
           >
-            Exploramos as veias e os padrões únicos da pedra, trazendo à tona
-            formas <strong class="font-garamond text-ten">DELICADAS</strong> ou
-            <strong class="font-garamond text-ten">IMPONENTES</strong>
-          </p>
-        </div>
-        <div
-          class="swiperServices shadow-md w-[70%] md:w-2/5 md:mr-6 lg:mr-0 lg:w-2/6 xl:w-3/12"
-        >
-          <!-- Additional required wrapper -->
-          <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div class="swiper-slide rounded-md shadow-lg">
-              <a href="../assets/gallery17.jpg" data-lightbox="Serviços">
-                <img src="../assets/gallery17.jpg" class="" alt="" />
-              </a>
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide rounded-md shadow-lg">
+                <a href="../assets/gallery22.jpg" data-lightbox="Serviços">
+                  <img src="../assets/gallery22.jpg" class="" alt="" />
+                </a>
+              </div>
+              <div class="swiper-slide rounded-md shadow-lg">
+                <a href="../assets/gallery23.jpg" data-lightbox="Serviços">
+                  <img src="../assets/gallery23.jpg" class="" alt="" />
+                </a>
+              </div>
+              <div class="swiper-slide rounded-md shadow-lg">
+                <a href="../assets/gallery24.jpg" data-lightbox="Serviços">
+                  <img src="../assets/gallery24.jpg" class="" alt="" />
+                </a>
+              </div>
+              <div class="swiper-slide rounded-md shadow-lg">
+                <a href="../assets/gallery25.jpg" data-lightbox="Serviços">
+                  <img src="../assets/gallery25.jpg" class="" alt="" />
+                </a>
+              </div>
+              <div class="swiper-slide rounded-md shadow-lg">
+                <a href="../assets/gallery27.jpg" data-lightbox="Serviços">
+                  <img src="../assets/gallery27.jpg" class="" alt="" />
+                </a>
+              </div>
+              <div class="swiper-slide rounded-md shadow-lg">
+                <a href="../assets/gallery29.jpg" data-lightbox="Serviços">
+                  <img src="../assets/gallery29.jpg" class="" alt="" />
+                </a>
+              </div>
+              <div class="swiper-slide rounded-md shadow-lg">
+                <a href="../assets/gallery30.jpg" data-lightbox="Serviços">
+                  <img src="../assets/gallery30.jpg" class="" alt="" />
+                </a>
+              </div>
+              <div class="swiper-slide rounded-md shadow-lg">
+                <a href="../assets/gallery32.jpg" data-lightbox="Serviços">
+                  <img src="../assets/gallery32.jpg" class="" alt="" />
+                </a>
+              </div>
             </div>
-            <div class="swiper-slide rounded-md shadow-lg">
-              <a href="../assets/gallery18.jpg" data-lightbox="Serviços">
-                <img src="../assets/gallery18.jpg" class="" alt="" />
-              </a>
-            </div>
-            <div class="swiper-slide rounded-md shadow-lg">
-              <a href="../assets/gallery19.jpg" data-lightbox="Serviços">
-                <img src="../assets/gallery19.jpg" class="" alt="" />
-              </a>
-            </div>
-            <div class="swiper-slide rounded-md shadow-lg">
-              <a href="../assets/gallery20.jpg" data-lightbox="Serviços">
-                <img src="../assets/gallery20.jpg" class="" alt="" />
-              </a>
-            </div>
-            <div class="swiper-slide rounded-md shadow-lg">
-              <a href="../assets/gallery21.jpg" data-lightbox="Serviços">
-                <img src="../assets/gallery21.jpg" class="" alt="" />
-              </a>
-            </div>
-            <div class="swiper-slide rounded-md shadow-lg">
-              <a href="../assets/gallery22.jpg" data-lightbox="Serviços">
-                <img src="../assets/gallery22.jpg" class="" alt="" />
-              </a>
-            </div>
-            <div class="swiper-slide rounded-md shadow-lg">
-              <a href="../assets/gallery23.jpg" data-lightbox="Serviços">
-                <img src="../assets/gallery23.jpg" class="" alt="" />
-              </a>
-            </div>
-            <div class="swiper-slide rounded-md shadow-lg">
-              <a href="../assets/gallery24.jpg" data-lightbox="Serviços">
-                <img src="../assets/gallery24.jpg" class="" alt="" />
-              </a>
-            </div>
-            <div class="swiper-slide rounded-md shadow-lg">
-              <a href="../assets/gallery25.jpg" data-lightbox="Serviços">
-                <img src="../assets/gallery25.jpg" class="" alt="" />
-              </a>
-            </div>
-            <div class="swiper-slide rounded-md shadow-lg">
-              <a href="../assets/gallery26.jpg" data-lightbox="Serviços">
-                <img src="../assets/gallery26.jpg" class="" alt="" />
-              </a>
-            </div>
-            <div class="swiper-slide rounded-md shadow-lg">
-              <a href="../assets/gallery27.jpg" data-lightbox="Serviços">
-                <img src="../assets/gallery27.jpg" class="" alt="" />
-              </a>
-            </div>
-            <div class="swiper-slide rounded-md shadow-lg">
-              <a href="../assets/gallery28.jpg" data-lightbox="Serviços">
-                <img src="../assets/gallery28.jpg" class="" alt="" />
-              </a>
-            </div>
-            <div class="swiper-slide rounded-md shadow-lg">
-              <a href="../assets/gallery29.jpg" data-lightbox="Serviços">
-                <img src="../assets/gallery29.jpg" class="" alt="" />
-              </a>
-            </div>
-            <div class="swiper-slide rounded-md shadow-lg">
-              <a href="../assets/gallery30.jpg" data-lightbox="Serviços">
-                <img src="../assets/gallery30.jpg" class="" alt="" />
-              </a>
-            </div>
-            <div class="swiper-slide rounded-md shadow-lg">
-              <a href="../assets/gallery31.jpg" data-lightbox="Serviços">
-                <img src="../assets/gallery31.jpg" class="" alt="" />
-              </a>
-            </div>
-            <div class="swiper-slide rounded-md shadow-lg">
-              <a href="../assets/gallery32.jpg" data-lightbox="Serviços">
-                <img src="../assets/gallery32.jpg" class="" alt="" />
-              </a>
-            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
           </div>
-          <!-- If we need pagination -->
-          <div class="swiper-pagination"></div>
-
-          <!-- If we need navigation buttons -->
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
         </div>
       </section>
     </main>
+
+    <!------Footer------>
     <footer
       id="section-6"
       class="bg-white section w-screen min-h-screen py-14 flex flex-col justify-start items-center gap-6 pb-10 md:flex-row md:min-h-fit md:justify-center xl:pb-0 xl:items-center lg:min-h-screen"
@@ -959,6 +918,7 @@
         <div id="map" class="w-[90%] h-96 drop-shadow-md self-center"></div>
       </div>
     </footer>
+
     <!--Google Maps Library-->
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCi-32bsWKVSK00v_aiYmTQlnzm5BgiJFA&callback=initMap&v=weekly"
