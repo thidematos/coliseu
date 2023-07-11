@@ -210,3 +210,23 @@ const cardContainer = document.querySelector('.cards');
 cardContainer.addEventListener('click', (e) => {
   e.target.closest('.card')?.classList.toggle('flipCard');
 });
+
+//Retiring Margin Left
+const marginSlider = document.querySelectorAll('.sliderML');
+
+const handleResize = function () {
+  marginSlider.forEach((e) => {
+    if (window.screen.width >= 1280) {
+      if (e.dataset.margin === 'true') {
+        e.style.marginRight = '4%';
+      } else {
+        e.style.marginLeft = 0;
+      }
+    } else {
+      e.style = '';
+    }
+  });
+};
+handleResize();
+
+window.addEventListener('resize', handleResize);
