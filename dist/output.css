@@ -867,6 +867,11 @@ video {
   background-color: rgb(255 244 224 / var(--tw-bg-opacity));
 }
 
+.bg-sixtyAlu{
+  --tw-bg-opacity: 1;
+  background-color: rgb(183 196 207 / var(--tw-bg-opacity));
+}
+
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -913,6 +918,11 @@ video {
 .py-4{
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.py-16{
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 .pb-10{
@@ -1654,6 +1664,10 @@ video {
     min-height: 100vh;
   }
 
+  .xl\:w-1\/2{
+    width: 50%;
+  }
+
   .xl\:w-2\/5{
     width: 40%;
   }
@@ -1686,6 +1700,10 @@ video {
     width: 40%;
   }
 
+  .xl\:w-\[45\%\]{
+    width: 45%;
+  }
+
   .xl\:w-\[50\%\]{
     width: 50%;
   }
@@ -1700,18 +1718,6 @@ video {
 
   .xl\:w-full{
     width: 100%;
-  }
-
-  .xl\:w-1\/2{
-    width: 50%;
-  }
-
-  .xl\:w-\[80\%\]{
-    width: 80%;
-  }
-
-  .xl\:w-\[45\%\]{
-    width: 45%;
   }
 
   .xl\:scale-\[0\.8\]{
@@ -1752,16 +1758,12 @@ video {
     gap: 5rem;
   }
 
-  .xl\:gap-8{
-    gap: 2rem;
-  }
-
-  .xl\:gap-24{
-    gap: 6rem;
-  }
-
   .xl\:gap-28{
     gap: 7rem;
+  }
+
+  .xl\:gap-8{
+    gap: 2rem;
   }
 
   .xl\:self-end{
@@ -1795,16 +1797,12 @@ video {
     padding-right: 0px;
   }
 
-  .xl\:pr-2{
-    padding-right: 0.5rem;
-  }
-
-  .xl\:pr-4{
-    padding-right: 1rem;
-  }
-
   .xl\:pr-\[4\%\]{
     padding-right: 4%;
+  }
+
+  .xl\:pt-\[5rem\]{
+    padding-top: 5rem;
   }
 
   .xl\:text-2xl{

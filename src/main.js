@@ -164,6 +164,7 @@ const stickyHandler = function (entries) {
 const observer = new IntersectionObserver(stickyHandler, {
   root: null,
   threshold: 0,
+  rootMargin: '-' + getComputedStyle(navLinks).height,
 });
 
 observer.observe(section1);
