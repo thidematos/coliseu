@@ -3,13 +3,13 @@ module.exports = {
   content: ['./src/**/*.{html,js}'],
   theme: {
     colors: {
-      sixtyAlu: '#B7C4CF',
+      sixtyAlu: '#F6F1F1',
       sixty: '#FFF4E0',
-      thirthyAlu: '#EEE3CB',
+      thirthyAlu: '#AFD3E2',
       thirty: '#FFBF9B',
-      tenAlu: '#D7C0AE',
+      tenAlu: '#19A7CE',
       ten: '#B46060',
-      contrastAlu: '#967E76',
+      contrastAlu: '#146C94',
       contrast: '#4D4D4D',
       white: '#fff',
       cta: '#B46060',
@@ -18,9 +18,6 @@ module.exports = {
       garamond: 'EB Garamond',
       bodoni: 'Bodoni Moda',
       montserrat: 'Montserrat',
-    },
-    backgroundImage: {
-      inicial: "url('../assets/inicial.jpg')",
     },
     extend: {},
   },

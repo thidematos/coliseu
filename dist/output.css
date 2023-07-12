@@ -622,6 +622,22 @@ video {
   margin-top: 2rem;
 }
 
+.mt-10{
+  margin-top: 2.5rem;
+}
+
+.mb-8{
+  margin-bottom: 2rem;
+}
+
+.mb-10{
+  margin-bottom: 2.5rem;
+}
+
+.mb-12{
+  margin-bottom: 3rem;
+}
+
 .box-border{
   box-sizing: border-box;
 }
@@ -790,6 +806,18 @@ video {
   justify-content: space-around;
 }
 
+.justify-evenly{
+  justify-content: space-evenly;
+}
+
+.gap-10{
+  gap: 2.5rem;
+}
+
+.gap-2{
+  gap: 0.5rem;
+}
+
 .gap-3{
   gap: 0.75rem;
 }
@@ -804,6 +832,22 @@ video {
 
 .gap-8{
   gap: 2rem;
+}
+
+.gap-5{
+  gap: 1.25rem;
+}
+
+.gap-16{
+  gap: 4rem;
+}
+
+.gap-12{
+  gap: 3rem;
+}
+
+.gap-14{
+  gap: 3.5rem;
 }
 
 .self-start{
@@ -857,14 +901,29 @@ video {
   border-color: rgb(77 77 77 / var(--tw-border-opacity));
 }
 
+.border-sixtyAlu{
+  --tw-border-opacity: 1;
+  border-color: rgb(246 241 241 / var(--tw-border-opacity));
+}
+
 .border-ten{
   --tw-border-opacity: 1;
   border-color: rgb(180 96 96 / var(--tw-border-opacity));
 }
 
+.border-tenAlu{
+  --tw-border-opacity: 1;
+  border-color: rgb(25 167 206 / var(--tw-border-opacity));
+}
+
 .border-t-contrast{
   --tw-border-opacity: 1;
   border-top-color: rgb(77 77 77 / var(--tw-border-opacity));
+}
+
+.bg-contrastAlu{
+  --tw-bg-opacity: 1;
+  background-color: rgb(20 108 148 / var(--tw-bg-opacity));
 }
 
 .bg-sixty{
@@ -874,12 +933,36 @@ video {
 
 .bg-sixtyAlu{
   --tw-bg-opacity: 1;
-  background-color: rgb(183 196 207 / var(--tw-bg-opacity));
+  background-color: rgb(246 241 241 / var(--tw-bg-opacity));
+}
+
+.bg-thirthyAlu{
+  --tw-bg-opacity: 1;
+  background-color: rgb(175 211 226 / var(--tw-bg-opacity));
 }
 
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-tenAlu{
+  --tw-bg-opacity: 1;
+  background-color: rgb(25 167 206 / var(--tw-bg-opacity));
+}
+
+.bg-gradient-to-r{
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+
+.from-thirthyAlu{
+  --tw-gradient-from: #AFD3E2 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(175 211 226 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.to-tenAlu{
+  --tw-gradient-to: #19A7CE var(--tw-gradient-to-position);
 }
 
 .p-3{
@@ -931,6 +1014,14 @@ video {
 
 .pl-2{
   padding-left: 0.5rem;
+}
+
+.pt-10{
+  padding-top: 2.5rem;
+}
+
+.pt-8{
+  padding-top: 2rem;
 }
 
 .text-left{
@@ -1005,6 +1096,11 @@ video {
 .text-ten{
   --tw-text-opacity: 1;
   color: rgb(180 96 96 / var(--tw-text-opacity));
+}
+
+.text-white{
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .shadow{

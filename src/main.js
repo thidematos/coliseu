@@ -231,6 +231,8 @@ window.addEventListener('resize', handleResize);
 
 //Change State
 const changers = document.querySelectorAll('.logo');
+const secondPage = document.querySelector('.secondPage');
+const main = document.querySelector('.main');
 
 let pageStatus = true;
 
@@ -239,12 +241,12 @@ changers.forEach((e) =>
     pageStatus = !pageStatus;
     if (pageStatus) {
       observer.observe(section1);
+      document.title = 'O Coliseu - Marmoraria';
     } else {
       observer.unobserve(section1);
+      window.scrollTo(0, 0);
+      document.title = 'O Coliseu - Esquadrias e Vidros';
     }
-
-    const secondPage = document.querySelector('.secondPage');
-    const main = document.querySelector('.main');
 
     navLinks.classList.toggle('hidden');
     main.classList.toggle('hidden');
