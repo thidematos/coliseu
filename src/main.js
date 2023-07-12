@@ -1,7 +1,9 @@
 'use strict';
 
+const navLinks = document.querySelector('#nav');
 const hamb = document.querySelector('.hamb');
 const hambContainer = document.querySelector('.hamb_container');
+const knowMoreBtn = document.querySelector('.btn__knowMore');
 
 //Swiper
 const swiper = new Swiper('.swiper', {
@@ -101,16 +103,11 @@ const handleNav = function (e) {
   }
 };
 
-document
-  .querySelector('#nav')
-  .addEventListener('mouseover', handleNav.bind(false));
+navLinks.addEventListener('mouseover', handleNav.bind(false));
 
-document
-  .querySelector('#nav')
-  .addEventListener('mouseout', handleNav.bind(true));
+navLinks.addEventListener('mouseout', handleNav.bind(true));
 
 //Scroll Smooth
-const navLinks = document.querySelector('#nav');
 
 const smoothScroll = function (e) {
   if (!e.target.classList.contains('nav__link')) return;
@@ -231,3 +228,28 @@ const handleResize = function () {
 handleResize();
 
 window.addEventListener('resize', handleResize);
+
+//Change State
+const changers = document.querySelectorAll('.logo');
+
+let pageStatus = true;
+
+changers.forEach((e) =>
+  e.addEventListener('click', () => {
+    pageStatus = !pageStatus;
+    if (pageStatus) {
+      observer.observe(section1);
+    } else {
+      observer.unobserve(section1);
+    }
+
+    const secondPage = document.querySelector('.secondPage');
+    const main = document.querySelector('.main');
+
+    navLinks.classList.toggle('hidden');
+    main.classList.toggle('hidden');
+
+    secondPage.classList.toggle('hidden');
+    secondPage.classList.toggle('flex');
+  })
+);

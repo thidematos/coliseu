@@ -862,6 +862,11 @@ video {
   border-color: rgb(180 96 96 / var(--tw-border-opacity));
 }
 
+.border-t-contrast{
+  --tw-border-opacity: 1;
+  border-top-color: rgb(77 77 77 / var(--tw-border-opacity));
+}
+
 .bg-sixty{
   --tw-bg-opacity: 1;
   background-color: rgb(255 244 224 / var(--tw-bg-opacity));
@@ -918,11 +923,6 @@ video {
 .py-4{
   padding-top: 1rem;
   padding-bottom: 1rem;
-}
-
-.py-16{
-  padding-top: 4rem;
-  padding-bottom: 4rem;
 }
 
 .pb-10{
