@@ -6,6 +6,29 @@ const hamb = document.querySelector('.hamb');
 const hambContainer = document.querySelector('.hamb_container');
 const knowMoreBtn = document.querySelector('.btn__knowMore');
 
+const componentContainer = document.querySelector('.operations');
+const tabs = [...document.querySelectorAll('.operations__tab')];
+const content = [...document.querySelectorAll('.operations__content')];
+
+const rockSliders = document.querySelectorAll('.rockSlider');
+
+const section1 = document.querySelector('#section-1');
+const section1_0 = document.querySelector('#section-1_0');
+const sections = document.querySelectorAll('.section');
+const sections2 = document.querySelectorAll('.section2');
+
+const marginSlider = document.querySelectorAll('.sliderML');
+
+const hambs = [...document.querySelectorAll('.hamb')];
+const hambContainers = [...document.querySelectorAll('.hamb_container')];
+
+const switcher = document.querySelectorAll('.switcher');
+const secondPage = document.querySelector('.secondPage');
+const main = document.querySelector('.main');
+
+const dummyAside = document.querySelector('.dummy');
+const dummyMain = document.querySelector('.dummyMain');
+
 //Swiper
 const swiper = new Swiper('.swiper', {
   // Optional parameters
@@ -45,12 +68,6 @@ const swiperServices = new Swiper('.swiperServices', {
 });
 
 //Tabbed Component
-const componentContainer = document.querySelector('.operations');
-
-const tabs = [...document.querySelectorAll('.operations__tab')];
-
-const content = [...document.querySelectorAll('.operations__content')];
-
 componentContainer.addEventListener('click', (e) => {
   if (!e.target.classList.contains('operations__tab')) return;
 
@@ -70,8 +87,6 @@ componentContainer.addEventListener('click', (e) => {
 });
 
 //Rocks Slide
-const rockSliders = document.querySelectorAll('.rockSlider');
-
 const handleHover = function (e) {
   if (!e.target.classList.contains('rockSlide')) return;
 
@@ -86,21 +101,23 @@ rockSliders.forEach((e) => {
 //Fade
 const handleNav = function (e) {
   if (e.target.classList.contains('nav__link')) {
-    const hovered = e.target;
-    const siblings = [...document.querySelectorAll('.nav__link')];
-    const logo = hovered.closest('#nav').querySelector('.logo');
+    if (window.screen.width >= 1024) {
+      const hovered = e.target;
+      const siblings = [...document.querySelectorAll('.nav__link')];
+      const logo = hovered.closest('#nav').querySelector('.logo');
 
-    siblings.forEach((e) => {
-      if (e !== hovered) {
-        if (this) {
-          logo.classList.remove('opacity20');
-          e.classList.remove('opacity20');
-        } else {
-          logo.classList.add('opacity20');
-          e.classList.add('opacity20');
+      siblings.forEach((e) => {
+        if (e !== hovered) {
+          if (this) {
+            logo.classList.remove('opacity20');
+            e.classList.remove('opacity20');
+          } else {
+            logo.classList.add('opacity20');
+            e.classList.add('opacity20');
+          }
         }
-      }
-    });
+      });
+    }
   }
 };
 
@@ -114,6 +131,8 @@ const smoothScroll = function (e) {
   if (!e.target.classList.contains('nav__link')) return;
 
   e.preventDefault();
+
+  hambHandler(e);
 
   const el = document.querySelector(e.target.getAttribute('href'));
 
@@ -151,6 +170,8 @@ const smoothBtnHandler = function (e) {
 };
 
 navLinks.addEventListener('click', smoothScroll);
+navLinks2.addEventListener('click', smoothScroll);
+
 document
   .querySelector('.btn__knowMore')
   .addEventListener('click', smoothBtnHandler);
@@ -159,20 +180,21 @@ document
   .querySelector('#btn__knowMore')
   .addEventListener('click', smoothBtnHandler);
 
+document
+  .querySelector('.knowMoreAside')
+  .addEventListener('click', smoothBtnHandler);
+
 /////////////////////////////////////////////////////////////////////////////
 //Sticky NavBar
-const section1 = document.querySelector('#section-1');
-const section1_0 = document.querySelector('#section-1_0');
-
 const stickyHandler = function (entries) {
   const [entry] = entries;
 
   if (!entry.isIntersecting) {
     navLinks.classList.add('sticky');
-    document.querySelector('.dummyMain').classList.remove('hidden');
+    dummyMain.classList.remove('hidden');
   } else {
     navLinks.classList.remove('sticky');
-    document.querySelector('.dummyMain').classList.add('hidden');
+    dummyMain.classList.add('hidden');
   }
 };
 
@@ -180,10 +202,10 @@ const stickyHandler2 = function (entries) {
   const [entry] = entries;
 
   if (!entry.isIntersecting) {
-    document.querySelector('.dummy').classList.remove('hidden');
+    dummyAside.classList.remove('hidden');
     navLinks2.classList.add('sticky');
   } else {
-    document.querySelector('.dummy').classList.add('hidden');
+    dummyAside.classList.add('hidden');
     navLinks2.classList.remove('sticky');
     document.querySelector('#section-1_0').style = '';
   }
@@ -203,9 +225,8 @@ const observer2 = new IntersectionObserver(stickyHandler2, {
   rootMargin: '-' + (parseInt(getComputedStyle(navLinks2).height) - 2) + 'px',
 });
 
+/////////////////////////////////////////////////////////////////////
 //Reveal Elements
-const sections = document.querySelectorAll('.section');
-
 const revealSection = function (entries, observer) {
   const [entry] = entries;
 
@@ -221,6 +242,11 @@ const sectionObserver = new IntersectionObserver(revealSection, {
   threshold: 0.15,
 });
 
+const sectionObserver2 = new IntersectionObserver(revealSection, {
+  root: null,
+  threshold: 0.2,
+});
+
 sections.forEach((e) => sectionObserver.observe(e));
 
 ////////////////////////////////////////////////////////////////////
@@ -228,19 +254,29 @@ sections.forEach((e) => sectionObserver.observe(e));
 let statusHamb = [false, false];
 
 const hambHandler = function (e) {
-  const whichHamb = Number(e.target.dataset.hamb);
+  if (e.target.classList.contains('pageState')) {
+    statusHamb = [false, false];
+    hambs.forEach((e) => (e.src = '../assets/menu-hamb.png'));
+    hambContainers.forEach((e) => e.classList.remove('hamb_container-style'));
+  } else {
+    const whichHamb = Number(
+      e.target.dataset.hamb ||
+        e.target
+          .closest('.hamb_container')
+          .previousElementSibling.querySelector('.hamb').dataset.hamb
+    );
 
-  statusHamb[whichHamb] = !statusHamb[whichHamb];
+    statusHamb[whichHamb] = !statusHamb[whichHamb];
 
-  if (statusHamb[whichHamb])
-    hambs[whichHamb].src = '../assets/menu-hamb-open.png';
-  else hambs[whichHamb].src = '../assets/menu-hamb.png';
-
-  hambContainers[whichHamb].classList.toggle('hamb_container-style');
+    if (statusHamb[whichHamb]) {
+      hambs[whichHamb].src = '../assets/menu-hamb-open.png';
+      hambContainers[whichHamb].classList.add('hamb_container-style');
+    } else {
+      hambs[whichHamb].src = '../assets/menu-hamb.png';
+      hambContainers[whichHamb].classList.remove('hamb_container-style');
+    }
+  }
 };
-
-const hambs = [...document.querySelectorAll('.hamb')];
-const hambContainers = [...document.querySelectorAll('.hamb_container')];
 
 hambs.forEach((e) => e.addEventListener('click', hambHandler));
 
@@ -252,8 +288,6 @@ cardContainer.addEventListener('click', (e) => {
 });
 
 //Retiring Margin Left
-const marginSlider = document.querySelectorAll('.sliderML');
-
 const handleResize = function () {
   marginSlider.forEach((e) => {
     if (window.screen.width >= 1280) {
@@ -272,29 +306,26 @@ handleResize();
 window.addEventListener('resize', handleResize);
 
 //Change State
-const switcher = document.querySelectorAll('.switcher');
-const secondPage = document.querySelector('.secondPage');
-const main = document.querySelector('.main');
-
 const handleSwitch = function (e) {
   if (!e.target.classList.contains('pageState')) return;
 
-  console.log(e.target.dataset.page);
-
   pageStatus = Number(e.target.dataset.page);
+  observer2.unobserve(section1_0);
+  observer.unobserve(section1);
+
+  hambHandler(e);
 
   if (pageStatus) {
-    observer.unobserve(section1);
-    observer2.unobserve(section1_0);
+    dummyAside.classList.add('hidden');
+    window.scrollTo(0, 0);
     toggleStates(pageStatus);
     observer.observe(section1);
     document.title = 'O Coliseu - Marmoraria';
   } else {
-    observer2.unobserve(section1_0);
-    observer.unobserve(section1);
+    dummyMain.classList.add('hidden');
     window.scrollTo(0, 0);
     toggleStates(pageStatus);
-
+    sections2.forEach((e) => sectionObserver2.observe(e));
     observer2.observe(section1_0);
     document.title = 'O Coliseu - Esquadrias e Vidros';
   }

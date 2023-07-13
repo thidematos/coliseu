@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>O Coliseu</title>
+    <title>O Coliseu - Marmoraria</title>
     <link rel="stylesheet" href="../dist/output.css" />
     <!--  Swiper Style  -->
     <link
@@ -109,6 +109,7 @@
       <section
         id="section-1"
         class="section section--hidden flex flex-col justify-center items-center font-garamond text-xl mt-8 mb-12 gap-8 md:flex-row md:w-screen md:my-[5.2rem] md:px-7 lg:my-[6.8rem] lg:gap-20 lg:px-20 xl:my-[7rem] xl:gap-0"
+        data-section="first"
       >
         <div
           class="flex flex-col justify-center items-center gap-8 mb-6 text-contrast md:w-2/5 md:order-2 md:gap-6 md:mr-6 lg:text-2xl xl:w-3/12 xl:text-3xl xl:gap-10"
@@ -886,6 +887,9 @@
         </div>
       </section>
     </main>
+
+    <!-------------------------------SECOND PAGE - ESQUADRIAS------------------------------->
+
     <aside
       class="secondPage hidden min-h-screen overflow-x-hidden flex-col justify-start items-center bg-sixtyAlu"
     >
@@ -933,19 +937,10 @@
           class="hamb_container list-none font-montserrat md:w-1/5 lg:flex lg:flex-row lg:w-4/5 lg:justify-center lg:items-center lg:gap-2 lg:text-lg lg:pr-6 lg:text-contrast xl:gap-12 xl:w-3/5 xl:text-xl"
         >
           <ul class="hamb_list">
-            <a href="#section-2" class="nav__link">Apresentação</a>
+            <a href="#section-1_1" class="nav__link">Apresentação</a>
           </ul>
           <ul class="hamb_list">
-            <a href="#section-3" class="nav__link">História</a>
-          </ul>
-          <ul class="hamb_list">
-            <a href="#section-4" class="nav__link">Mármores</a>
-          </ul>
-          <ul class="hamb_list">
-            <a href="#section-45" class="nav__link">Colaboradores</a>
-          </ul>
-          <ul class="hamb_list">
-            <a href="#section-5" class="nav__link">Serviços</a>
+            <a href="#section-2_1" class="nav__link">Serviços</a>
           </ul>
           <ul class="hamb_list-last">
             <a href="#section-6" class="nav__link">Contato</a>
@@ -955,7 +950,8 @@
       <div class="dummy hidden h-24"></div>
       <section
         id="section-1_0"
-        class="section2 w-screen flex flex-col justify-evenly items-center gap-14 mt-6 mb-14"
+        class="section2 section--hidden w-screen flex flex-col justify-evenly items-center gap-14 mt-6 mb-14"
+        data-section="first"
       >
         <div
           class="flex flex-col justify-center items-center gap-8 w-9/12 pt-8 border-solid border-t border-t-contrast"
@@ -976,15 +972,16 @@
         <div class="w-screen flex flex-col justify-center items-center gap-14">
           <img class="shadow-lg" src="../assets/esq-init.jpg" alt="" />
           <button
-            class="font-montserrat text-white text-xl p-4 bg-tenAlu border border-solid border-tenAlu drop-shadow-md shadow-md"
+            class="knowMoreAside font-montserrat text-white text-xl p-4 bg-tenAlu border border-solid border-tenAlu drop-shadow-md shadow-md"
+            data-href="#section-1_1"
           >
-            <a href="#section-1_1">SAIBA MAIS</a>
+            SAIBA MAIS
           </button>
         </div>
       </section>
       <section
         id="section-1_1"
-        class="section2 w-screen min-h-screen bg-white flex flex-row flex-wrap justify-center items-start"
+        class="section2 section--hidden w-screen min-h-screen bg-white flex flex-row flex-wrap justify-center items-start"
       >
         <div
           class="w-9/12 flex flex-col justify-center items-start gap-6 text-justify mt-12"
@@ -1023,8 +1020,8 @@
         </div>
       </section>
       <section
-        id="section-2.1"
-        class="section section--hiden w-screen min-h-screen bg-sixtyAlu flex flex-col justify-start items-center gap-12"
+        id="section-2_1"
+        class="section2 section--hidden w-screen min-h-screen bg-sixtyAlu flex flex-col justify-start items-center gap-12"
       >
         <div
           class="w-9/12 flex flex-col justify-center items-center mt-12 gap-8"

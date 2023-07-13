@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  @apply scroll-smooth;
+}
+
 .hamb_open {
   @apply absolute bg-thirty right-5 top-16 text-center  drop-shadow duration-500;
 }
@@ -76,7 +80,8 @@
   @apply fixed opacity-80 right-10;
 }
 
-.section {
+.section,
+.section2 {
   @apply duration-1000;
 }
 

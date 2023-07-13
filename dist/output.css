@@ -1172,6 +1172,10 @@ video {
   transition-duration: 500ms;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 .hamb_open{
   position: absolute;
   right: 1.25rem;
@@ -1301,7 +1305,8 @@ video {
   opacity: 0.8;
 }
 
-.section{
+.section,
+.section2{
   transition-duration: 1000ms;
 }
 
