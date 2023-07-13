@@ -90,7 +90,7 @@ html {
 }
 
 .hamb_container {
-  @apply absolute z-50 right-0 top-24 w-screen text-center bg-thirty text-contrast text-lg font-bold transition-transform duration-1000 origin-right scale-x-0;
+  @apply absolute z-50 right-0 top-24 w-screen text-center shadow-lg bg-thirty text-contrast text-lg font-bold transition-transform duration-1000 origin-right scale-x-0 md:w-2/6;
 }
 
 .hamb_container-style {

@@ -42,27 +42,33 @@
       id="nav"
       class="w-screen h-[100px] z-50 flex flex-row justify-center items-center"
     >
-      <div class="logo flex flex-row justify-start items-center">
-        <div class="flex flex-col justify-center items-center gap-2">
-          <div class="flex flex-row justify-evenly items-center">
+      <div class="flex flex-row justify-start items-center md:w-screen">
+        <div
+          class="flex flex-col justify-center items-center gap-2 md:w-screen md:gap-0"
+        >
+          <div
+            class="flex flex-row justify-evenly items-center md:justify-around md:w-screen"
+          >
             <img
               src="../assets/logo.png"
               alt=""
-              class="w-[22%] drop-shadow-sm"
+              class="w-[22%] drop-shadow-sm md:w-[10%]"
             />
             <h1
-              class="font-bodoni font-bold text-2xl text-ten drop-shadow-md xl:text-4xl"
+              class="font-bodoni font-bold text-2xl text-ten drop-shadow-md md:text-3xl xl:text-4xl"
             >
               O COLISEU
             </h1>
             <img
               src="../assets/menu-hamb.png"
               alt=""
-              class="hamb scale-[0.8] mr-4 lg:hidden"
+              class="hamb scale-[0.8] mr-4 md:mr-0 lg:hidden"
               data-hamb="0"
             />
           </div>
-          <ul class="switcher flex flex-row justify-center items-center gap-6">
+          <ul
+            class="switcher flex flex-row justify-center items-center gap-6 md:gap-24"
+          >
             <li
               class="pageState font-garamond font-bold drop-shadow-md text-contrast pageActive"
               data-page="0"
@@ -901,16 +907,20 @@
         id="nav2"
         class="w-screen h-[100px] z-50 flex flex-row justify-center items-center"
       >
-        <div class="logo flex flex-row justify-start items-center">
-          <div class="flex flex-col justify-center items-center gap-2">
-            <div class="flex flex-row justify-evenly items-center">
+        <div class="flex flex-row justify-start items-center md:w-screen">
+          <div
+            class="flex flex-col justify-center items-center gap-2 md:w-screen md:gap-0"
+          >
+            <div
+              class="flex flex-row justify-evenly items-center md:justify-around md:w-screen"
+            >
               <img
                 src="../assets/logo.png"
                 alt=""
-                class="w-[22%] drop-shadow-sm"
+                class="w-[22%] drop-shadow-sm md:w-[10%]"
               />
               <h1
-                class="font-bodoni font-bold text-2xl text-ten drop-shadow-md xl:text-4xl"
+                class="font-bodoni font-bold text-2xl text-ten drop-shadow-md md:text-3xl xl:text-4xl"
               >
                 O COLISEU
               </h1>
@@ -922,7 +932,7 @@
               />
             </div>
             <ul
-              class="switcher flex flex-row justify-center items-center gap-6"
+              class="switcher flex flex-row justify-center items-center gap-6 md:gap-24"
             >
               <li
                 class="pageState font-garamond font-bold drop-shadow-md text-contrast"
@@ -961,33 +971,51 @@
       <div class="dummy hidden h-24"></div>
       <section
         id="section-1_0"
-        class="section2 section--hidden w-screen flex flex-col justify-evenly items-center gap-14 mt-4 mb-14"
+        class="section2 section--hidden w-screen flex flex-col justify-evenly items-center gap-14 mt-4 mb-14 md:justify-center"
         data-section="first"
       >
         <div
-          class="flex flex-col justify-center items-center gap-8 w-9/12 pt-8 border-solid border-t border-t-contrast"
+          class="hidden md:w-9/12 md:block md:border-solid md:border-t-contrast md:border-t"
+        ></div>
+        <div
+          class="md:flex md:flex-row md:justify-center md:items-center md:w-[80%] md:pt-12"
         >
-          <h2 class="font-garamond text-contrast text-xl drop-shadow-md">
-            VERSÁTIL
-          </h2>
-          <h2 class="font-garamond text-contrast text-xl drop-shadow-md">
-            CONTEMPORÂNEO
-          </h2>
-
-          <h3
-            class="font-garamond text-2xl text-contrast bg-thirthyAlu p-3 drop-shadow-md shadow-md"
+          <div
+            class="flex flex-col justify-center items-center gap-8 w-9/12 pt-8 border-solid border-t border-t-contrast md:border-none md:w-[50%] md:pt-0"
           >
-            ESQUADRIAS & VIDROS
-          </h3>
-        </div>
-        <div class="w-screen flex flex-col justify-center items-center gap-14">
-          <img class="shadow-lg" src="../assets/esq-init.jpg" alt="" />
-          <button
-            class="knowMoreAside font-montserrat text-white text-xl p-4 bg-tenAlu border border-solid border-tenAlu drop-shadow-md shadow-md"
-            data-href="#section-1_1"
+            <h2 class="font-garamond text-contrast text-xl drop-shadow-md">
+              VERSÁTIL
+            </h2>
+            <h2 class="font-garamond text-contrast text-xl drop-shadow-md">
+              CONTEMPORÂNEO
+            </h2>
+            <h3
+              class="font-garamond text-2xl text-contrast bg-thirthyAlu p-3 drop-shadow-md shadow-md"
+            >
+              ESQUADRIAS & VIDROS
+            </h3>
+            <button
+              class="hidden knowMoreAside font-montserrat text-white text-xl p-4 bg-tenAlu border border-solid border-tenAlu drop-shadow-md shadow-md md:block"
+              data-href="#section-1_1"
+            >
+              SAIBA MAIS
+            </button>
+          </div>
+          <div
+            class="w-screen flex flex-col justify-center items-center gap-14 md:w-[50%] md:items-start"
           >
-            SAIBA MAIS
-          </button>
+            <img
+              class="shadow-lg md:w-full"
+              src="../assets/esq-init.jpg"
+              alt=""
+            />
+            <button
+              class="knowMoreAside font-montserrat text-white text-xl p-4 bg-tenAlu border border-solid border-tenAlu drop-shadow-md shadow-md md:hidden"
+              data-href="#section-1_1"
+            >
+              SAIBA MAIS
+            </button>
+          </div>
         </div>
       </section>
       <section

@@ -131,6 +131,10 @@ navLinks.addEventListener('mouseout', handleNav.bind(true));
 const smoothScroll = function (e) {
   if (!e.target.classList.contains('nav__link')) return;
 
+  if (window.screen.width > 768 && window.screen.width < 1024) {
+    sections.forEach((e) => e.classList.remove('section--hidden'));
+  }
+
   e.preventDefault();
 
   hambHandler(e);
@@ -144,7 +148,7 @@ const smoothScroll = function (e) {
       .querySelector(`#${e.target.id}`)
       .scrollIntoView({ behavior: 'smooth' });
   } else {
-    const headerHeight = isShowwed ? 96 + 128 : 96;
+    const headerHeight = isShowwed ? 100 + 128 : 100;
     const position = el.getBoundingClientRect().top;
     const offsetPosition = position + window.pageYOffset - headerHeight;
 
@@ -157,6 +161,10 @@ const smoothScroll = function (e) {
 
 const smoothBtnHandler = function (e) {
   const el = document.querySelector(e.target.dataset.href);
+
+  if (window.screen.width > 768 && window.screen.width < 1024) {
+    sections.forEach((e) => e.classList.remove('section--hidden'));
+  }
 
   let isShowwed = el.classList.contains('section--hidden');
 
@@ -182,8 +190,8 @@ document
   .addEventListener('click', smoothBtnHandler);
 
 document
-  .querySelector('.knowMoreAside')
-  .addEventListener('click', smoothBtnHandler);
+  .querySelectorAll('.knowMoreAside')
+  .forEach((e) => e.addEventListener('click', smoothBtnHandler));
 
 /////////////////////////////////////////////////////////////////////////////
 //Sticky NavBar
