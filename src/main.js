@@ -23,6 +23,7 @@ const hambs = [...document.querySelectorAll('.hamb')];
 const hambContainers = [...document.querySelectorAll('.hamb_container')];
 
 const switcher = document.querySelectorAll('.switcher');
+const roundSwitchs = document.querySelectorAll('.roundSwitch');
 const secondPage = document.querySelector('.secondPage');
 const main = document.querySelector('.main');
 
@@ -159,7 +160,7 @@ const smoothBtnHandler = function (e) {
 
   let isShowwed = el.classList.contains('section--hidden');
 
-  const headerHeight = isShowwed ? 96 + 128 : 96;
+  const headerHeight = isShowwed ? 100 + 128 : 100;
   const position = el.getBoundingClientRect().top;
   const offsetPosition = position + window.pageYOffset - headerHeight;
 
@@ -214,7 +215,7 @@ const stickyHandler2 = function (entries) {
 const observer = new IntersectionObserver(stickyHandler, {
   root: null,
   threshold: 0,
-  rootMargin: '-' + (parseInt(getComputedStyle(navLinks).height) - 2) + 'px',
+  rootMargin: '-' + (parseInt(getComputedStyle(navLinks).height) - 20) + 'px',
 });
 
 observer.observe(section1);
@@ -222,7 +223,7 @@ observer.observe(section1);
 const observer2 = new IntersectionObserver(stickyHandler2, {
   root: null,
   threshold: 0,
-  rootMargin: '-' + (parseInt(getComputedStyle(navLinks2).height) - 2) + 'px',
+  rootMargin: '-' + (parseInt(getComputedStyle(navLinks2).height) - 20) + 'px',
 });
 
 /////////////////////////////////////////////////////////////////////
@@ -244,7 +245,7 @@ const sectionObserver = new IntersectionObserver(revealSection, {
 
 const sectionObserver2 = new IntersectionObserver(revealSection, {
   root: null,
-  threshold: 0.2,
+  threshold: 0.15,
 });
 
 sections.forEach((e) => sectionObserver.observe(e));
@@ -306,46 +307,61 @@ handleResize();
 window.addEventListener('resize', handleResize);
 
 //Change State
-const handleSwitch = function (e) {
+const handleClick = function (e) {
   if (!e.target.classList.contains('pageState')) return;
 
+  handleSwitch(pageStatus);
+
   pageStatus = Number(e.target.dataset.page);
-  observer2.unobserve(section1_0);
-  observer.unobserve(section1);
-
-  hambHandler(e);
-
-  if (pageStatus) {
-    dummyAside.classList.add('hidden');
-    window.scrollTo(0, 0);
-    toggleStates(pageStatus);
-    observer.observe(section1);
-    document.title = 'O Coliseu - Marmoraria';
-  } else {
-    dummyMain.classList.add('hidden');
-    window.scrollTo(0, 0);
-    toggleStates(pageStatus);
-    sections2.forEach((e) => sectionObserver2.observe(e));
-    observer2.observe(section1_0);
-    document.title = 'O Coliseu - Esquadrias e Vidros';
-  }
 };
 
 const toggleStates = function (status) {
   if (status) {
-    navLinks.classList.remove('hidden');
-    main.classList.remove('hidden');
-    secondPage.classList.add('hidden');
-  } else {
     navLinks.classList.add('hidden');
     main.classList.add('hidden');
     secondPage.classList.remove('hidden');
     secondPage.classList.add('flex');
+  } else {
+    navLinks.classList.remove('hidden');
+    main.classList.remove('hidden');
+    secondPage.classList.add('hidden');
   }
 };
 
-let pageStatus = 1;
+const handleSwitch = function (pageStatus) {
+  observer2.unobserve(section1_0);
+  observer.unobserve(section1);
 
-switcher.forEach((element) => element.addEventListener('click', handleSwitch));
+  dummyMain.classList.add('hidden');
+  dummyAside.classList.add('hidden');
+
+  statusHamb = [false, false];
+  hambs.forEach((e) => (e.src = '../assets/menu-hamb.png'));
+  hambContainers.forEach((e) => e.classList.remove('hamb_container-style'));
+
+  if (pageStatus) {
+    window.scrollTo(0, 0);
+    toggleStates(pageStatus);
+    roundSwitchs.forEach((e) => (e.checked = true));
+    sections2.forEach((e) => sectionObserver2.observe(e));
+    observer2.observe(section1_0);
+    document.title = 'O Coliseu - Esquadrias e Vidros';
+  } else {
+    window.scrollTo(0, 0);
+    toggleStates(pageStatus);
+    roundSwitchs.forEach((e) => (e.checked = false));
+    observer.observe(section1);
+    document.title = 'O Coliseu - Marmoraria';
+  }
+};
+
+let pageStatus = 0;
+
+switcher.forEach((element) => element.addEventListener('click', handleClick));
+roundSwitchs.forEach((switcher) =>
+  switcher.addEventListener('change', (e) => {
+    handleSwitch(e.target.checked);
+  })
+);
 
 //
