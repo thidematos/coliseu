@@ -1,6 +1,7 @@
 'use strict';
 
 const navLinks = document.querySelector('#nav');
+const navLinks2 = document.querySelector('#nav2');
 const hamb = document.querySelector('.hamb');
 const hambContainer = document.querySelector('.hamb_container');
 const knowMoreBtn = document.querySelector('.btn__knowMore');
@@ -107,64 +108,100 @@ navLinks.addEventListener('mouseover', handleNav.bind(false));
 
 navLinks.addEventListener('mouseout', handleNav.bind(true));
 
+//////////////////////////////////////////////////////////////
 //Scroll Smooth
-
 const smoothScroll = function (e) {
   if (!e.target.classList.contains('nav__link')) return;
 
   e.preventDefault();
 
-  document
-    .querySelector(e.target.getAttribute('href'))
-    .scrollIntoView({ behavior: 'smooth' });
+  const el = document.querySelector(e.target.getAttribute('href'));
+
+  let isShowwed = el.classList.contains('section--hidden');
+
+  if (e.target.id === 'section-6') {
+    document
+      .querySelector(`#${e.target.id}`)
+      .scrollIntoView({ behavior: 'smooth' });
+  } else {
+    const headerHeight = isShowwed ? 96 + 128 : 96;
+    const position = el.getBoundingClientRect().top;
+    const offsetPosition = position + window.pageYOffset - headerHeight;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth',
+    });
+  }
+};
+
+const smoothBtnHandler = function (e) {
+  const el = document.querySelector(e.target.dataset.href);
+
+  let isShowwed = el.classList.contains('section--hidden');
+
+  const headerHeight = isShowwed ? 96 + 128 : 96;
+  const position = el.getBoundingClientRect().top;
+  const offsetPosition = position + window.pageYOffset - headerHeight;
+
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: 'smooth',
+  });
 };
 
 navLinks.addEventListener('click', smoothScroll);
-document.querySelector('.btn__knowMore').addEventListener('click', (e) => {
-  console.log(e.target.dataset.href);
-  document
-    .querySelector(e.target.dataset.href)
-    .scrollIntoView({ behavior: 'smooth' });
-});
+document
+  .querySelector('.btn__knowMore')
+  .addEventListener('click', smoothBtnHandler);
 
-document.querySelector('#btn__knowMore').addEventListener('click', (e) => {
-  console.log(e.target.dataset.href);
-  document
-    .querySelector(e.target.dataset.href)
-    .scrollIntoView({ behavior: 'smooth' });
-});
+document
+  .querySelector('#btn__knowMore')
+  .addEventListener('click', smoothBtnHandler);
 
+/////////////////////////////////////////////////////////////////////////////
 //Sticky NavBar
 const section1 = document.querySelector('#section-1');
+const section1_0 = document.querySelector('#section-1_0');
 
 const stickyHandler = function (entries) {
   const [entry] = entries;
 
   if (!entry.isIntersecting) {
     navLinks.classList.add('sticky');
-
-    document.querySelector('.main').style.marginTop =
-      parseInt(getComputedStyle(navLinks).height) +
-      parseInt(getComputedStyle(navLinks).marginTop) +
-      parseInt(getComputedStyle(navLinks).marginBottom) +
-      'px';
-    navLinks.classList.remove('mt-2');
-    navLinks.classList.remove('lg:mt-6');
+    document.querySelector('.dummyMain').classList.remove('hidden');
   } else {
     navLinks.classList.remove('sticky');
-    document.querySelector('.main').style = '';
-    navLinks.classList.add('mt-2');
-    navLinks.classList.add('lg:mt-6');
+    document.querySelector('.dummyMain').classList.add('hidden');
+  }
+};
+
+const stickyHandler2 = function (entries) {
+  const [entry] = entries;
+
+  if (!entry.isIntersecting) {
+    document.querySelector('.dummy').classList.remove('hidden');
+    navLinks2.classList.add('sticky');
+  } else {
+    document.querySelector('.dummy').classList.add('hidden');
+    navLinks2.classList.remove('sticky');
+    document.querySelector('#section-1_0').style = '';
   }
 };
 
 const observer = new IntersectionObserver(stickyHandler, {
   root: null,
   threshold: 0,
-  rootMargin: '-' + getComputedStyle(navLinks).height,
+  rootMargin: '-' + (parseInt(getComputedStyle(navLinks).height) - 2) + 'px',
 });
 
 observer.observe(section1);
+
+const observer2 = new IntersectionObserver(stickyHandler2, {
+  root: null,
+  threshold: 0,
+  rootMargin: '-' + (parseInt(getComputedStyle(navLinks2).height) - 2) + 'px',
+});
 
 //Reveal Elements
 const sections = document.querySelectorAll('.section');
@@ -186,21 +223,26 @@ const sectionObserver = new IntersectionObserver(revealSection, {
 
 sections.forEach((e) => sectionObserver.observe(e));
 
+////////////////////////////////////////////////////////////////////
 // Hamb
-let statusHamb = false;
+let statusHamb = [false, false];
 
-hamb.addEventListener('click', (e) => {
-  statusHamb = !statusHamb;
+const hambHandler = function (e) {
+  const whichHamb = Number(e.target.dataset.hamb);
 
-  if (statusHamb) {
-    hamb.src = '../assets/xmark.png';
-  } else {
-    hamb.src = '../assets/menu-hamb.png';
-  }
+  statusHamb[whichHamb] = !statusHamb[whichHamb];
 
-  hambContainer.classList.toggle('hidden');
-  hambContainer.classList.toggle('hamb_container-style');
-});
+  if (statusHamb[whichHamb])
+    hambs[whichHamb].src = '../assets/menu-hamb-open.png';
+  else hambs[whichHamb].src = '../assets/menu-hamb.png';
+
+  hambContainers[whichHamb].classList.toggle('hamb_container-style');
+};
+
+const hambs = [...document.querySelectorAll('.hamb')];
+const hambContainers = [...document.querySelectorAll('.hamb_container')];
+
+hambs.forEach((e) => e.addEventListener('click', hambHandler));
 
 // Flip Card
 const cardContainer = document.querySelector('.cards');
@@ -230,28 +272,49 @@ handleResize();
 window.addEventListener('resize', handleResize);
 
 //Change State
-const changers = document.querySelectorAll('.logo');
+const switcher = document.querySelectorAll('.switcher');
 const secondPage = document.querySelector('.secondPage');
 const main = document.querySelector('.main');
 
-let pageStatus = true;
+const handleSwitch = function (e) {
+  if (!e.target.classList.contains('pageState')) return;
 
-changers.forEach((e) =>
-  e.addEventListener('click', () => {
-    pageStatus = !pageStatus;
-    if (pageStatus) {
-      observer.observe(section1);
-      document.title = 'O Coliseu - Marmoraria';
-    } else {
-      observer.unobserve(section1);
-      window.scrollTo(0, 0);
-      document.title = 'O Coliseu - Esquadrias e Vidros';
-    }
+  console.log(e.target.dataset.page);
 
-    navLinks.classList.toggle('hidden');
-    main.classList.toggle('hidden');
+  pageStatus = Number(e.target.dataset.page);
 
-    secondPage.classList.toggle('hidden');
-    secondPage.classList.toggle('flex');
-  })
-);
+  if (pageStatus) {
+    observer.unobserve(section1);
+    observer2.unobserve(section1_0);
+    toggleStates(pageStatus);
+    observer.observe(section1);
+    document.title = 'O Coliseu - Marmoraria';
+  } else {
+    observer2.unobserve(section1_0);
+    observer.unobserve(section1);
+    window.scrollTo(0, 0);
+    toggleStates(pageStatus);
+
+    observer2.observe(section1_0);
+    document.title = 'O Coliseu - Esquadrias e Vidros';
+  }
+};
+
+const toggleStates = function (status) {
+  if (status) {
+    navLinks.classList.remove('hidden');
+    main.classList.remove('hidden');
+    secondPage.classList.add('hidden');
+  } else {
+    navLinks.classList.add('hidden');
+    main.classList.add('hidden');
+    secondPage.classList.remove('hidden');
+    secondPage.classList.add('flex');
+  }
+};
+
+let pageStatus = 1;
+
+switcher.forEach((element) => element.addEventListener('click', handleSwitch));
+
+//

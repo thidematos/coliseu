@@ -40,27 +40,46 @@
   >
     <nav
       id="nav"
-      class="w-screen max-h-20 z-50 flex flex-row justify-center items-stretch mt-2 mb-6 md:mb-8 lg:mb-10 lg:mt-6"
+      class="w-screen h-24 z-50 flex flex-row justify-center items-stretch"
     >
       <div
-        class="logo flex flex-row justify-start pl-2 gap-6 md:w-4/5 md:gap-40 lg:pl-6 lg:gap-3 xl:w-2/5 xl:gap-8 xl:justify-center"
+        class="logo flex flex-row justify-start items-center pl-2 gap-6 md:w-4/5 md:gap-40 lg:pl-6 lg:gap-3 xl:w-2/5 xl:gap-8 xl:justify-center"
       >
-        <img src="../assets/logo.png" alt="" class="drop-shadow-md" />
-        <div class="flex flex-col justify-center items-center logo">
-          <h2
-            class="font-garamond text-contrast drop-shadow-md font-bold lg:text-xl xl:text-2xl"
+        <img src="../assets/logo.png" alt="" class="w-[30%] drop-shadow-md" />
+        <div class="flex flex-col justify-center items-start gap-1 pt-2">
+          <div class="flex flex-row justify-center items-center gap-8">
+            <h1
+              class="font-bodoni font-bold text-2xl text-ten drop-shadow-md xl:text-4xl"
+            >
+              O COLISEU
+            </h1>
+            <img
+              src="../assets/menu-hamb.png"
+              alt=""
+              class="hamb scale-[0.8] mr-4 self-end lg:hidden"
+              data-hamb="0"
+            />
+          </div>
+          <ul
+            class="switcher flex flex-row justify-center items-center gap-8 pt-2"
           >
-            Marmoraria
-          </h2>
-          <h1
-            class="font-bodoni font-bold text-2xl text-ten drop-shadow-md xl:text-4xl"
-          >
-            O COLISEU
-          </h1>
+            <li
+              class="pageState font-garamond font-bold drop-shadow-md text-contrast pageActive"
+              data-page="1"
+            >
+              Marmoraria
+            </li>
+            <li
+              class="pageState font-garamond font-bold drop-shadow-md text-contrast"
+              data-page="0"
+            >
+              Serralheria
+            </li>
+          </ul>
         </div>
       </div>
       <li
-        class="hamb_container list-none font-montserrat hidden md:w-1/5 lg:flex lg:flex-row lg:w-4/5 lg:justify-center lg:items-center lg:gap-2 lg:text-lg lg:pr-6 lg:text-contrast xl:gap-12 xl:w-3/5 xl:text-xl"
+        class="hamb_container list-none font-montserrat md:w-1/5 lg:flex lg:flex-row lg:w-4/5 lg:justify-center lg:items-center lg:gap-2 lg:text-lg lg:pr-6 lg:text-contrast xl:gap-12 xl:w-3/5 xl:text-xl"
       >
         <ul class="hamb_list">
           <a href="#section-2" class="nav__link">Apresentação</a>
@@ -81,19 +100,15 @@
           <a href="#section-6" class="nav__link">Contato</a>
         </ul>
       </li>
-      <img
-        src="../assets/menu-hamb.png"
-        alt=""
-        class="hamb scale-[0.8] mr-4 self-center lg:hidden"
-      />
     </nav>
+    <div class="dummyMain hidden h-24"></div>
     <main
-      class="main flex flex-col justify-center items-center border-solid border-t border-t-contrast w-9/12"
+      class="main flex flex-col justify-center mt-7 items-center border-solid border-t border-t-contrast w-9/12"
     >
       <!------Header------>
       <section
         id="section-1"
-        class="section section--hidden flex flex-col justify-center items-center font-garamond text-xl mt-8 mb-14 gap-8 md:flex-row md:w-screen md:my-[5.2rem] md:px-7 lg:my-[6.8rem] lg:gap-20 lg:px-20 xl:my-[7rem] xl:gap-0"
+        class="section section--hidden flex flex-col justify-center items-center font-garamond text-xl mt-8 mb-12 gap-8 md:flex-row md:w-screen md:my-[5.2rem] md:px-7 lg:my-[6.8rem] lg:gap-20 lg:px-20 xl:my-[7rem] xl:gap-0"
       >
         <div
           class="flex flex-col justify-center items-center gap-8 mb-6 text-contrast md:w-2/5 md:order-2 md:gap-6 md:mr-6 lg:text-2xl xl:w-3/12 xl:text-3xl xl:gap-10"
@@ -602,115 +617,10 @@
         </div>
       </section>
 
-      <!--Colaboradores-->
-      <section
-        id="section-45"
-        class="bg-white section section--hidden w-screen min-h-screen py-14 flex flex-col justify-start items-center gap-6 md:min-h-fit md:justify-center lg:min-h-screen lg:px-24 xl:px-48 xl:gap-12"
-      >
-        <div
-          class="px-8 flex flex-col justify-center items-center gap-8 md:w-6/12 lg:w-1/2 xl:w-7/12"
-        >
-          <h3
-            class="text-3xl bg-sixty p-3 font-garamond text-ten text-center drop-shadow-md w-fit lg:text-4xl xl:text-4xl"
-          >
-            Colaboradores
-          </h3>
-
-          <p
-            class="hidden text-md text-justify indent-6 text-contrast font-montserrat xl:text-lg xl:w-full xl:block"
-          >
-            As parcerias são relações construídas sobre alicerces de confiança,
-            comprometimento e respeito mútuo. Compartilhar conhecimento,
-            experiências e recursos cria um ambiente de colaboração e
-            cooperação, onde cada colaborador contribui com sua expertise única.
-            Por meio da sinergia e da troca constante, expandimos horizontes,
-            impulsionamos a inovação e superamos desafios.
-          </p>
-
-          <p
-            class="text-lg text-center text-contrast font-garamond md:text-xl xl:text-2xl"
-          >
-            Juntos, continuamos a construir um legado de
-            <strong class="text-ten">EXCELÊNCIA</strong> e
-            <strong class="text-ten">SATISFAÇÃO</strong>
-          </p>
-        </div>
-        <div
-          class="cards w-[95%] flex flex-wrap flex-row justify-center items-center gap-4 xl:w-[40%]"
-        >
-          <div class="card border border-solid border-ten">
-            <div class="card__front flex flex-col justify-center items-center">
-              <img src="../assets/mustang.png" alt="" class="w-10/12" />
-            </div>
-            <div
-              class="card__back flex flex-col justify-center items-center text-center w-10/12"
-            >
-              <h3>Mustang</h3>
-              <p>Lorem ipsum dolor sit amet.</p>
-            </div>
-          </div>
-          <div class="card border border-solid border-ten">
-            <div class="card__front flex flex-col justify-center items-center">
-              <img src="../assets/sons.png" alt="" class="w-10/12" />
-            </div>
-            <div
-              class="card__back flex flex-col justify-center items-center text-center w-10/12"
-            >
-              <h3>Sons of Anarchy</h3>
-              <p>Lorem ipsum dolor sit amet.</p>
-            </div>
-          </div>
-          <div class="card border border-solid border-ten">
-            <div class="card__front flex flex-col justify-center items-center">
-              <img src="../assets/harley-black.png" alt="" class="w-10/12" />
-            </div>
-            <div
-              class="card__back flex flex-col justify-center items-center text-center w-10/12"
-            >
-              <h3>Harley Davidson</h3>
-              <p>Lorem ipsum dolor sit amet.</p>
-            </div>
-          </div>
-          <div class="card border border-solid border-ten">
-            <div class="card__front flex flex-col justify-center items-center">
-              <img src="../assets/mayans.png" alt="" class="w-10/12" />
-            </div>
-            <div
-              class="card__back flex flex-col justify-center items-center text-center w-10/12"
-            >
-              <h3>Mayans</h3>
-              <p>Lorem ipsum dolor sit amet.</p>
-            </div>
-          </div>
-          <div class="card border border-solid border-ten">
-            <div class="card__front flex flex-col justify-center items-center">
-              <img src="../assets/harley-color.png" alt="" class="w-10/12" />
-            </div>
-            <div
-              class="card__back flex flex-col justify-center items-center text-center w-10/12"
-            >
-              <h3>Harley Davidson</h3>
-              <p>Lorem ipsum dolor sit amet.</p>
-            </div>
-          </div>
-          <div class="card border border-solid border-ten">
-            <div class="card__front flex flex-col justify-center items-center">
-              <img src="../assets/ford.png" alt="" class="w-10/12" />
-            </div>
-            <div
-              class="card__back flex flex-col justify-center items-center text-center w-10/12"
-            >
-              <h3>Ford</h3>
-              <p>Lorem ipsum dolor sit amet.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!-----Serviços----->
       <section
         id="section-5"
-        class="bg-sixty section section--hidden w-screen min-h-screen py-14 flex flex-col justify-start items-center overflow-hidden gap-6 md:flex-row md:min-h-fit md:px-16 md:gap-8 lg:pl-10 lg:gap-10 lg:min-h-screen xl:px-48 xl:justify-center xl:gap-28"
+        class="bg-white section section--hidden w-screen min-h-screen py-14 flex flex-col justify-start items-center overflow-hidden gap-6 md:flex-row md:min-h-fit md:px-16 md:gap-8 lg:pl-10 lg:gap-10 lg:min-h-screen xl:px-48 xl:justify-center xl:gap-28"
       >
         <div
           class="flex flex-col justify-center items-center w-full gap-6 md:w-1/2 md:gap-8 lg:w-[60%] xl:w-1/2 xl:items-end"
@@ -727,7 +637,7 @@
                 Nossos trabalhos:
               </h3>
               <h3
-                class="font-garamond text-3xl bg-white text-ten px-4 py-2 drop-shadow-md shadow-md lg:text-4xl xl:text6xl"
+                class="font-garamond text-3xl bg-sixty text-contrast px-4 py-2 drop-shadow-md shadow-md lg:text-4xl xl:text6xl"
               >
                 Beleza Lapidada.
               </h3>
@@ -870,33 +780,157 @@
           </div>
         </div>
       </section>
-    </main>
-    <aside
-      class="secondPage hidden min-h-screen overflow-hidden flex-col justify-start items-center bg-sixtyAlu"
-    >
-      <nav
-        id="navEsq"
-        class="w-screen max-h-20 z-50 flex flex-row justify-center items-stretch mt-2 mb-6 md:mb-8 lg:mb-10 lg:mt-6"
+
+      <!--Colaboradores-->
+      <section
+        id="section-45"
+        class="bg-sixty section section--hidden w-screen min-h-screen py-14 flex flex-col justify-start items-center gap-6 md:min-h-fit md:justify-center lg:min-h-screen lg:px-24 xl:px-48 xl:gap-12"
       >
         <div
-          class="logo flex flex-row justify-start pl-2 gap-6 md:w-4/5 md:gap-40 lg:pl-6 lg:gap-3 xl:w-2/5 xl:gap-8 xl:justify-center"
+          class="px-8 flex flex-col justify-center items-center gap-8 md:w-6/12 lg:w-1/2 xl:w-7/12"
         >
-          <img src="../assets/logo.png" alt="" class="drop-shadow-md" />
-          <div class="flex flex-col justify-center items-center">
-            <h2
-              class="font-garamond text-contrast drop-shadow-md font-bold lg:text-xl xl:text-2xl"
+          <h3
+            class="text-3xl bg-white p-3 font-garamond text-ten text-center drop-shadow-md w-fit lg:text-4xl xl:text-4xl"
+          >
+            Colaboradores
+          </h3>
+
+          <p
+            class="hidden text-md text-justify indent-6 text-contrast font-montserrat xl:text-lg xl:w-full xl:block"
+          >
+            As parcerias são relações construídas sobre alicerces de confiança,
+            comprometimento e respeito mútuo. Compartilhar conhecimento,
+            experiências e recursos cria um ambiente de colaboração e
+            cooperação, onde cada colaborador contribui com sua expertise única.
+            Por meio da sinergia e da troca constante, expandimos horizontes,
+            impulsionamos a inovação e superamos desafios.
+          </p>
+
+          <p
+            class="text-lg text-center text-contrast font-garamond md:text-xl xl:text-2xl"
+          >
+            Juntos, continuamos a construir um legado de
+            <strong class="text-ten">EXCELÊNCIA</strong> e
+            <strong class="text-ten">SATISFAÇÃO</strong>
+          </p>
+        </div>
+        <div
+          class="cards w-[95%] flex flex-wrap flex-row justify-center items-center gap-4 xl:w-[40%]"
+        >
+          <div class="card border border-solid border-ten">
+            <div class="card__front flex flex-col justify-center items-center">
+              <img src="../assets/mustang.png" alt="" class="w-10/12" />
+            </div>
+            <div
+              class="card__back flex flex-col justify-center items-center text-center w-10/12"
             >
-              Serralheria
-            </h2>
-            <h1
-              class="font-bodoni font-bold text-2xl text-ten drop-shadow-md xl:text-4xl"
+              <h3>Mustang</h3>
+              <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+          </div>
+          <div class="card border border-solid border-ten">
+            <div class="card__front flex flex-col justify-center items-center">
+              <img src="../assets/sons.png" alt="" class="w-10/12" />
+            </div>
+            <div
+              class="card__back flex flex-col justify-center items-center text-center w-10/12"
             >
-              O COLISEU
-            </h1>
+              <h3>Sons of Anarchy</h3>
+              <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+          </div>
+          <div class="card border border-solid border-ten">
+            <div class="card__front flex flex-col justify-center items-center">
+              <img src="../assets/harley-black.png" alt="" class="w-10/12" />
+            </div>
+            <div
+              class="card__back flex flex-col justify-center items-center text-center w-10/12"
+            >
+              <h3>Harley Davidson</h3>
+              <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+          </div>
+          <div class="card border border-solid border-ten">
+            <div class="card__front flex flex-col justify-center items-center">
+              <img src="../assets/mayans.png" alt="" class="w-10/12" />
+            </div>
+            <div
+              class="card__back flex flex-col justify-center items-center text-center w-10/12"
+            >
+              <h3>Mayans</h3>
+              <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+          </div>
+          <div class="card border border-solid border-ten">
+            <div class="card__front flex flex-col justify-center items-center">
+              <img src="../assets/harley-color.png" alt="" class="w-10/12" />
+            </div>
+            <div
+              class="card__back flex flex-col justify-center items-center text-center w-10/12"
+            >
+              <h3>Harley Davidson</h3>
+              <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+          </div>
+          <div class="card border border-solid border-ten">
+            <div class="card__front flex flex-col justify-center items-center">
+              <img src="../assets/ford.png" alt="" class="w-10/12" />
+            </div>
+            <div
+              class="card__back flex flex-col justify-center items-center text-center w-10/12"
+            >
+              <h3>Ford</h3>
+              <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <aside
+      class="secondPage hidden min-h-screen overflow-x-hidden flex-col justify-start items-center bg-sixtyAlu"
+    >
+      <nav
+        id="nav2"
+        class="w-screen h-24 z-50 flex flex-row justify-center items-stretch"
+      >
+        <div
+          class="logo flex flex-row justify-start items-center pl-2 gap-6 md:w-4/5 md:gap-40 lg:pl-6 lg:gap-3 xl:w-2/5 xl:gap-8 xl:justify-center"
+        >
+          <img src="../assets/logo.png" alt="" class="w-[30%] drop-shadow-md" />
+          <div class="flex flex-col justify-center items-start gap-1">
+            <div class="flex flex-row justify-center items-center gap-8">
+              <h1
+                class="font-bodoni font-bold text-2xl text-ten drop-shadow-md xl:text-4xl"
+              >
+                O COLISEU
+              </h1>
+              <img
+                src="../assets/menu-hamb.png"
+                alt=""
+                class="hamb scale-[0.8] mr-4 self-end lg:hidden"
+                data-hamb="1"
+              />
+            </div>
+            <ul
+              class="switcher flex flex-row justify-center items-center gap-8 pt-2"
+            >
+              <li
+                class="pageState font-garamond font-bold drop-shadow-md text-contrast"
+                data-page="1"
+              >
+                Marmoraria
+              </li>
+              <li
+                class="pageState font-garamond font-bold drop-shadow-md text-contrast pageActive"
+                data-page="0"
+              >
+                Serralheria
+              </li>
+            </ul>
           </div>
         </div>
         <li
-          class="hamb_container list-none font-montserrat hidden md:w-1/5 lg:flex lg:flex-row lg:w-4/5 lg:justify-center lg:items-center lg:gap-2 lg:text-lg lg:pr-6 lg:text-contrast xl:gap-12 xl:w-3/5 xl:text-xl"
+          class="hamb_container list-none font-montserrat md:w-1/5 lg:flex lg:flex-row lg:w-4/5 lg:justify-center lg:items-center lg:gap-2 lg:text-lg lg:pr-6 lg:text-contrast xl:gap-12 xl:w-3/5 xl:text-xl"
         >
           <ul class="hamb_list">
             <a href="#section-2" class="nav__link">Apresentação</a>
@@ -917,15 +951,11 @@
             <a href="#section-6" class="nav__link">Contato</a>
           </ul>
         </li>
-        <img
-          src="../assets/menu-hamb.png"
-          alt=""
-          class="hamb scale-[0.8] mr-4 self-center lg:hidden"
-        />
       </nav>
+      <div class="dummy hidden h-24"></div>
       <section
-        id="section-1.0"
-        class="section section--hidden w-screen flex flex-col justify-evenly items-center gap-14 mb-14"
+        id="section-1_0"
+        class="section2 w-screen flex flex-col justify-evenly items-center gap-14 mt-6 mb-14"
       >
         <div
           class="flex flex-col justify-center items-center gap-8 w-9/12 pt-8 border-solid border-t border-t-contrast"
@@ -948,13 +978,13 @@
           <button
             class="font-montserrat text-white text-xl p-4 bg-tenAlu border border-solid border-tenAlu drop-shadow-md shadow-md"
           >
-            <a href="#section-1.1">SAIBA MAIS</a>
+            <a href="#section-1_1">SAIBA MAIS</a>
           </button>
         </div>
       </section>
       <section
-        id="section-1.1"
-        class="section section--hiden w-screen min-h-screen bg-white flex flex-row flex-wrap justify-center items-start"
+        id="section-1_1"
+        class="section2 w-screen min-h-screen bg-white flex flex-row flex-wrap justify-center items-start"
       >
         <div
           class="w-9/12 flex flex-col justify-center items-start gap-6 text-justify mt-12"
