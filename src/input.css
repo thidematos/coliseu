@@ -138,6 +138,8 @@ html {
   display: inline-block;
   width: 46px;
   height: 20px;
+
+  @apply md:w-[51px] md:h-[25px];
 }
 
 /* Hide default HTML checkbox */
@@ -170,6 +172,8 @@ html {
   background-color: white;
   -webkit-transition: 0.4s;
   transition: 0.4s;
+
+  @apply md:w-[18px] md:h-[18px];
 }
 
 input:checked + .slider {

@@ -42,32 +42,34 @@
       id="nav"
       class="w-screen h-[100px] z-50 flex flex-row justify-center items-center"
     >
-      <div class="flex flex-row justify-start items-center md:w-screen">
+      <div
+        class="flex flex-row justify-start items-center gap-2 md:gap-0 md:justify-center md:w-screen"
+      >
+        <img
+          src="../assets/logo.png"
+          alt=""
+          class="hidden md:block md:pl-8 md:w-[20%]"
+        />
         <div
-          class="flex flex-col justify-center items-center gap-2 md:w-screen md:gap-0"
+          class="flex flex-col justify-center items-center gap-2 md:w-[60%] md:gap-4"
         >
           <div
-            class="flex flex-row justify-evenly items-center md:justify-around md:w-screen"
+            class="flex flex-row justify-start items-center gap-12 md:gap-0 md:justify-around md:w-full"
           >
             <img
               src="../assets/logo.png"
               alt=""
-              class="w-[22%] drop-shadow-sm md:w-[10%]"
+              class="w-[22%] ml-4 drop-shadow-sm md:hidden"
             />
             <h1
               class="font-bodoni font-bold text-2xl text-ten drop-shadow-md md:text-3xl xl:text-4xl"
             >
               O COLISEU
             </h1>
-            <img
-              src="../assets/menu-hamb.png"
-              alt=""
-              class="hamb scale-[0.8] mr-4 md:mr-0 lg:hidden"
-              data-hamb="0"
-            />
           </div>
+
           <ul
-            class="switcher flex flex-row justify-center items-center gap-6 md:gap-24"
+            class="switcher flex flex-row justify-end items-center gap-6 w-full md:justify-center md:gap-16"
           >
             <li
               class="pageState font-garamond font-bold drop-shadow-md text-contrast pageActive"
@@ -87,6 +89,12 @@
             </li>
           </ul>
         </div>
+        <img
+          src="../assets/menu-hamb.png"
+          alt=""
+          class="hamb scale-[0.8] mr-2 md:mr-0 md:scale-[0.3] md:w-[20%] md:block lg:hidden"
+          data-hamb="0"
+        />
       </div>
       <ul
         class="hamb_container list-none font-montserrat lg:flex lg:flex-row lg:w-4/5 lg:justify-center lg:items-center lg:gap-2 lg:text-lg lg:pr-6 lg:text-contrast xl:gap-12 xl:w-3/5 xl:text-xl"
@@ -122,7 +130,7 @@
         data-section="first"
       >
         <div
-          class="flex flex-col justify-center items-center gap-8 mb-6 text-contrast md:w-2/5 md:order-2 md:gap-6 md:mr-6 lg:text-2xl xl:w-3/12 xl:text-3xl xl:gap-10"
+          class="flex flex-col justify-center items-center gap-8 mb-6 text-contrast md:w-2/5 md:order-2 md:gap-6 lg:text-2xl xl:w-3/12 xl:text-3xl xl:gap-10"
         >
           <h2 class="drop-shadow-md">TRADIÇÃO,</h2>
           <h2 class="drop-shadow-md">QUALIDADE,</h2>
@@ -907,32 +915,34 @@
         id="nav2"
         class="w-screen h-[100px] z-50 flex flex-row justify-center items-center"
       >
-        <div class="flex flex-row justify-start items-center md:w-screen">
+        <div
+          class="flex flex-row justify-start items-center gap-2 md:gap-0 md:justify-center md:w-screen"
+        >
+          <img
+            src="../assets/logo.png"
+            alt=""
+            class="hidden md:block md:pl-8 md:w-[20%]"
+          />
           <div
-            class="flex flex-col justify-center items-center gap-2 md:w-screen md:gap-0"
+            class="flex flex-col justify-center items-center gap-2 md:w-[60%] md:gap-4"
           >
             <div
-              class="flex flex-row justify-evenly items-center md:justify-around md:w-screen"
+              class="flex flex-row justify-start items-center gap-12 md:gap-0 md:justify-around md:w-full"
             >
               <img
                 src="../assets/logo.png"
                 alt=""
-                class="w-[22%] drop-shadow-sm md:w-[10%]"
+                class="w-[22%] ml-4 drop-shadow-sm md:hidden"
               />
               <h1
                 class="font-bodoni font-bold text-2xl text-ten drop-shadow-md md:text-3xl xl:text-4xl"
               >
                 O COLISEU
               </h1>
-              <img
-                src="../assets/menu-hamb.png"
-                alt=""
-                class="hamb scale-[0.8] mr-4 lg:hidden"
-                data-hamb="1"
-              />
             </div>
+
             <ul
-              class="switcher flex flex-row justify-center items-center gap-6 md:gap-24"
+              class="switcher flex flex-row justify-end items-center gap-6 w-full md:justify-center md:gap-16"
             >
               <li
                 class="pageState font-garamond font-bold drop-shadow-md text-contrast"
@@ -952,45 +962,55 @@
               </li>
             </ul>
           </div>
+          <img
+            src="../assets/menu-hamb.png"
+            alt=""
+            class="hamb scale-[0.8] mr-2 md:mr-0 md:scale-[0.3] md:w-[20%] md:block lg:hidden"
+            data-hamb="1"
+          />
         </div>
         <ul
           class="hamb_container list-none font-montserrat lg:flex lg:flex-row lg:w-4/5 lg:justify-center lg:items-center lg:gap-2 lg:text-lg lg:pr-6 lg:text-contrast xl:gap-12 xl:w-3/5 xl:text-xl"
         >
-          <ul class="hamb_list">
+          <li class="hamb_list">
             <a href="#section-1_1" class="nav__link">Apresentação</a>
-          </ul>
-          <ul class="hamb_list">
+          </li>
+          <li class="hamb_list">
             <a href="#section-2_1" class="nav__link">Serviços</a>
-          </ul>
-          <ul class="hamb_list-last">
+          </li>
+          <li class="hamb_list-last">
             <a href="#section-6" class="nav__link">Contato</a>
-          </ul>
+          </li>
         </ul>
       </nav>
 
       <div class="dummy hidden h-24"></div>
       <section
         id="section-1_0"
-        class="section2 section--hidden w-screen flex flex-col justify-evenly items-center gap-14 mt-4 mb-14 md:justify-center"
+        class="section2 section--hidden w-screen flex flex-col justify-evenly items-center gap-14 mt-4 mb-14 md:justify-center md:mb-24"
         data-section="first"
       >
         <div
           class="hidden md:w-9/12 md:block md:border-solid md:border-t-contrast md:border-t"
         ></div>
         <div
-          class="md:flex md:flex-row md:justify-center md:items-center md:w-[80%] md:pt-12"
+          class="flex flex-col justify-center items-center gap-16 md:flex-row md:w-full md:pt-12 md:gap-12"
         >
           <div
-            class="flex flex-col justify-center items-center gap-8 w-9/12 pt-8 border-solid border-t border-t-contrast md:border-none md:w-[50%] md:pt-0"
+            class="flex flex-col justify-center items-center gap-8 w-9/12 pt-8 border-solid border-t border-t-contrast md:border-none md:w-[30%] md:pt-0"
           >
-            <h2 class="font-garamond text-contrast text-xl drop-shadow-md">
+            <h2
+              class="font-garamond text-contrast text-xl drop-shadow-md md:text-lg"
+            >
               VERSÁTIL
             </h2>
-            <h2 class="font-garamond text-contrast text-xl drop-shadow-md">
+            <h2
+              class="font-garamond text-contrast text-xl drop-shadow-md md:text-lg"
+            >
               CONTEMPORÂNEO
             </h2>
             <h3
-              class="font-garamond text-2xl text-contrast bg-thirthyAlu p-3 drop-shadow-md shadow-md"
+              class="font-garamond text-2xl text-contrast bg-thirthyAlu p-3 drop-shadow-md shadow-md md:text-xl"
             >
               ESQUADRIAS & VIDROS
             </h3>
@@ -1004,11 +1024,22 @@
           <div
             class="w-screen flex flex-col justify-center items-center gap-14 md:w-[50%] md:items-start"
           >
-            <img
-              class="shadow-lg md:w-full"
-              src="../assets/esq-init.jpg"
-              alt=""
-            />
+            <picture class="shadow-lg md:w-full">
+              <source
+                media="(max-width: 450px)"
+                srcset="../assets/esq-init.jpg"
+              />
+              <source
+                media="(max-width: 900px)"
+                srcset="../assets/esq-init-g.jpg"
+              />
+              <source
+                media="(max-width: 1050px)"
+                srcset="../assets/esq-init-g.jpg"
+              />
+              <img src="../assets/esq-init-g.jpg" alt="" />
+            </picture>
+
             <button
               class="knowMoreAside font-montserrat text-white text-xl p-4 bg-tenAlu border border-solid border-tenAlu drop-shadow-md shadow-md md:hidden"
               data-href="#section-1_1"
@@ -1020,10 +1051,10 @@
       </section>
       <section
         id="section-1_1"
-        class="section2 section--hidden w-screen min-h-screen bg-white flex flex-row flex-wrap justify-center items-start"
+        class="section2 section--hidden w-screen min-h-screen bg-white flex flex-row flex-wrap justify-center items-start md:min-h-fit md:items-center md:py-24"
       >
         <div
-          class="w-9/12 flex flex-col justify-center items-start gap-6 text-justify mt-12"
+          class="w-9/12 flex flex-col justify-center items-start gap-6 text-justify mt-12 md:w-1/2 md:pl-16 md:pr-8 md:gap-8 md:mt-0"
         >
           <div class="flex flex-col items-start justify-center gap-3">
             <h3 class="font-bodoni text-xl">A segurança de uma</h3>
@@ -1045,7 +1076,9 @@
             </p>
           </div>
         </div>
-        <div class="flex flex-col w-full justify-center items-center gap-2">
+        <div
+          class="flex flex-col w-full justify-center items-center gap-2 md:w-1/2 md:pr-8"
+        >
           <a href="../assets/esq-features.jpg" data-lightbox="Features">
             <img
               class="drop-shadow-lg"
@@ -1060,17 +1093,17 @@
       </section>
       <section
         id="section-2_1"
-        class="section2 section--hidden w-screen min-h-screen bg-sixtyAlu flex flex-col justify-start items-center gap-12"
+        class="section2 section--hidden w-screen min-h-screen bg-sixtyAlu flex flex-col justify-start items-center gap-12 md:min-h-fit md:flex-row md:justify-center md:pl-16 md:pr-8 md:mb-32"
       >
         <div
-          class="w-9/12 flex flex-col justify-center items-center mt-12 gap-8"
+          class="w-9/12 flex flex-col justify-center items-center mt-12 gap-8 md:w-[60%] md:order-last md:gap-10"
         >
           <div class="flex flex-col flex-wrap items-start justify-center gap-2">
             <h3 class="font-bodoni text-contrast text-xl drop-shadow-md">
               Esquadrias:
             </h3>
             <h4
-              class="font-bodoni text-contrast text-xl bg-thirthyAlu p-3 drop-shadow-md"
+              class="font-bodoni text-contrast text-xl bg-thirthyAlu p-3 drop-shadow-md md:text-2xl"
             >
               ELEGÂNCIA & QUALIDADE
             </h4>
@@ -1091,9 +1124,11 @@
             natural e isolamento térmico eficiente.
           </p>
         </div>
-        <div class="w-screen flex flex-col justify-start items-center gap-7">
+        <div
+          class="w-screen flex flex-col justify-start items-center gap-7 md:w-[40%] md: mt-32"
+        >
           <div
-            class="swiperServices sliderML shadow-md w-[68%] lg:mr-0 lg:w-[50%] xl:w-[45%]"
+            class="swiperServices sliderML shadow-md w-[68%] md:w-full lg:mr-0 lg:w-[50%] xl:w-[45%]"
           >
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">

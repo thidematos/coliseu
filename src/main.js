@@ -131,10 +131,6 @@ navLinks.addEventListener('mouseout', handleNav.bind(true));
 const smoothScroll = function (e) {
   if (!e.target.classList.contains('nav__link')) return;
 
-  if (window.screen.width > 768 && window.screen.width < 1024) {
-    sections.forEach((e) => e.classList.remove('section--hidden'));
-  }
-
   e.preventDefault();
 
   hambHandler(e);
@@ -161,10 +157,6 @@ const smoothScroll = function (e) {
 
 const smoothBtnHandler = function (e) {
   const el = document.querySelector(e.target.dataset.href);
-
-  if (window.screen.width > 768 && window.screen.width < 1024) {
-    sections.forEach((e) => e.classList.remove('section--hidden'));
-  }
 
   let isShowwed = el.classList.contains('section--hidden');
 
@@ -298,6 +290,10 @@ cardContainer.addEventListener('click', (e) => {
 
 //Retiring Margin Left
 const handleResize = function () {
+  if (window.screen.width > 768 && window.screen.width < 1024) {
+    sections.forEach((e) => e.classList.remove('section--hidden'));
+    sections2.forEach((e) => e.classList.remove('section--hidden'));
+  }
   marginSlider.forEach((e) => {
     if (window.screen.width >= 1280) {
       if (e.dataset.margin === 'true') {
@@ -343,24 +339,26 @@ const handleSwitch = function (pageStatus) {
   dummyMain.classList.add('hidden');
   dummyAside.classList.add('hidden');
 
-  statusHamb = [false, false];
-  hambs.forEach((e) => (e.src = '../assets/menu-hamb.png'));
-  hambContainers.forEach((e) => e.classList.remove('hamb_container-style'));
+  setTimeout(() => {
+    statusHamb = [false, false];
+    hambs.forEach((e) => (e.src = '../assets/menu-hamb.png'));
+    hambContainers.forEach((e) => e.classList.remove('hamb_container-style'));
 
-  if (pageStatus) {
-    window.scrollTo(0, 0);
-    toggleStates(pageStatus);
-    roundSwitchs.forEach((e) => (e.checked = true));
-    sections2.forEach((e) => sectionObserver2.observe(e));
-    observer2.observe(section1_0);
-    document.title = 'O Coliseu - Esquadrias e Vidros';
-  } else {
-    window.scrollTo(0, 0);
-    toggleStates(pageStatus);
-    roundSwitchs.forEach((e) => (e.checked = false));
-    observer.observe(section1);
-    document.title = 'O Coliseu - Marmoraria';
-  }
+    if (pageStatus) {
+      window.scrollTo(0, 0);
+      toggleStates(pageStatus);
+      roundSwitchs.forEach((e) => (e.checked = true));
+      sections2.forEach((e) => sectionObserver2.observe(e));
+      observer2.observe(section1_0);
+      document.title = 'O Coliseu - Esquadrias e Vidros';
+    } else {
+      window.scrollTo(0, 0);
+      toggleStates(pageStatus);
+      roundSwitchs.forEach((e) => (e.checked = false));
+      observer.observe(section1);
+      document.title = 'O Coliseu - Marmoraria';
+    }
+  }, 300);
 };
 
 let pageStatus = 0;
