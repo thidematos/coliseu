@@ -40,18 +40,18 @@
   >
     <nav
       id="nav"
-      class="w-screen h-[100px] z-50 flex flex-row justify-center items-center"
+      class="nav w-screen h-[100px] z-50 flex flex-row justify-center items-center lg:p-4"
     >
       <div
-        class="flex flex-row justify-start items-center gap-2 md:gap-0 md:justify-center md:w-screen"
+        class="logo flex flex-row justify-start items-center gap-2 md:gap-0 md:justify-center md:w-screen lg:w-[55%]"
       >
         <img
           src="../assets/logo.png"
           alt=""
-          class="hidden md:block md:pl-8 md:w-[20%]"
+          class="hidden md:block md:pl-8 md:w-[20%] lg:w-[26%] lg:pl-2"
         />
         <div
-          class="flex flex-col justify-center items-center gap-2 md:w-[60%] md:gap-4"
+          class="flex flex-col justify-center items-center gap-2 md:w-[60%] md:gap-4 lg:gap-2 lg:ml-4"
         >
           <div
             class="flex flex-row justify-start items-center gap-12 md:gap-0 md:justify-around md:w-full"
@@ -69,7 +69,7 @@
           </div>
 
           <ul
-            class="switcher flex flex-row justify-end items-center gap-6 w-full md:justify-center md:gap-16"
+            class="switcher flex flex-row justify-end items-center gap-6 w-full md:justify-center md:gap-16 lg:gap-6"
           >
             <li
               class="pageState font-garamond font-bold drop-shadow-md text-contrast pageActive"
@@ -97,25 +97,25 @@
         />
       </div>
       <ul
-        class="hamb_container list-none font-montserrat lg:flex lg:flex-row lg:w-4/5 lg:justify-center lg:items-center lg:gap-2 lg:text-lg lg:pr-6 lg:text-contrast xl:gap-12 xl:w-3/5 xl:text-xl"
+        class="largeList hamb_container list-none font-bodoni lg:flex lg:flex-row lg:w-[45%] lg:flex-wrap lg:justify-evenly lg:items-center lg:gap-2 lg:text-lg lg:pr-2 lg:text-contrast lg:h-full xl:gap-12 xl:w-3/5 xl:text-xl"
       >
-        <li class="hamb_list">
-          <a href="#section-2" class="nav__link">Apresentação</a>
+        <li class="hamb_list lg:w-[30%] lg:text-center">
+          <a href="#section-2" class="nav__link lg:w-full">Apresentação</a>
         </li>
-        <li class="hamb_list">
-          <a href="#section-3" class="nav__link">História</a>
+        <li class="hamb_list lg:w-[30%] lg:text-center">
+          <a href="#section-3" class="nav__link lg:w-full">História</a>
         </li>
-        <li class="hamb_list">
-          <a href="#section-4" class="nav__link">Mármores</a>
+        <li class="hamb_list lg:w-[30%] lg:text-center">
+          <a href="#section-4" class="nav__link lg:w-full">Mármores</a>
         </li>
-        <li class="hamb_list">
-          <a href="#section-45" class="nav__link">Colaboradores</a>
+        <li class="hamb_list lg:w-[30%] lg:text-center">
+          <a href="#section-5" class="nav__link lg:w-full">Serviços</a>
         </li>
-        <li class="hamb_list">
-          <a href="#section-5" class="nav__link">Serviços</a>
+        <li class="hamb_list lg:w-[30%] lg:text-center">
+          <a href="#section-45" class="nav__link lg:w-full">Colaboradores</a>
         </li>
-        <li class="hamb_list-last">
-          <a href="#section-6" class="nav__link">Contato</a>
+        <li class="hamb_list-last lg:w-[30%] lg:text-center">
+          <a href="#section-6" class="nav__link lg:w-full">Contato</a>
         </li>
       </ul>
     </nav>
@@ -126,7 +126,7 @@
       <!------Header------>
       <section
         id="section-1"
-        class="section section--hidden flex flex-col justify-center items-center font-garamond text-xl pt-5 mb-12 gap-8 md:flex-row md:w-screen md:my-[5.2rem] md:px-7 lg:my-[6.8rem] lg:gap-20 lg:px-20 xl:my-[7rem] xl:gap-0"
+        class="section section--hidden flex flex-col justify-center items-center font-garamond text-xl pt-5 mb-12 gap-8 md:flex-row md:w-screen md:my-[5.2rem] md:px-7 lg:my-[7.2rem] lg:gap-20 lg:px-20 xl:my-[7rem] xl:gap-0"
         data-section="first"
       >
         <div
@@ -175,10 +175,10 @@
       <!-----Features----->
       <section
         id="section-2"
-        class="bg-white section section--hidden w-screen min-h-screen py-14 flex flex-col justify-start items-center gap-6 md:min-h-fit lg:flex-row lg:min-h-screen lg:gap-8 lg:pl-10 lg:justify-center lg:items-center xl:px-20"
+        class="bg-white section section--hidden w-screen min-h-screen py-14 flex flex-col justify-start items-center gap-6 md:min-h-fit md:gap-0 md:flex-row lg:flex-row lg:min-h-screen lg:gap-8 lg:pl-10 lg:justify-center lg:items-center xl:px-20"
       >
         <div
-          class="flex flex-col justify-center items-center gap-6 w-screen text-contrast lg:w-1/2 xl:w-[50%]"
+          class="flex flex-col justify-center items-center gap-6 w-screen text-contrast md:w-[50%] lg:w-1/2 xl:w-[50%]"
         >
           <div
             class="font-bodoni px-6 flex flex-col gap-3 justify-center items-center xl:w-[70%] xl:self-end"
@@ -193,7 +193,7 @@
             </h3>
           </div>
           <p
-            class="px-8 font-montserrat indent-6 text-justify text-md md:px-16 xl:text-lg xl:w-[70%] xl:self-end"
+            class="px-8 font-montserrat indent-6 text-justify text-md md:pl-16 md:pr-6 lg:pl-8 xl:text-lg xl:w-[70%] xl:self-end"
           >
             Na Marmoraria O Coliseu, entendemos a importância de cada projeto e
             nos dedicamos a criar resultados que sejam duradouros e
@@ -201,7 +201,7 @@
             superar suas expectativas em todos os aspectos do nosso trabalho.
           </p>
           <p
-            class="px-8 font-montserrat indent-6 text-justify text-md md:px-16 xl:text-lg xl:w-[70%] xl:self-end"
+            class="px-8 font-montserrat indent-6 text-justify text-md md:pl-16 md:pr-6 lg:pl-8 xl:text-lg xl:w-[70%] xl:self-end"
           >
             Seja para projetos residenciais ou comerciais, conte com a
             Marmoraria O Coliseu para oferecer soluções personalizadas e de alta
@@ -212,7 +212,8 @@
         </div>
         <!-- Slider main container -->
         <div
-          class="swiper sliderML shadow-lg w-[90%] rounded-md md:w-3/5 md:mb-8 lg:w-[40%] lg:mb-0 xl:w-[30%]"
+          class="swiper sliderML shadow-lg w-[90%] rounded-md md:w-[40%] md:mb-8 lg:w-[40%] lg:mb-0 xl:w-[30%]"
+          data-margin="false"
         >
           <!-- Additional required wrapper -->
           <div class="swiper-wrapper">
@@ -489,8 +490,8 @@
           class="flex flex-col justify-center items-center w-full gap-6 md:flex md:flex-col md:justify-center md:items-center md:w-7/12 lg:w-1/2 xl:items-end"
         >
           <div
-            class="swiper sliderML shadow-md w-[90%] rockSlider md:w-[60%] lg:mr-0 lg:w-[70%] xl:w-6/12"
-            data-margin="true"
+            class="swiper shadow-md w-[90%] rockSlider md:w-[60%] lg:mr-0 lg:w-[70%] xl:w-6/12"
+            data-margin="false"
           >
             <h3
               class="font-garamond drop-shadow-md text-ten text-center text-lg lg:mb-3 lg:text-xl xl:text-2xl"
@@ -913,18 +914,18 @@
     >
       <nav
         id="nav2"
-        class="w-screen h-[100px] z-50 flex flex-row justify-center items-center"
+        class="nav w-screen h-[100px] z-50 flex flex-row justify-center items-center"
       >
         <div
-          class="flex flex-row justify-start items-center gap-2 md:gap-0 md:justify-center md:w-screen"
+          class="logo flex flex-row justify-start items-center gap-2 md:gap-0 md:justify-center md:w-screen lg:w-[55%]"
         >
           <img
             src="../assets/logo.png"
             alt=""
-            class="hidden md:block md:pl-8 md:w-[20%]"
+            class="hidden md:block md:pl-8 md:w-[20%] lg:w-[26%] lg:pl-2"
           />
           <div
-            class="flex flex-col justify-center items-center gap-2 md:w-[60%] md:gap-4"
+            class="flex flex-col justify-center items-center gap-2 md:w-[60%] md:gap-4 lg:gap-2 lg:ml-4"
           >
             <div
               class="flex flex-row justify-start items-center gap-12 md:gap-0 md:justify-around md:w-full"
@@ -942,7 +943,7 @@
             </div>
 
             <ul
-              class="switcher flex flex-row justify-end items-center gap-6 w-full md:justify-center md:gap-16"
+              class="switcher flex flex-row justify-end items-center gap-6 w-full md:justify-center md:gap-16 lg:gap-6"
             >
               <li
                 class="pageState font-garamond font-bold drop-shadow-md text-contrast"
@@ -970,16 +971,18 @@
           />
         </div>
         <ul
-          class="hamb_container list-none font-montserrat lg:flex lg:flex-row lg:w-4/5 lg:justify-center lg:items-center lg:gap-2 lg:text-lg lg:pr-6 lg:text-contrast xl:gap-12 xl:w-3/5 xl:text-xl"
+          class="largeList hamb_container list-none font-bodoni lg:flex lg:flex-row lg:w-[45%] lg:flex-wrap lg:justify-evenly lg:items-center lg:gap-2 lg:text-lg lg:pr-2 lg:text-contrast lg:h-full lg:pt-4 xl:gap-12 xl:w-3/5 xl:text-xl"
         >
-          <li class="hamb_list">
-            <a href="#section-1_1" class="nav__link">Apresentação</a>
+          <li class="hamb_list lg:w-[30%] lg:text-center">
+            <a href="#section-1_1" class="nav__link lg:w-full">Apresentação</a>
           </li>
-          <li class="hamb_list">
-            <a href="#section-2_1" class="nav__link">Serviços</a>
+
+          <li class="hamb_list lg:w-[30%] lg:text-center">
+            <a href="#section-2_1" class="nav__link lg:w-full">Serviços</a>
           </li>
-          <li class="hamb_list-last">
-            <a href="#section-6" class="nav__link">Contato</a>
+
+          <li class="hamb_list-last lg:w-[30%] lg:text-center">
+            <a href="#section-6" class="nav__link lg:w-full">Contato</a>
           </li>
         </ul>
       </nav>
@@ -987,30 +990,30 @@
       <div class="dummy hidden h-24"></div>
       <section
         id="section-1_0"
-        class="section2 section--hidden w-screen flex flex-col justify-evenly items-center gap-14 mt-4 mb-14 md:justify-center md:mb-24"
+        class="section2 section--hidden w-screen flex flex-col justify-evenly items-center gap-14 mt-4 mb-14 md:justify-center md:mb-24 lg:mb-36"
         data-section="first"
       >
         <div
           class="hidden md:w-9/12 md:block md:border-solid md:border-t-contrast md:border-t"
         ></div>
         <div
-          class="flex flex-col justify-center items-center gap-16 md:flex-row md:w-full md:pt-12 md:gap-12"
+          class="flex flex-col justify-center items-center gap-16 md:flex-row md:w-full md:pt-12 md:gap-12 lg:pt-24"
         >
           <div
-            class="flex flex-col justify-center items-center gap-8 w-9/12 pt-8 border-solid border-t border-t-contrast md:border-none md:w-[30%] md:pt-0"
+            class="flex flex-col justify-center items-center gap-8 w-9/12 pt-8 border-solid border-t border-t-contrast md:border-none md:w-[30%] md:pt-0 lg:w-[40%]"
           >
             <h2
-              class="font-garamond text-contrast text-xl drop-shadow-md md:text-lg"
+              class="font-garamond text-contrast text-xl drop-shadow-md md:text-lg lg:text-2xl"
             >
               VERSÁTIL
             </h2>
             <h2
-              class="font-garamond text-contrast text-xl drop-shadow-md md:text-lg"
+              class="font-garamond text-contrast text-xl drop-shadow-md md:text-lg lg:text-2xl"
             >
               CONTEMPORÂNEO
             </h2>
             <h3
-              class="font-garamond text-2xl text-contrast bg-thirthyAlu p-3 drop-shadow-md shadow-md md:text-xl"
+              class="font-garamond text-2xl text-contrast bg-thirthyAlu p-3 drop-shadow-md shadow-md md:text-xl lg:text-3xl"
             >
               ESQUADRIAS & VIDROS
             </h3>
@@ -1022,7 +1025,7 @@
             </button>
           </div>
           <div
-            class="w-screen flex flex-col justify-center items-center gap-14 md:w-[50%] md:items-start"
+            class="w-screen flex flex-col justify-center items-center gap-14 md:w-[50%] md:items-start lg:w-[40%]"
           >
             <picture class="shadow-lg md:w-full">
               <source
@@ -1051,15 +1054,15 @@
       </section>
       <section
         id="section-1_1"
-        class="section2 section--hidden w-screen min-h-screen bg-white flex flex-row flex-wrap justify-center items-start md:min-h-fit md:items-center md:py-24"
+        class="section2 section--hidden w-screen min-h-screen bg-white flex flex-row flex-wrap justify-center items-start md:min-h-fit md:items-center md:py-24 lg:min-h-screen lg:py-0"
       >
         <div
-          class="w-9/12 flex flex-col justify-center items-start gap-6 text-justify mt-12 md:w-1/2 md:pl-16 md:pr-8 md:gap-8 md:mt-0"
+          class="w-9/12 flex flex-col justify-center items-start gap-6 text-justify mt-12 md:w-1/2 md:pl-16 md:pr-8 md:gap-8 md:mt-0 lg:gap-12 lg:pl-32 lg:pr-16"
         >
           <div class="flex flex-col items-start justify-center gap-3">
-            <h3 class="font-bodoni text-xl">A segurança de uma</h3>
+            <h3 class="font-bodoni text-xl lg:text-2xl">A segurança de uma</h3>
             <h3
-              class="font-bodoni font-bold text-contrastAlu text-2xl bg-sixtyAlu w-fit p-3 drop-shadow-md shadow-lg"
+              class="font-bodoni font-bold text-contrastAlu text-2xl bg-sixtyAlu w-fit p-3 drop-shadow-md shadow-lg lg:text-3xl"
             >
               MARCA RENOMADA
             </h3>
@@ -1077,7 +1080,7 @@
           </div>
         </div>
         <div
-          class="flex flex-col w-full justify-center items-center gap-2 md:w-1/2 md:pr-8"
+          class="flex flex-col w-full justify-center items-center gap-2 md:w-1/2 md:pr-8 lg:pr-16"
         >
           <a href="../assets/esq-features.jpg" data-lightbox="Features">
             <img
@@ -1086,24 +1089,30 @@
               alt=""
             />
           </a>
-          <h4 class="font-bodoni italic text-base text-center text-contrast">
+          <h4
+            class="font-bodoni italic text-base text-center text-contrast lg:text-lg"
+          >
             Transformamos ideias em realidade
           </h4>
         </div>
       </section>
       <section
         id="section-2_1"
-        class="section2 section--hidden w-screen min-h-screen bg-sixtyAlu flex flex-col justify-start items-center gap-12 md:min-h-fit md:flex-row md:justify-center md:pl-16 md:pr-8 md:mb-32"
+        class="section2 section--hidden w-screen min-h-screen bg-sixtyAlu flex flex-col justify-start items-center gap-12 md:min-h-fit md:flex-row md:justify-center md:pl-16 md:pr-8 md:mb-32 lg:min-h-screen lg:mb-0 lg:pl-0 lg:pr-0 lg:gap-8"
       >
         <div
-          class="w-9/12 flex flex-col justify-center items-center mt-12 gap-8 md:w-[60%] md:order-last md:gap-10"
+          class="w-9/12 flex flex-col justify-center items-center mt-12 gap-8 md:w-[60%] md:order-last md:gap-10 lg:pr-20 lg:pl-16 lg:mt-0"
         >
-          <div class="flex flex-col flex-wrap items-start justify-center gap-2">
-            <h3 class="font-bodoni text-contrast text-xl drop-shadow-md">
+          <div
+            class="flex flex-col flex-wrap items-start justify-center gap-2 lg:self-start"
+          >
+            <h3
+              class="font-bodoni text-contrast text-xl drop-shadow-md lg:text-2xl"
+            >
               Esquadrias:
             </h3>
             <h4
-              class="font-bodoni text-contrast text-xl bg-thirthyAlu p-3 drop-shadow-md md:text-2xl"
+              class="font-bodoni text-contrast text-xl bg-thirthyAlu p-3 drop-shadow-md md:text-2xl lg:text-3xl"
             >
               ELEGÂNCIA & QUALIDADE
             </h4>
@@ -1125,10 +1134,10 @@
           </p>
         </div>
         <div
-          class="w-screen flex flex-col justify-start items-center gap-7 md:w-[40%] md: mt-32"
+          class="w-screen flex flex-col justify-start items-center gap-7 md:w-[40%] md:mt-32 lg:mt-0 lg:pl-16"
         >
           <div
-            class="swiperServices sliderML shadow-md w-[68%] md:w-full lg:mr-0 lg:w-[50%] xl:w-[45%]"
+            class="swiperServices sliderML shadow-md w-[68%] md:w-full lg:mr-0 lg:w-full xl:w-[45%]"
           >
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
@@ -1206,7 +1215,7 @@
             <img
               src="../assets/logo.png"
               alt=""
-              class="w-4/12 drop-shadow-md"
+              class="w-5/12 drop-shadow-md"
             />
             <h1
               class="font-bodoni font-bold text-3xl text-ten drop-shadow-md xl:text-4xl"

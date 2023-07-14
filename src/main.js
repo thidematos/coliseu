@@ -105,7 +105,7 @@ const handleNav = function (e) {
     if (window.screen.width >= 1024) {
       const hovered = e.target;
       const siblings = [...document.querySelectorAll('.nav__link')];
-      const logo = hovered.closest('#nav').querySelector('.logo');
+      const logo = hovered.closest('.nav').querySelector('.logo');
 
       siblings.forEach((e) => {
         if (e !== hovered) {
@@ -125,6 +125,10 @@ const handleNav = function (e) {
 navLinks.addEventListener('mouseover', handleNav.bind(false));
 
 navLinks.addEventListener('mouseout', handleNav.bind(true));
+
+navLinks2.addEventListener('mouseover', handleNav.bind(false));
+
+navLinks2.addEventListener('mouseout', handleNav.bind(true));
 
 //////////////////////////////////////////////////////////////
 //Scroll Smooth
@@ -255,26 +259,28 @@ sections.forEach((e) => sectionObserver.observe(e));
 let statusHamb = [false, false];
 
 const hambHandler = function (e) {
-  if (e.target.classList.contains('pageState')) {
-    statusHamb = [false, false];
-    hambs.forEach((e) => (e.src = '../assets/menu-hamb.png'));
-    hambContainers.forEach((e) => e.classList.remove('hamb_container-style'));
-  } else {
-    const whichHamb = Number(
-      e.target.dataset.hamb ||
-        e.target
-          .closest('.hamb_container')
-          .previousElementSibling.querySelector('.hamb').dataset.hamb
-    );
-
-    statusHamb[whichHamb] = !statusHamb[whichHamb];
-
-    if (statusHamb[whichHamb]) {
-      hambs[whichHamb].src = '../assets/menu-hamb-open.png';
-      hambContainers[whichHamb].classList.add('hamb_container-style');
+  if (window.screen.width < 1024) {
+    if (e.target.classList.contains('pageState')) {
+      statusHamb = [false, false];
+      hambs.forEach((e) => (e.src = '../assets/menu-hamb.png'));
+      hambContainers.forEach((e) => e.classList.remove('hamb_container-style'));
     } else {
-      hambs[whichHamb].src = '../assets/menu-hamb.png';
-      hambContainers[whichHamb].classList.remove('hamb_container-style');
+      const whichHamb = Number(
+        e.target.dataset.hamb ||
+          e.target
+            .closest('.hamb_container')
+            .previousElementSibling.querySelector('.hamb').dataset.hamb
+      );
+
+      statusHamb[whichHamb] = !statusHamb[whichHamb];
+
+      if (statusHamb[whichHamb]) {
+        hambs[whichHamb].src = '../assets/menu-hamb-open.png';
+        hambContainers[whichHamb].classList.add('hamb_container-style');
+      } else {
+        hambs[whichHamb].src = '../assets/menu-hamb.png';
+        hambContainers[whichHamb].classList.remove('hamb_container-style');
+      }
     }
   }
 };
@@ -294,8 +300,15 @@ const handleResize = function () {
     sections.forEach((e) => e.classList.remove('section--hidden'));
     sections2.forEach((e) => e.classList.remove('section--hidden'));
   }
+
+  if (window.screen.width > 1023) {
+    document
+      .querySelectorAll('.largeList')
+      .forEach((e) => e.classList.remove('hamb_container'));
+  }
+
   marginSlider.forEach((e) => {
-    if (window.screen.width >= 1280) {
+    if (window.screen.width >= 1024) {
       if (e.dataset.margin === 'true') {
         e.style.marginRight = '4%';
       } else {
