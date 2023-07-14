@@ -327,9 +327,9 @@ window.addEventListener('resize', handleResize);
 const handleClick = function (e) {
   if (!e.target.classList.contains('pageState')) return;
 
-  handleSwitch(pageStatus);
-
   pageStatus = Number(e.target.dataset.page);
+
+  handleSwitch(false, pageStatus);
 };
 
 const toggleStates = function (status) {
@@ -345,14 +345,14 @@ const toggleStates = function (status) {
   }
 };
 
-const handleSwitch = function (pageStatus) {
+const handleSwitch = function (timer, pageStatus) {
   observer2.unobserve(section1_0);
   observer.unobserve(section1);
 
   dummyMain.classList.add('hidden');
   dummyAside.classList.add('hidden');
 
-  setTimeout(() => {
+  const handler = function () {
     statusHamb = [false, false];
     hambs.forEach((e) => (e.src = '../assets/menu-hamb.png'));
     hambContainers.forEach((e) => e.classList.remove('hamb_container-style'));
@@ -371,7 +371,10 @@ const handleSwitch = function (pageStatus) {
       observer.observe(section1);
       document.title = 'O Coliseu - Marmoraria';
     }
-  }, 300);
+  };
+
+  if (timer) setTimeout(handler, 300);
+  else handler();
 };
 
 let pageStatus = 0;
@@ -379,7 +382,7 @@ let pageStatus = 0;
 switcher.forEach((element) => element.addEventListener('click', handleClick));
 roundSwitchs.forEach((switcher) =>
   switcher.addEventListener('change', (e) => {
-    handleSwitch(e.target.checked);
+    handleSwitch(true, e.target.checked);
   })
 );
 
