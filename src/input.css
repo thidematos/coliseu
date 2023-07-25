@@ -202,3 +202,18 @@ input:checked + .slider:before {
 .pageState {
   @apply cursor-pointer;
 }
+
+.pedras__style {
+  @apply w-[45%] drop-shadow-lg border-4 border-solid border-white xl:w-[22%];
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.gallery__container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.gallery__container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
