@@ -2112,6 +2112,10 @@ input:checked + .slider:before {
     margin-left: 0px;
   }
 
+  .xl\:mt-6{
+    margin-top: 1.5rem;
+  }
+
   .xl\:block{
     display: block;
   }
@@ -2184,6 +2188,18 @@ input:checked + .slider:before {
     width: 100%;
   }
 
+  .xl\:w-\[20\%\]{
+    width: 20%;
+  }
+
+  .xl\:w-\[6\%\]{
+    width: 6%;
+  }
+
+  .xl\:w-\[7\%\]{
+    width: 7%;
+  }
+
   .xl\:scale-\[0\.8\]{
     --tw-scale-x: 0.8;
     --tw-scale-y: 0.8;
@@ -2220,6 +2236,14 @@ input:checked + .slider:before {
 
   .xl\:gap-6{
     gap: 1.5rem;
+  }
+
+  .xl\:gap-8{
+    gap: 2rem;
+  }
+
+  .xl\:gap-1{
+    gap: 0.25rem;
   }
 
   .xl\:self-end{

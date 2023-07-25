@@ -34,6 +34,12 @@ lightbox.option({
   alwaysShowNavOnTouchDevices: true,
 });
 
+const Scrollbar = window.Scrollbar;
+
+Scrollbar.init(document.querySelector('.gallery__container'), {
+  alwaysShowTracks: true,
+});
+
 //Swiper
 const swiper = new Swiper('.swiper', {
   // Optional parameters
