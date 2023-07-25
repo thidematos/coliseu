@@ -34,10 +34,14 @@ lightbox.option({
   alwaysShowNavOnTouchDevices: true,
 });
 
-const Scrollbar = window.Scrollbar;
+window.addEventListener('resize', () => {
+  if (window.screen.width > 1023) {
+    const Scrollbar = window.Scrollbar;
 
-Scrollbar.init(document.querySelector('.gallery__container'), {
-  alwaysShowTracks: true,
+    Scrollbar.init(document.querySelector('.gallery__container'), {
+      alwaysShowTracks: true,
+    });
+  }
 });
 
 //Swiper
@@ -101,7 +105,7 @@ componentContainer.addEventListener('click', (e) => {
 const handleHover = function (e) {
   if (!e.target.classList.contains('rockSlide')) return;
 
-  e.target.previousElementSibling.classList.toggle('scale');
+  e.target.parentElement.previousElementSibling.classList.toggle('scale-x-0');
 };
 
 rockSliders.forEach((e) => {
