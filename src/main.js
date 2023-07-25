@@ -30,6 +30,10 @@ const main = document.querySelector('.main');
 const dummyAside = document.querySelector('.dummy');
 const dummyMain = document.querySelector('.dummyMain');
 
+lightbox.option({
+  alwaysShowNavOnTouchDevices: true,
+});
+
 //Swiper
 const swiper = new Swiper('.swiper', {
   // Optional parameters
@@ -286,13 +290,6 @@ const hambHandler = function (e) {
 };
 
 hambs.forEach((e) => e.addEventListener('click', hambHandler));
-
-// Flip Card
-const cardContainer = document.querySelector('.cards');
-
-cardContainer.addEventListener('click', (e) => {
-  e.target.closest('.card')?.classList.toggle('flipCard');
-});
 
 //Retiring Margin Left
 const handleResize = function () {
