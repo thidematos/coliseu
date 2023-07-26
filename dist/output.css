@@ -598,6 +598,14 @@ video {
   position: sticky;
 }
 
+.left-6{
+  left: 1.5rem;
+}
+
+.top-5{
+  top: 1.25rem;
+}
+
 .left-1{
   left: 0.25rem;
 }
