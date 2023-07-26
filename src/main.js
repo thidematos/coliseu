@@ -34,7 +34,7 @@ lightbox.option({
   alwaysShowNavOnTouchDevices: true,
 });
 
-window.addEventListener('resize', () => {
+window.addEventListener('load', () => {
   if (window.screen.width > 1023) {
     const Scrollbar = window.Scrollbar;
 
@@ -233,7 +233,7 @@ const stickyHandler2 = function (entries) {
 const observer = new IntersectionObserver(stickyHandler, {
   root: null,
   threshold: 0,
-  rootMargin: '-' + (parseInt(getComputedStyle(navLinks).height) - 20) + 'px',
+  rootMargin: '-' + parseInt(getComputedStyle(navLinks).height) + 'px',
 });
 
 observer.observe(section1);
