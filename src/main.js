@@ -30,6 +30,18 @@ const main = document.querySelector('.main');
 const dummyAside = document.querySelector('.dummy');
 const dummyMain = document.querySelector('.dummyMain');
 
+window.addEventListener('load', () => {
+  if (window.screen.width < 768)
+    document
+      .querySelectorAll('.social__title')
+      .forEach((title) => (title.style.fontSize = '10px'));
+
+  if (window.screen.width >= 768 && window.screen.width < 1024)
+    document
+      .querySelectorAll('.social__title')
+      .forEach((title) => (title.style.fontSize = '12px'));
+});
+
 lightbox.option({
   alwaysShowNavOnTouchDevices: true,
 });
@@ -162,7 +174,7 @@ const smoothScroll = function (e) {
       .querySelector(`#${e.target.id}`)
       .scrollIntoView({ behavior: 'smooth' });
   } else {
-    const headerHeight = isShowwed ? 100 + 128 : 100;
+    const headerHeight = isShowwed ? 106 + 128 : 106;
     const position = el.getBoundingClientRect().top;
     const offsetPosition = position + window.pageYOffset - headerHeight;
 
@@ -178,7 +190,7 @@ const smoothBtnHandler = function (e) {
 
   let isShowwed = el.classList.contains('section--hidden');
 
-  const headerHeight = isShowwed ? 100 + 128 : 100;
+  const headerHeight = isShowwed ? 106 + 128 : 106;
   const position = el.getBoundingClientRect().top;
   const offsetPosition = position + window.pageYOffset - headerHeight;
 

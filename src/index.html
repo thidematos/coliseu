@@ -48,7 +48,7 @@
   >
     <nav
       id="nav"
-      class="nav w-screen h-[100px] z-50 flex flex-row justify-center items-center lg:p-4"
+      class="nav w-screen h-[106px] z-50 flex flex-row justify-center items-center lg:p-4"
     >
       <div
         class="logo flex flex-row justify-start items-center gap-2 md:gap-0 md:justify-center md:w-screen lg:w-[55%] xl:w-[40%] xl:pt-2"
@@ -69,11 +69,16 @@
               alt=""
               class="w-[22%] ml-4 drop-shadow-sm md:hidden"
             />
-            <h1
-              class="font-bodoni font-bold text-2xl text-ten drop-shadow-md md:text-3xl xl:text-3xl"
-            >
-              O COLISEU
-            </h1>
+            <div class="flex flex-col justify-center items-center">
+              <h1
+                class="font-bodoni font-bold text-2xl text-ten drop-shadow-md md:text-3xl xl:text-3xl"
+              >
+                O COLISEU
+              </h1>
+              <h2 class="social__title font-bodoni lg:text-sm">
+                D. E. Salviano Mármores ME.
+              </h2>
+            </div>
           </div>
 
           <ul
@@ -261,11 +266,12 @@
             <p
               class="text-md text-justify indent-6 font-montserrat md:w-6/12 xl:w-[50%] xl:text-sm xl:pr-10 xl:pl-40"
             >
-              A Marmoraria O Coliseu foi idealizada por Meire e Daniel Salviano
-              (Du), um profissional com mais de 35 anos de experiência no ramo.
-              Desde a sua inauguração em 2004, em São Sebastião, nosso objetivo
-              tem sido alcançar um padrão de qualidade excepcional, capaz de
-              superar as expectativas dos nossos clientes.
+              A Marmoraria O Coliseu (D.E. Salviano Mármores ME.) foi idealizada
+              por Meire e Daniel Salviano (Du), um profissional com mais de 35
+              anos de experiência no ramo. Desde a sua inauguração em 2004, em
+              São Sebastião, nosso objetivo tem sido alcançar um padrão de
+              qualidade excepcional, capaz de superar as expectativas dos nossos
+              clientes.
               <span class="hidden lg:block lg:text-indent-6 lg:mt-2">
                 Seguimos a filosofia de que "Criatividade e cuidado em todo o
                 processo de trabalho garantem a perfeição desejada". Deixe o
@@ -370,7 +376,7 @@
           <p
             class="text-xl text-center text-contrast hidden font-garamond lg:block xl:text-lg"
           >
-            Consulte nosso catálogo:
+            Consulte nosso catálogo de lâminas:
           </p>
           <a
             class="w-1/2 p-4 rounded-md shadow-2xl hidden bg-white lg:flex flex-col justify-center items-center border border-solid border-ten md:w-[65%] lg:w-[35%] xl:w-[50%]"
@@ -782,7 +788,7 @@
             <p
               class="text-xl text-center text-contrast font-garamond lg:hidden xl:text-lg"
             >
-              Consulte nosso catálogo:
+              Consulte nosso catálogo de lâminas:
             </p>
             <a
               class="w-1/2 p-4 rounded-md shadow-2xl bg-white flex flex-col justify-center items-center border border-solid border-ten md:w-[65%] lg:hidden xl:w-[45%]"
@@ -1023,11 +1029,16 @@
                 alt=""
                 class="w-[22%] ml-4 drop-shadow-sm md:hidden"
               />
-              <h1
-                class="font-bodoni font-bold text-2xl text-ten drop-shadow-md md:text-3xl xl:text-3xl"
-              >
-                O COLISEU
-              </h1>
+              <div class="flex flex-col justify-center items-center">
+                <h1
+                  class="font-bodoni font-bold text-2xl text-ten drop-shadow-md md:text-3xl xl:text-3xl"
+                >
+                  O COLISEU
+                </h1>
+                <h2 class="social__title font-bodoni lg:text-sm">
+                  D. E. Salviano Mármores ME.
+                </h2>
+              </div>
             </div>
 
             <ul
@@ -1407,7 +1418,7 @@
                 href="https://wa.me/5512991592479"
                 target="_blank"
                 class="w-[10%] xl:w-[7%]"
-                ><img src="../assets/Sem título.png" alt="" class=""
+                ><img src="../assets/wpp.png" alt="" class=""
               /></a>
               <a
                 href="https://www.instagram.com/marmorariaocoliseu/"
@@ -1435,9 +1446,10 @@
 
     <!--Google Maps Library-->
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCi-32bsWKVSK00v_aiYmTQlnzm5BgiJFA&callback=initMap&v=weekly"
-      defer
+      async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZ3xtY02F5VuPnEMt33YW8zxiMTSEbPME&callback=initMap"
     ></script>
+
     <script src="maps.js"></script>
     <!----------------------->
   </body>

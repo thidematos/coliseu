@@ -598,14 +598,6 @@ video {
   position: sticky;
 }
 
-.left-6{
-  left: 1.5rem;
-}
-
-.top-5{
-  top: 1.25rem;
-}
-
 .left-1{
   left: 0.25rem;
 }
@@ -716,6 +708,10 @@ video {
 
 .h-\[100px\]{
   height: 100px;
+}
+
+.h-\[106px\]{
+  height: 106px;
 }
 
 .h-\[65vh\]{
@@ -1113,6 +1109,10 @@ video {
 .text-xl{
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.text-\[10px\]{
+  font-size: 10px;
 }
 
 .font-bold{
@@ -1843,6 +1843,15 @@ input:checked + .slider:before {
     line-height: 1.75rem;
   }
 
+  .md\:text-sm{
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .md\:text-\[12px\]{
+    font-size: 12px;
+  }
+
   .md\:shadow-md{
     --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
@@ -2122,6 +2131,11 @@ input:checked + .slider:before {
     line-height: 1.75rem;
   }
 
+  .lg\:text-sm{
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
   .lg\:text-contrast{
     --tw-text-opacity: 1;
     color: rgb(77 77 77 / var(--tw-text-opacity));
@@ -2134,6 +2148,10 @@ input:checked + .slider:before {
     margin-bottom: 0px;
   }
 
+  .xl\:mb-24{
+    margin-bottom: 6rem;
+  }
+
   .xl\:mb-8{
     margin-bottom: 2rem;
   }
@@ -2144,10 +2162,6 @@ input:checked + .slider:before {
 
   .xl\:mt-6{
     margin-top: 1.5rem;
-  }
-
-  .xl\:mb-24{
-    margin-bottom: 6rem;
   }
 
   .xl\:block{
@@ -2190,6 +2204,10 @@ input:checked + .slider:before {
     width: 35%;
   }
 
+  .xl\:w-\[38\%\]{
+    width: 38%;
+  }
+
   .xl\:w-\[40\%\]{
     width: 40%;
   }
@@ -2224,10 +2242,6 @@ input:checked + .slider:before {
 
   .xl\:w-full{
     width: 100%;
-  }
-
-  .xl\:w-\[38\%\]{
-    width: 38%;
   }
 
   .xl\:scale-\[0\.8\]{
@@ -2357,11 +2371,6 @@ input:checked + .slider:before {
   .xl\:text-3xl{
     font-size: 1.875rem;
     line-height: 2.25rem;
-  }
-
-  .xl\:text-4xl{
-    font-size: 2.25rem;
-    line-height: 2.5rem;
   }
 
   .xl\:text-base{

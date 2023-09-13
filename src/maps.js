@@ -12,4 +12,6 @@ function initMap() {
   });
 }
 
-window.initMap = initMap;
+window.addEventListener('load', () => {
+  window.initMap = initMap;
+});
