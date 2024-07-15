@@ -138,7 +138,7 @@ function PaddingParagraph({ children }) {
 
 function MarblesTable() {
   return (
-    <div className="bg-creme flex h-[600px] w-full flex-col items-center justify-start px-3 py-5">
+    <div className="flex h-[600px] w-full flex-col items-center justify-start bg-creme px-3 py-5">
       <TitleContainer>
         <SectionSubtitle textSize="text-lg">
           Transforme seus projetos em verdadeiras
@@ -176,22 +176,13 @@ function MarbleTile({ marble }) {
 
 function DownloadCatalogo() {
   return (
-    <div className="flex flex-col items-center justify-center gap-4">
-      <p className="font-garamond text-xl drop-shadow-sm">
-        Consulte nosso catálogo de lâminas:
-      </p>
-      <a
-        href="/catalogo-coliseu.pdf"
-        target="_blank"
-        className="bg-creme flex w-[55%] flex-col items-center justify-center rounded-lg border border-gray-200 p-3 shadow-xl"
-      >
-        <Logo width={"w-[60%]"} />
-
-        <h1 className="font-bodoni text-lg uppercase text-specialRed drop-shadow-sm">
-          O Coliseu
-        </h1>
-      </a>
-    </div>
+    <a
+      href="/catalogo-coliseu.pdf"
+      target="_blank"
+      className="w-[70%] text-center font-garamond text-lg uppercase text-specialRed underline underline-offset-2"
+    >
+      <p>Consulte nosso catálogo de lâminas</p>
+    </a>
   );
 }
 

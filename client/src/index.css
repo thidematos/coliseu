@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
+@import url("https://unpkg.com/leaflet@1.9.4/dist/leaflet.css");
 
 @tailwind base;
 @tailwind components;
@@ -35,4 +36,46 @@
 
 .swiper-pagination-bullet-active {
   background-color: rgb(220, 38, 38) !important;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes swipeToLeft {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.swipeLeft {
+  animation: swipeToLeft 0.25s linear;
+  animation-fill-mode: forwards;
+  @apply origin-right;
+}
+
+.showModal {
+  animation: show 0.25s linear;
+  animation-fill-mode: forwards;
+  @apply origin-center;
+}
+
+.leaflet-popup-content-wrapper {
+  @apply rounded-none bg-creme;
+}
+
+.leaflet-popup,
+.leaflet-popup-tip {
+  @apply bg-creme;
 }
