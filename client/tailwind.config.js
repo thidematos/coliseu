@@ -11,6 +11,7 @@ export default {
       colors: {
         specialRed: "rgb(180,96,96)",
         creme: "rgb(255,244,224)",
+        serralheria: "rgb(246,241,241)",
       },
     },
   },

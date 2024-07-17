@@ -1,15 +1,7 @@
 import SectionContainer from "./../ui/SectionContainer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
-import {
-  MapContainer,
-  Marker,
-  Popup,
-  TileLayer,
-  useMapEvents,
-} from "react-leaflet";
-
-import L from "leaflet";
+import { AdvancedMarker, APIProvider, Map } from "@vis.gl/react-google-maps";
 
 function Contact() {
   return (
@@ -31,64 +23,27 @@ function Contact() {
           <p>marmorariaocoliseu@hotmail.com</p>
         </Anchor>
         <Social />
-        <Map />
+        <GoogleMaps />
       </div>
     </SectionContainer>
   );
 }
 
-function Map() {
-  const position = [-23.719429897253832, -45.42491119999999];
-
-  var greenIcon = L.icon({
-    iconUrl: "/logo.png",
-
-    iconSize: [80, 50], // size of the icon
-    shadowSize: [50, 64], // size of the shadow
-    iconAnchor: [52, 30], // point of the icon which will correspond to marker's location
-    shadowAnchor: [4, 62], // the same for the shadow
-    popupAnchor: [-10, -25], // point from which the popup should open relative to the iconAnchor
-  });
+function GoogleMaps() {
+  const position = {
+    lat: -23.719429897253832,
+    lng: -45.42491119999999,
+  };
 
   return (
     <div className="h-96 w-full">
-      <MapContainer
-        center={position}
-        zoom={17}
-        scrollWheelZoom={true}
-        className="h-full"
-      >
-        <Marker position={position} icon={greenIcon}>
-          <Popup>
-            <p className="font-bodoni font-bold uppercase text-specialRed">
-              o coliseu
-            </p>
-          </Popup>
-        </Marker>
-
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
-        />
-        <OpenGoogleMaps />
-      </MapContainer>
+      <APIProvider apiKey="AIzaSyAxnC7LpVP2B00wC6eJpUIB16RzKeinV_4">
+        <Map defaultZoom={18} defaultCenter={position} mapId={"thigas"}>
+          <AdvancedMarker position={position} />
+        </Map>
+      </APIProvider>
     </div>
   );
-}
-
-function OpenGoogleMaps() {
-  useMapEvents({
-    click: () => {
-      const anchor = document.createElement("a");
-
-      anchor.setAttribute("href", "https://goo.gl/maps/iec2MGTLKrw71iRNA");
-      anchor.setAttribute("target", "_blank");
-
-      anchor.click();
-    },
-  });
-
-  return null;
 }
 
 function Heading() {

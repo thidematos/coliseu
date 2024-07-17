@@ -1,11 +1,14 @@
+import { useSelector } from "react-redux";
 import { useScrollToView } from "./useScrollToView";
 
 function Button({ children, href }) {
   const handler = useScrollToView(href);
+  const { isMarmoraria } = useSelector((store) => store.ui);
+
   return (
     <button
       onClick={handler}
-      className="border border-gray-200 bg-gray-50 p-4 text-xl uppercase text-specialRed shadow-xl"
+      className={`rounded-sm ${isMarmoraria ? "bg-gray-50 text-specialRed" : "bg-cyan-600 text-stone-50"} p-4 text-xl uppercase shadow-xl`}
     >
       {children}
     </button>

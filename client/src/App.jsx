@@ -4,6 +4,7 @@ import Marmoraria from "./features/marmoraria/Marmoraria";
 import AppLayout from "./ui/AppLayout";
 import { Provider } from "react-redux";
 import { store } from "./store";
+import Serralheria from "./features/serralheria/Serralheria";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Marmoraria />,
+      },
+      {
+        path: "/serralheria",
+        element: <Serralheria />,
       },
     ],
   },

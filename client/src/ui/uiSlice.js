@@ -12,6 +12,7 @@ const initialState = {
     isOpenModal: false,
     content: {},
   },
+  isMarmoraria: true,
 };
 
 const slice = createSlice({
@@ -36,9 +37,18 @@ const slice = createSlice({
         content: {},
       };
     },
+    changePageTheme(state, action) {
+      state.isMarmoraria = action.payload;
+      state.isOpenHamb = false;
+    },
   },
 });
 
 export default slice.reducer;
-export const { verifyNavHeight, toggleHamb, openModal, closeModal } =
-  slice.actions;
+export const {
+  verifyNavHeight,
+  toggleHamb,
+  openModal,
+  closeModal,
+  changePageTheme,
+} = slice.actions;

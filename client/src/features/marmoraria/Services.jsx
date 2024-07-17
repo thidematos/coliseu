@@ -7,11 +7,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCards, Autoplay, Pagination } from "swiper/modules";
 import InterativeImg from "../../ui/InterativeImg";
 import "swiper/css/effect-cards";
-import Projects from "./Projects";
+import Projects from "./../../ui/Projects";
 
 function Services() {
   return (
-    <SectionContainer selector={"servicos"} usePadding={false}>
+    <SectionContainer selector={"projetos"} usePadding={false}>
       <TitleContainer>
         <SectionSubtitle textSize="text-2xl">Nossos trabalhos:</SectionSubtitle>
         <SectionTitle>Beleza Lapidada.</SectionTitle>
@@ -31,7 +31,7 @@ function Services() {
       <ParagraphTile />
 
       <p className="font-garamond font-bold uppercase text-specialRed drop-shadow-sm">
-        confira o nosso último projeto:
+        confira os nossos projetos:
       </p>
 
       <Projects />

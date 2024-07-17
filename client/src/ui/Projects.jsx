@@ -1,8 +1,9 @@
 import { useState } from "react";
-import InterativeImg from "../../ui/InterativeImg";
+import InterativeImg from "./InterativeImg";
 
 import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useSelector } from "react-redux";
 
 function Projects() {
   const projects = [
@@ -40,8 +41,6 @@ function Projects() {
     },
   ];
 
-  const [currentProject, setCurrentProject] = useState(0);
-
   return (
     <div className="flex w-full flex-row flex-nowrap items-center justify-start gap-6 overflow-x-scroll px-8 pb-10">
       {projects.map((project) => (
@@ -52,6 +51,8 @@ function Projects() {
 }
 
 function ProjectCard({ project }) {
+  const { isMarmoraria } = useSelector((store) => store.ui);
+
   return (
     <div className="flex w-[90%] flex-shrink-0 flex-col items-center justify-center gap-4 border border-gray-100 bg-stone-100 px-4 pb-8 pt-4 shadow-xl">
       <Swiper
@@ -60,13 +61,14 @@ function ProjectCard({ project }) {
           delay: 3000,
           disableOnInteraction: true,
         }}
+        spaceBetween={20}
         modules={[Pagination, Autoplay]}
-        className="w-full shadow-lg"
+        className="w-full"
       >
         {project.imgs.map((img) => (
           <SwiperSlide
             key={img}
-            className="rounded-lg border border-specialRed"
+            className={`rounded-lg border bg-stone-100 shadow-xl ${isMarmoraria ? "border-specialRed" : "border-sky-700"}`}
           >
             <InterativeImg
               src={`/${img}`}
@@ -75,7 +77,9 @@ function ProjectCard({ project }) {
           </SwiperSlide>
         ))}
       </Swiper>
-      <p className="text-center font-garamond text-lg font-bold uppercase text-specialRed drop-shadow-sm">
+      <p
+        className={`text-center font-garamond text-lg font-bold uppercase ${isMarmoraria ? "text-specialRed" : "text-sky-700"} drop-shadow-sm`}
+      >
         {project.material}
       </p>
       <p className="text-center font-garamond text-xl drop-shadow-sm">

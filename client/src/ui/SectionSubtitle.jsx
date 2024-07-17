@@ -2,10 +2,11 @@ function SectionSubtitle({
   children,
   uppercase = false,
   textSize = "text-lg",
+  fontFamily = "font-garamond",
 }) {
   return (
     <h3
-      className={`${uppercase ? "uppercase" : ""} font-garamond ${textSize} drop-shadow-sm`}
+      className={`${uppercase ? "uppercase" : ""} ${fontFamily} ${textSize} drop-shadow-sm`}
     >
       {children}
     </h3>

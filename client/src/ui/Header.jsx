@@ -7,6 +7,7 @@ import { verifyNavHeight } from "./uiSlice";
 
 function Header() {
   const { isMobile } = useSelector((store) => store.ui.verifyMobile);
+  const { isMarmoraria } = useSelector((store) => store.ui);
 
   const dispatch = useDispatch();
 
@@ -21,7 +22,7 @@ function Header() {
   return (
     <header
       ref={headerRef}
-      className="fixed z-10 flex w-full flex-row items-center justify-around bg-orange-50/90 py-6"
+      className={`fixed z-10 flex w-full flex-row items-center justify-around ${isMarmoraria ? "bg-orange-50/90" : "bg-serralheria/90"} py-6`}
     >
       <Logo width={"w-[25%]"} />
       <ColiseuTitle useCNPJ />
