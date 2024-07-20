@@ -1,6 +1,6 @@
-const multer = require('multer');
+import multer from 'multer';
 const multerStorage = multer.memoryStorage();
-const AppError = require('./../utils/appError');
+import AppError from './appError.js';
 
 const multerFilter = (req, file, cb) => {
   if (!file.mimetype.startsWith('image/'))
@@ -9,4 +9,4 @@ const multerFilter = (req, file, cb) => {
 };
 const upload = multer({ storage: multerStorage, fileFilter: multerFilter });
 
-module.exports = upload;
+export default upload;

@@ -100,8 +100,12 @@ function Marbles() {
   return (
     <SectionContainer selector={"marmores"} useWhite usePadding={false}>
       <TitleContainer>
-        <SectionSubtitle textSize="text-2xl">O mármore e a sua</SectionSubtitle>
-        <SectionTitle useWhiteContrast>Beleza inspiradora.</SectionTitle>
+        <SectionSubtitle textSize="text-2xl md:text-xl">
+          O mármore e a sua
+        </SectionSubtitle>
+        <SectionTitle textSize="text-3xl md:text-2xl" useWhiteContrast>
+          Beleza inspiradora.
+        </SectionTitle>
       </TitleContainer>
 
       <PaddingParagraph>
@@ -130,7 +134,7 @@ function Marbles() {
 
 function PaddingParagraph({ children }) {
   return (
-    <div className="px-8">
+    <div className="px-8 md:text-sm">
       <Paragraph>{children}</Paragraph>
     </div>
   );

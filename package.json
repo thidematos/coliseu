@@ -4,6 +4,7 @@
   "description": "",
   "bin": "./bin/cli.js",
   "main": "test.js",
+  "type": "module",
   "scripts": {
     "start": "nodemon server.js"
   },

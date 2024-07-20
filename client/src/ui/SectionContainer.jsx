@@ -7,6 +7,7 @@ function SectionContainer({
   usePadding = true,
 }) {
   const { isMarmoraria } = useSelector((store) => store.ui);
+  const { isTablet } = useSelector((store) => store.ui.verifyMobile);
 
   const marmoraria = {
     onContrast: "bg-orange-50",
@@ -21,7 +22,7 @@ function SectionContainer({
   return (
     <section
       id={selector}
-      className={`${useWhite ? (isMarmoraria ? marmoraria.withoutContrast : serralheria.withoutContrast) : isMarmoraria ? marmoraria.onContrast : serralheria.onContrast} ${usePadding ? "px-8" : ""} flex min-h-[100dvh] w-full flex-col items-center justify-start gap-10 py-20`}
+      className={`${useWhite ? (isMarmoraria ? marmoraria.withoutContrast : serralheria.withoutContrast) : isMarmoraria ? marmoraria.onContrast : serralheria.onContrast} ${usePadding ? "px-8 md:px-[10%]" : ""} flex ${isTablet ? "h-auto" : "min-h-dvh"} w-full flex-col items-center justify-start gap-10 py-20 md:gap-16`}
     >
       {children}
     </section>

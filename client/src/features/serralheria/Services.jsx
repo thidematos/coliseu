@@ -42,7 +42,7 @@ function Services() {
       <p className="font-garamond font-bold uppercase tracking-wider drop-shadow">
         Confira nossos projetos:
       </p>
-      <Projects />
+      <Projects isMarmoraria={false} />
     </SectionContainer>
   );
 }

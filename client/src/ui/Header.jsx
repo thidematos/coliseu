@@ -24,7 +24,7 @@ function Header() {
       ref={headerRef}
       className={`fixed z-10 flex w-full flex-row items-center justify-around ${isMarmoraria ? "bg-orange-50/90" : "bg-serralheria/90"} py-6`}
     >
-      <Logo width={"w-[25%]"} />
+      <Logo width={"w-[25%] md:w-[12%]"} />
       <ColiseuTitle useCNPJ />
       {isMobile && <Navbar />}
       <div className="centerX absolute bottom-0 w-[60%] border-b border-gray-400"></div>

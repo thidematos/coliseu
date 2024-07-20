@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 function SectionTitle({
   children,
   useWhiteContrast = false,
-  textSize = "text-3xl",
+  textSize = "text-3xl md:text-2xl",
   fontWeight,
   fontFamily = "font-garamond",
 }) {

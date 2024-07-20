@@ -1,16 +1,16 @@
-const express = require('express');
-const morgan = require('morgan');
-const cors = require('cors');
-const xssClean = require('xss-clean');
-const mongoSanitize = require('express-mongo-sanitize');
-const rateLimit = require('express-rate-limit');
-const cookieParser = require('cookie-parser');
-const path = require('path');
+import express from 'express';
+import morgan from 'morgan';
+import cors from 'cors';
+import xssClean from 'xss-clean';
+import mongoSanitize from 'express-mongo-sanitize';
+import rateLimit from 'express-rate-limit';
+import cookieParser from 'cookie-parser';
 
-const dummyRouter = require('./routers/dummyRouter');
+import AppError from './utils/appError.js';
+import globalErrorHandler from './controllers/errorController.js';
 
-const AppError = require('./utils/appError');
-const globalErrorHandler = require('./controllers/errorController');
+import authRouter from './routers/authRouter.js';
+import projectRouter from './routers/projectRouter.js';
 
 const limiter = rateLimit({
   max: 200,
@@ -32,21 +32,17 @@ app.use(mongoSanitize());
 
 app.use(xssClean());
 
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.use((req, res, next) => {
-  req.requestTime = new Date().toISOString();
-
-  next();
-});
+app.use(express.static('./public'));
 
 if (process.env.NODE_ENV === 'production') app.use('/api', limiter);
 
-app.use('/api/v1/dummy', dummyRouter);
+app.use('/api/v1/authentication', authRouter);
+
+app.use('/api/v1/projects', projectRouter);
 
 //Routing react-route-dom
 app.all('/*', (req, res, next) => {
-  res.sendFile(path.join(__dirname, 'public/index.html'));
+  res.sendFile('/public/index.html');
 });
 
 app.all('/api/v1/*', (req, res, next) => {
@@ -55,4 +51,4 @@ app.all('/api/v1/*', (req, res, next) => {
 
 app.use(globalErrorHandler);
 
-module.exports = app;
+export default app;

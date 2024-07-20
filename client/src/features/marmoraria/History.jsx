@@ -3,19 +3,33 @@ import Paragraph from "../../ui/Paragraph";
 import SectionContainer from "../../ui/SectionContainer";
 import SectionTitle from "../../ui/SectionTitle";
 import InterativeImg from "../../ui/InterativeImg";
+import { useSelector } from "react-redux";
 
 function History() {
+  const { isBiggerThanMobile } = useSelector((store) => store.ui.verifyMobile);
+
+  const paragraphContent =
+    "A Marmoraria o Coliseu (D.E. Salviano Mármores ME.) foi idealizada por Meire e Daniel Salviano (Du), um profissional com mais de 35 anos de experiência no ramo. Desde a sua inauguração em São Sebastião, em 2004, nosso objetivo tem sido alcançar um padrão de qualidade excepcional, capaz de superar as expectativas dos nossos clientes.";
+
   return (
     <SectionContainer selector={"historia"}>
-      <SectionTitle textSize="text-3xl">Nossa história.</SectionTitle>
-      <Paragraph>
-        A Marmoraria o Coliseu (D.E. Salviano Mármores ME.) foi idealizada por
-        Meire e Daniel Salviano (Du), um profissional com mais de 35 anos de
-        experiência no ramo. Desde a sua inauguração em São Sebastião, em 2004,
-        nosso objetivo tem sido alcançar um padrão de qualidade excepcional,
-        capaz de superar as expectativas dos nossos clientes.
-      </Paragraph>
-      <ColiseuPiccture />
+      <SectionTitle textSize="text-3xl md:text3xl">
+        Nossa história.
+      </SectionTitle>
+      {isBiggerThanMobile ? (
+        <div className="grid grid-cols-6 items-center gap-10">
+          <Paragraph textPosition="col-span-3 text-justify md:text-sm">
+            {paragraphContent}
+          </Paragraph>
+          <ColiseuPiccture />
+        </div>
+      ) : (
+        <>
+          <Paragraph>{paragraphContent}</Paragraph>
+          <ColiseuPiccture />
+        </>
+      )}
+
       <Tabs />
     </SectionContainer>
   );
@@ -23,7 +37,7 @@ function History() {
 
 function ColiseuPiccture() {
   return (
-    <div className="space-y-3">
+    <div className="space-y-3 md:col-span-3">
       <InterativeImg
         src={"/coliseu.jpg"}
         className="rounded border border-specialRed shadow-lg"
@@ -62,7 +76,7 @@ function Tabs() {
   });
 
   return (
-    <div className="rounded-b-md rounded-t-md border border-specialRed shadow-xl">
+    <div className="rounded-b-md rounded-t-md border border-specialRed shadow-xl md:w-[80%]">
       <div className="grid w-full grid-cols-2 rounded-t-md border border-b bg-stone-100 p-3">
         {tabs.map((tab, ind) => (
           <TabButton
@@ -73,8 +87,8 @@ function Tabs() {
           />
         ))}
       </div>
-      <div className="flex min-h-[350px] flex-col items-center justify-center gap-4 rounded-b-md bg-stone-50 px-4">
-        <Paragraph textPosition="text-justify">
+      <div className="flex min-h-[350px] flex-col items-center justify-center gap-4 rounded-b-md bg-stone-50 px-4 md:min-h-[200px] md:px-8">
+        <Paragraph textPosition="text-justify text-sm">
           {tabs[activeTab].content}
         </Paragraph>
       </div>
@@ -85,7 +99,7 @@ function Tabs() {
 function TabButton({ tab, active, setter }) {
   return (
     <button
-      className={`col-span-1 font-garamond text-xl ${active ? "scale-105 bg-specialRed text-stone-50 shadow-md" : "text-stone-700"} p-2 drop-shadow-sm duration-150`}
+      className={`col-span-1 font-garamond text-xl ${active ? "scale-105 bg-specialRed text-stone-50 shadow-md" : "text-stone-700"} p-2 drop-shadow-sm duration-150 md:text-lg`}
       onClick={() => setter(tab.id)}
     >
       {tab.title}

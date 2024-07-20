@@ -31,9 +31,11 @@ function HambMenu() {
   const [isOpenHamb, setIsOpenHamb] = useNavbar(hambRef);
   const { isMarmoraria } = useSelector((store) => store.ui);
 
+  const { isTablet } = useSelector((store) => store.ui.verifyMobile);
+
   const { innerWidth } = useSelector((store) => store.ui.verifyMobile);
 
-  const hambWidth = `${innerWidth / 1.5}px`;
+  const hambWidth = `${innerWidth / (isTablet ? 2.5 : 1.5)}px`;
   return (
     <>
       <nav
@@ -58,7 +60,7 @@ function HambMenu() {
       >
         <FontAwesomeIcon
           icon={faBars}
-          className="text-3xl text-stone-700 drop-shadow"
+          className="text-3xl text-stone-700 drop-shadow md:text-4xl"
         />
       </button>
     </>

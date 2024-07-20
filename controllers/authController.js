@@ -1,10 +1,8 @@
-const AppError = require('../utils/appError');
-const catchAsync = require('../utils/catchAsync');
-const User = require('./../models/userModel');
-const jwt = require('jsonwebtoken');
-const { promisify } = require('util');
-const SendMail = require('./../utils/email');
-const crypto = require('crypto');
+import AppError from './../utils/appError.js';
+import catchAsync from './../utils/catchAsync.js';
+import User from './../models/userModel.js';
+import jwt from 'jsonwebtoken';
+import { promisify } from 'util';
 
 const signToken = (id) => {
   return jwt.sign({ id: id }, process.env.JWT_SECRET, {
@@ -36,20 +34,24 @@ const createSendCookie = (user, statusCode, res) => {
   });
 };
 
-exports.signup = catchAsync(async (req, res, next) => {
-  const { email, password, passwordConfirm } = req.body;
+export const signup = catchAsync(async (req, res, next) => {
+  const { email, password, passwordConfirm, photo, name } = req.body;
 
   const newUser = await User.create({
     email,
     password,
     passwordConfirm,
+    photo,
+    name,
   });
 
   createSendCookie(newUser, 201, res);
 });
 
-exports.login = catchAsync(async (req, res, next) => {
+export const login = catchAsync(async (req, res, next) => {
   const { email, password } = req.body;
+
+  console.log(email);
 
   if (!email && !password)
     return next(new AppError('Please, provide an email and password', 400));
@@ -62,7 +64,7 @@ exports.login = catchAsync(async (req, res, next) => {
   createSendCookie(user, 200, res);
 });
 
-exports.protect = catchAsync(async (req, res, next) => {
+export const protect = catchAsync(async (req, res, next) => {
   let token;
 
   //Verifies if the token is valid.
@@ -85,14 +87,26 @@ exports.protect = catchAsync(async (req, res, next) => {
 
   if (!currentUser) return next(new AppError('Usuário não encontrado!', 401));
 
-  if (currentUser.changedPasswordAfter(decoded.iat))
-    return next(new AppError('Usuário não está autenticado.', 401));
-
   req.user = currentUser;
   next();
 });
 
-exports.restrictTo = (...role) => {
+export const authUser = (req, res, next) => {
+  const userObj = req.user.toObject();
+
+  delete userObj.password;
+  delete userObj.role;
+  delete userObj.passwordConfirm;
+
+  res.status(200).json({
+    status: 'success',
+    data: {
+      user: userObj,
+    },
+  });
+};
+
+export const restrictTo = (...role) => {
   return (req, res, next) => {
     if (!role.includes(req.user.role))
       return next(
@@ -102,51 +116,3 @@ exports.restrictTo = (...role) => {
     next();
   };
 };
-
-exports.resetPassword = catchAsync(async (req, res, next) => {
-  const token = req.params.resetToken;
-  const hashedToken = crypto.createHash('sha256').update(token).digest('hex');
-  const user = await User.findOne({
-    passwordResetToken: hashedToken,
-    passwordResetExpiration: { $gt: Date.now() },
-  });
-
-  if (!user)
-    return next(
-      new AppError(
-        'Atualização de senha falhou: token inválido. Por favor, tente novamente.',
-        400
-      )
-    );
-
-  user.password = req.body.password;
-  user.passwordConfirm = req.body.passwordConfirm;
-  user.passwordResetToken = undefined;
-  user.passwordResetExpiration = undefined;
-
-  await user.save();
-
-  createSendCookie(user, 200, res);
-});
-
-exports.forgotPassword = catchAsync(async (req, res, next) => {
-  const user = await User.findOne({ email: req.body.email });
-
-  if (!user) return next(new AppError('Usuário não encontrado', 404));
-
-  const resetToken = user.getPasswordResetToken();
-
-  await user.save({
-    validateBeforeSave: false,
-  });
-
-  await new SendMail().sendDummyMail({
-    example: 'send password reset',
-    resetToken,
-  });
-
-  res.status(200).json({
-    status: 'success',
-    message: 'Reset token enviado',
-  });
-});

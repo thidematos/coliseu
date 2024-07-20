@@ -2,9 +2,11 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   verifyMobile: {
-    isMobile: window.innerWidth <= 480,
+    isMobile: window.innerWidth <= 1024,
     innerWidth: window.innerWidth,
     innerHeight: window.innerHeight,
+    isTablet: window.innerWidth > 480 && window.innerWidth <= 1024,
+    isBiggerThanMobile: window.innerWidth > 480,
   },
   isOpenHamb: false,
   navBarHeight: "0px",

@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
-module.exports = async () => {
+export default async () => {
   const string = process.env.DB_CONNECTION.replace(
     '<password>',
     process.env.DB_PASSWORD

@@ -1,15 +1,13 @@
-const mongoose = require('mongoose');
-const validator = require('validator');
-const bcrypt = require('bcryptjs');
-const crypto = require('crypto');
+import mongoose from 'mongoose';
+import bcrypt from 'bcryptjs';
 
 const userSchema = new mongoose.Schema({
   email: {
     type: String,
     required: true,
     unique: true,
-    validate: validator.isEmail,
   },
+  name: String,
   password: {
     type: String,
     required: true,
@@ -28,16 +26,18 @@ const userSchema = new mongoose.Schema({
       message: 'Passwords should match',
     },
   },
+  role: {
+    type: String,
+    enum: ['MASTER', 'ADMIN', 'user'],
+    default: 'user',
+  },
+  photo: String,
 
   createdAt: {
     type: Date,
     default: Date.now,
     select: false,
   },
-
-  passwordResetToken: String,
-  passwordResetExpiration: String,
-  passwordChangedAt: Date,
 });
 
 userSchema.pre('save', async function (next) {
@@ -50,27 +50,6 @@ userSchema.pre('save', async function (next) {
   next();
 });
 
-userSchema.pre('save', async function (next) {
-  if (!this.isModified('password' || this.isNew)) return next();
-
-  this.passwordChangedAt = Date.now() - 1000;
-
-  next();
-});
-
-userSchema.methods.getPasswordResetToken = function () {
-  let token = crypto.randomBytes(32).toString('hex');
-
-  this.passwordResetToken = crypto
-    .createHash('sha256')
-    .update(token)
-    .digest('hex');
-
-  this.passwordResetExpiration = Date.now() + 10 * 60 * 1000;
-
-  return token;
-};
-
 userSchema.methods.correctPassword = async function (
   reqPassword,
   userPassword
@@ -78,19 +57,6 @@ userSchema.methods.correctPassword = async function (
   return await bcrypt.compare(reqPassword, userPassword);
 };
 
-userSchema.methods.changedPasswordAfter = function (jwtTimeStamp) {
-  if (this.passwordChangedAt) {
-    const changedTimeStamp = parseInt(
-      this.passwordChangedAt.getTime() / 1000,
-      10
-    );
-
-    return jwtTimeStamp < changedTimeStamp;
-  }
-
-  return false;
-};
-
 const User = mongoose.model('User', userSchema);
 
-module.exports = User;
+export default User;

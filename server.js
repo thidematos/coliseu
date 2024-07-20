@@ -4,11 +4,11 @@ process.on('uncaughtException', (err) => {
   process.exit(1);
 });
 
-const app = require('./app');
-const dotenv = require('dotenv');
-const connectionDB = require('./utils/connectDB');
+import app from './app.js';
+import dotenv from 'dotenv';
+import connectionDB from './utils/connectDB.js';
 
-dotenv.config({ path: `${__dirname}/config.env` });
+dotenv.config({ path: `./config.env` });
 
 const server = app.listen(process.env.PORT || 3000, async () => {
   console.log('Server started!');

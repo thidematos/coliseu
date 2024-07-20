@@ -1,7 +1,7 @@
 function SectionSubtitle({
   children,
   uppercase = false,
-  textSize = "text-lg",
+  textSize = "text-lg md:text-base",
   fontFamily = "font-garamond",
 }) {
   return (

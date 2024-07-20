@@ -12,35 +12,43 @@ function About() {
     <SectionContainer selector={"apresentacao"} useWhite={true}>
       <Title />
       <Paragraphs />
-      <Swiper
-        className="w-full rounded-lg px-8 shadow-xl"
-        pagination={true}
-        modules={[Pagination, Autoplay]}
-        loop={true}
-        autoplay={{
-          delay: 3000,
-          disableOnInteraction: false,
-        }}
-      >
-        <SwiperSlide>
-          <InterativeImg src={"/about-1.jpg"} className="scale-105" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <InterativeImg src={"/about-2.jpg"} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <InterativeImg src={"/about-3.jpg"} />
-        </SwiperSlide>
-      </Swiper>
+      <AboutSwiper />
     </SectionContainer>
+  );
+}
+
+function AboutSwiper() {
+  return (
+    <Swiper
+      className="w-full rounded-lg px-8 shadow-xl md:w-[60%]"
+      pagination={true}
+      modules={[Pagination, Autoplay]}
+      loop={true}
+      autoplay={{
+        delay: 3000,
+        disableOnInteraction: false,
+      }}
+    >
+      <SwiperSlide>
+        <InterativeImg src={"/about-1.jpg"} className="scale-105" />
+      </SwiperSlide>
+      <SwiperSlide>
+        <InterativeImg src={"/about-2.jpg"} />
+      </SwiperSlide>
+      <SwiperSlide>
+        <InterativeImg src={"/about-3.jpg"} />
+      </SwiperSlide>
+    </Swiper>
   );
 }
 
 function Title() {
   return (
     <TitleContainer>
-      <SectionSubtitle textSize="text-2xl">Lapidamos sonhos,</SectionSubtitle>
-      <SectionTitle useWhiteContrast={true} textSize="text-3xl">
+      <SectionSubtitle textSize="text-2xl md:text-xl">
+        Lapidamos sonhos,
+      </SectionSubtitle>
+      <SectionTitle useWhiteContrast={true} textSize="text-3xl md:text-2xl">
         Damos vida a projetos.
       </SectionTitle>
     </TitleContainer>
@@ -49,7 +57,7 @@ function Title() {
 
 function Paragraphs() {
   return (
-    <article className="space-y-4">
+    <article className="space-y-4 md:text-sm">
       <Paragraph>
         Na Marmoraria O Coliseu, entendemos a importância de cada projeto e nos
         dedicamos a criar resultados que sejam duradouros e impressionantes.
