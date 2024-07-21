@@ -15,7 +15,7 @@ function Contact() {
     >
       {isBiggerThanMobile ? (
         <div className="md:grid md:grid-cols-2 md:items-center md:gap-10 md:px-[5%]">
-          <div className="md:col-span-1">
+          <div className="space-y-6 md:col-span-1">
             <Heading />
             <div className="flex flex-col items-start justify-center gap-8">
               <Anchor
@@ -91,10 +91,10 @@ function GoogleMaps() {
 function Heading() {
   return (
     <div className="flex flex-col items-center justify-center gap-3 text-center">
-      <h3 className="border-b border-specialRed px-8 pb-6 font-garamond text-3xl drop-shadow">
+      <h3 className="border-b border-specialRed px-8 pb-6 font-garamond text-3xl drop-shadow lg:text-2xl">
         Entre em contato
       </h3>
-      <p className="text-sm drop-shadow">
+      <p className="text-sm drop-shadow lg:text-xs">
         Clique e acesse diretamente nossos contatos
       </p>
     </div>
@@ -104,20 +104,26 @@ function Heading() {
 function Social() {
   return (
     <div className="flex flex-col items-start justify-center gap-2">
-      <p className="font-bodoni text-lg font-bold tracking-wider drop-shadow">
+      <p className="font-bodoni text-lg font-bold tracking-wider drop-shadow lg:text-base">
         Social
       </p>
       <div className="flex flex-row items-center justify-start gap-4">
         <a href="https://wa.me/5512991592479" target="_blank">
-          <img src="/wpp.png" className="size-[35px] drop-shadow" />
+          <img
+            src="/wpp.png"
+            className="size-[35px] drop-shadow lg:size-[25px]"
+          />
         </a>
         <a href="https://www.instagram.com/marmorariaocoliseu/" target="_blank">
-          <img src="/instagram.png" className="size-[35px] drop-shadow" />
+          <img
+            src="/instagram.png"
+            className="size-[35px] drop-shadow lg:size-[25px]"
+          />
         </a>
 
         <FontAwesomeIcon
           icon={faArrowUpRightFromSquare}
-          className="text-lg text-blue-400"
+          className="text-lg text-blue-400 lg:text-xs"
         />
       </div>
     </div>
@@ -127,18 +133,18 @@ function Social() {
 function Anchor({ children, label, href }) {
   return (
     <div className="flex flex-col items-start justify-center gap-2">
-      <p className="font-bodoni text-lg font-bold tracking-wider drop-shadow">
+      <p className="font-bodoni text-lg font-bold tracking-wider drop-shadow lg:text-base">
         {label}
       </p>
       <a
-        className="flex flex-row items-center justify-center gap-2 bg-creme p-3 text-sm"
+        className="flex flex-row items-center justify-center gap-2 bg-creme p-3 text-sm lg:text-xs"
         href={href}
         target="_blank"
       >
         {children}
         <FontAwesomeIcon
           icon={faArrowUpRightFromSquare}
-          className="text-lg text-blue-400"
+          className="text-lg text-blue-400 lg:text-xs"
         />
       </a>
     </div>

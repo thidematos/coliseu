@@ -23,7 +23,17 @@ const pages = [
 function Navbar() {
   const { isMobile } = useSelector((store) => store.ui.verifyMobile);
 
-  return <>{isMobile && <HambMenu />}</>;
+  return (
+    <>
+      {isMobile ? (
+        <HambMenu />
+      ) : (
+        <nav className="lg:col-span-5 lg:flex lg:flex-row lg:justify-center">
+          <NavLinks />
+        </nav>
+      )}
+    </>
+  );
 }
 
 function HambMenu() {
@@ -69,7 +79,7 @@ function HambMenu() {
 
 function NavLinks() {
   return (
-    <ul className="flex h-full flex-col items-center justify-around text-lg">
+    <ul className="flex h-full flex-col items-center justify-around text-lg lg:relative lg:w-full lg:flex-row lg:flex-wrap lg:justify-center lg:gap-x-5 lg:text-xs">
       <ThemeLink />
       {pages.map((page) => (
         <NavButton page={page} key={page.to} />
@@ -84,7 +94,7 @@ function ThemeLink() {
   return (
     <Link
       to={`${isMarmoraria ? "/serralheria" : "/"}`}
-      className="relative flex w-full flex-col items-center justify-center gap-2 pb-2"
+      className="relative flex w-full flex-col items-center justify-center gap-2 pb-2 lg:order-last lg:w-auto lg:flex-row"
       onClick={() =>
         scrollTo({
           top: 0,
@@ -97,7 +107,7 @@ function ThemeLink() {
         Ir para
       </p>
       <div className="flex flex-row items-center justify-center gap-1">
-        <h1 className="text-nowrap font-bodoni text-xl font-bold uppercase tracking-wider text-specialRed drop-shadow">
+        <h1 className="text-nowrap font-bodoni text-xl font-bold uppercase tracking-wider text-specialRed drop-shadow lg:text-base">
           O Coliseu
         </h1>
         <h2 className="scale-105 bg-stone-50 px-2 py-1 font-bodoni text-sm tracking-wide text-stone-800 shadow-lg">

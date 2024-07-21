@@ -18,7 +18,7 @@ function Services() {
   return (
     <SectionContainer selector={"projetos"} usePadding={false}>
       {isBiggerThanMobile ? (
-        <div className="md:grid md:w-full md:grid-cols-5 md:items-center md:pl-[5%]">
+        <div className="md:grid md:w-full md:grid-cols-5 md:items-center md:pl-[5%] lg:px-[10%]">
           <div className="px-8 md:col-span-2 md:space-y-10 md:px-0">
             <TitleContainer>
               <SectionSubtitle textSize="text-2xl md:text-xl">
@@ -28,7 +28,7 @@ function Services() {
                 Beleza Lapidada.
               </SectionTitle>
             </TitleContainer>
-            <Paragraph textSize={"md:text-sm"}>{paragraphContent}</Paragraph>
+            <Paragraph>{paragraphContent}</Paragraph>
           </div>
           <SwiperOverflow />
           <ParagraphTile />
@@ -74,7 +74,7 @@ function SwiperOverflow() {
         pagination={true}
         modules={[EffectCards, Pagination]}
         loop={true}
-        className="h-full w-[70%]"
+        className="h-full w-[70%] lg:w-[60%]"
       >
         <SwiperSlide>
           <InterativeImg
@@ -119,7 +119,7 @@ function SwiperOverflow() {
 
 function ParagraphTile() {
   return (
-    <p className="mx-8 bg-stone-50 p-4 text-center shadow-xl drop-shadow-sm md:col-span-5 md:my-10 md:w-[65%] md:place-self-center">
+    <p className="mx-8 bg-stone-50 p-4 text-center shadow-xl drop-shadow-sm md:col-span-5 md:my-10 md:w-[65%] md:place-self-center lg:w-[50%] lg:text-sm">
       Exploramos as veias e os padrões únicos da pedra, trazendo à tona formas{" "}
       <strong className="font-garamond text-specialRed">DELICADAS</strong> ou{" "}
       <strong className="font-garamond text-specialRed">IMPONENTES</strong>

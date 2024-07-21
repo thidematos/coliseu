@@ -9,7 +9,9 @@ import TitleContainer from "./../../ui/TitleContainer";
 import { useSelector } from "react-redux";
 
 function About() {
-  const { isBiggerThanMobile } = useSelector((store) => store.ui.verifyMobile);
+  const { isBiggerThanMobile, isLarge } = useSelector(
+    (store) => store.ui.verifyMobile,
+  );
 
   return (
     <SectionContainer selector={"apresentacao"} useWhite={true}>
@@ -17,10 +19,10 @@ function About() {
         <div className="md:grid md:grid-cols-2 md:items-center md:gap-10">
           <div className="md:col-span-1 md:space-y-10">
             <Title />
-            <Paragraphs useSecond={false} />
+            <Paragraphs useSecond={isLarge ? true : false} />
           </div>
           <AboutSwiper />
-          <Paragraph textPosition="md:col-span-2">
+          <Paragraph textPosition="md:col-span-2 lg:hidden">
             Seja para projetos residencias ou comerciais, conte com a Marmoraria
             O Coliseu para oferecer soluções personalizadas e de alta qualidade
             em pedras naturais e lâminas. Estamos aqui para transformar suas
@@ -79,7 +81,7 @@ function Title() {
 
 function Paragraphs({ useSecond = true }) {
   return (
-    <article className="space-y-4 md:text-sm">
+    <article className="space-y-4 md:text-sm lg:space-y-8">
       <Paragraph>
         Na Marmoraria O Coliseu, entendemos a importância de cada projeto e nos
         dedicamos a criar resultados que sejam duradouros e impressionantes.

@@ -10,7 +10,9 @@ import ColiseuTitle from "../../ui/ColiseuTitle";
 import { useSelector } from "react-redux";
 
 function Services() {
-  const { isBiggerThanMobile } = useSelector((store) => store.ui.verifyMobile);
+  const { isBiggerThanMobile, isLarge } = useSelector(
+    (store) => store.ui.verifyMobile,
+  );
 
   return (
     <SectionContainer selector={"projetos"} useWhite={false} usePadding={false}>
@@ -27,7 +29,7 @@ function Services() {
                 ELEGÂNCIA & QUALIDADE
               </SectionTitle>
             </div>
-            <div className="">
+            <div className="lg:flex lg:flex-col lg:items-center lg:justify-center lg:gap-10">
               <Paragraph>
                 Trabalhamos com o uso de alumínio - linha{" "}
                 <span className="font-bodoni font-bold text-sky-700 drop-shadow-sm">
@@ -41,14 +43,15 @@ function Services() {
                 com vidros de qualidade, que proporcionam transparência,
                 iluminação natural e isolamento térmico eficiente.
               </Paragraph>
+              {isLarge && <SerralheriaLogo />}
             </div>
           </div>
           <div className="md:col-span-4 md:flex md:flex-col md:items-center md:justify-center md:space-y-5">
             <SwiperOverflow />
-            <SerralheriaLogo />
+            {!isLarge && <SerralheriaLogo />}
           </div>
 
-          <div className="md:col-span-7 md:flex md:flex-col md:items-center md:justify-center">
+          <div className="md:col-span-7 md:flex md:flex-col md:items-center md:justify-center lg:mt-10">
             <p className="text-center font-garamond font-bold uppercase tracking-wider drop-shadow">
               Confira nossos projetos:
             </p>

@@ -15,7 +15,7 @@ function Projects({ isMarmoraria = true }) {
     "flex w-full flex-row flex-nowrap items-center justify-start gap-6 overflow-x-scroll px-8 pb-10";
 
   const notMobileStyle =
-    "md:grid md:grid-flow-col md:w-[90vw] md:px-10 md:overflow-x-scroll md:py-10 md:gap-6";
+    "md:grid md:grid-flow-col md:w-[90vw] md:px-10 md:overflow-x-scroll md:py-10 md:gap-6 md:justify-center lg:py-8";
 
   return (
     <div className={isBiggerThanMobile ? notMobileStyle : mobileStyles}>

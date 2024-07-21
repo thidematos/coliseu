@@ -9,19 +9,21 @@ function Hero() {
     (store) => store.ui.verifyMobile,
   );
 
+  console.log(isTablet);
+
   return (
     <section
       className={`flex ${isTablet ? "h-auto pb-20 pt-10" : "h-dvh"} flex-col items-center justify-start gap-10`}
     >
       <NavDummy />
       {isBiggerThanMobile ? (
-        <div className="mx-[10%] grid grid-cols-5 gap-6">
-          <div className="order-2 flex w-full flex-col items-center justify-center gap-6 md:col-span-2">
+        <div className="md:mx-[10%] md:grid md:grid-cols-5 md:gap-6 lg:grid-cols-6">
+          <div className="order-2 flex w-full flex-col items-center justify-center gap-6 md:col-span-2 lg:col-span-3">
             <Impact />
             <Button href={"#apresentacao"}>Saiba mais</Button>
           </div>
 
-          <img src="/hero.jpg" className="col-span-3" />
+          <img src="/hero.jpg" className="col-span-3 lg:col-span-3" />
         </div>
       ) : (
         <>

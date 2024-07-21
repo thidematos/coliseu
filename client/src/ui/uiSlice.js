@@ -2,10 +2,11 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   verifyMobile: {
-    isMobile: window.innerWidth <= 1024,
+    isMobile: window.innerWidth < 1024,
     innerWidth: window.innerWidth,
     innerHeight: window.innerHeight,
-    isTablet: window.innerWidth > 480 && window.innerWidth <= 1024,
+    isTablet: window.innerWidth > 480 && window.innerWidth < 1024,
+    isLarge: window.innerWidth >= 1024 && window.innerWidth < 1280,
     isBiggerThanMobile: window.innerWidth > 480,
   },
   isOpenHamb: false,

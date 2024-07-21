@@ -5,7 +5,9 @@ import SectionSubtitle from "../../ui/SectionSubtitle";
 import InterativeImg from "./../../ui/InterativeImg";
 
 function About() {
-  const { isBiggerThanMobile } = useSelector((store) => store.ui.verifyMobile);
+  const { isBiggerThanMobile, isLarge } = useSelector(
+    (store) => store.ui.verifyMobile,
+  );
 
   return (
     <SectionContainer
@@ -15,7 +17,8 @@ function About() {
     >
       {isBiggerThanMobile ? (
         <div className="md:grid md:grid-cols-7 md:gap-10 md:px-[10%]">
-          <div className="md:col-span-3">
+          <div className="md:col-span-3 lg:flex lg:flex-col lg:items-center lg:justify-center lg:gap-10">
+            {isLarge && <Title />}
             <Paragraph>
               O Coliseu, combinando a tradição e excelência que nos define, está
               pronto para fornecer soluções personalizadas e de alta qualidade
@@ -28,7 +31,7 @@ function About() {
           </div>
 
           <div className="flex flex-col items-center justify-center gap-4 md:col-span-4 md:gap-10">
-            <Title />
+            {!isLarge && <Title />}
             <div className="space-y-4">
               <InterativeImg src={"/esq-features.jpg"} className="shadow-lg" />
               <p className="text-center font-bodoni italic drop-shadow">

@@ -1,7 +1,7 @@
 function Paragraph({
   children,
   textPosition = "text-justify",
-  textSize = "text-base md:text-sm",
+  textSize = "text-base md:text-sm lg:text-xs",
 }) {
   return (
     <p

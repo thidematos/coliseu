@@ -98,7 +98,9 @@ const marbles = [
 });
 
 function Marbles() {
-  const { isBiggerThanMobile } = useSelector((store) => store.ui.verifyMobile);
+  const { isBiggerThanMobile, isLarge } = useSelector(
+    (store) => store.ui.verifyMobile,
+  );
 
   const firstParagraphContent =
     "O mármore é formado a partir do calcário, uma rocha composta por minerais de calcita. Ao longo de milhões de anos, o calcário é submetido a altas temperaturas e pressões, o que provoca transformações em sua estrutura. Essas mudanças levam à recristalização dos mineiras de calcita, resultando no mármore, uma rocha metamórfica com textura cristalina e brilho característico.";
@@ -110,7 +112,7 @@ function Marbles() {
     <SectionContainer selector={"marmores"} useWhite usePadding={false}>
       {isBiggerThanMobile ? (
         <div className="md:grid md:grid-cols-5 md:items-center md:gap-10 md:px-[10%]">
-          <div className="col-span-2 space-y-10">
+          <div className="md:col-span-2 md:space-y-10 lg:space-y-6">
             <TitleContainer>
               <SectionSubtitle textSize="text-2xl md:text-xl">
                 O mármore e a sua
@@ -120,12 +122,20 @@ function Marbles() {
               </SectionTitle>
             </TitleContainer>
             <PaddingParagraph>{firstParagraphContent}</PaddingParagraph>
+            {isLarge && (
+              <PaddingParagraph colSpan="md:col-span-5">
+                {secondParagraphContent}
+              </PaddingParagraph>
+            )}
           </div>
 
           <MarblesTable />
-          <PaddingParagraph colSpan="md:col-span-5">
-            {secondParagraphContent}
-          </PaddingParagraph>
+          {!isLarge && (
+            <PaddingParagraph colSpan="md:col-span-5">
+              {secondParagraphContent}
+            </PaddingParagraph>
+          )}
+
           <DownloadCatalogo />
         </div>
       ) : (
@@ -158,7 +168,7 @@ function PaddingParagraph({ children, colSpan = "" }) {
 
 function MarblesTable() {
   return (
-    <div className="flex h-[600px] w-full flex-col items-center justify-start bg-creme px-3 py-5 md:order-first md:col-span-3 md:h-[450px]">
+    <div className="flex h-[600px] w-full flex-col items-center justify-start bg-creme px-3 py-5 md:order-first md:col-span-3 md:h-[450px] lg:w-[75%] lg:place-self-center">
       <TitleContainer>
         <SectionSubtitle textSize="text-lg md:text-base">
           Transforme seus projetos em verdadeiras
@@ -201,7 +211,7 @@ function DownloadCatalogo() {
     <a
       href="/catalogo-coliseu.pdf"
       target="_blank"
-      className="w-[70%] text-center font-garamond text-lg uppercase text-specialRed underline underline-offset-2 md:col-span-5 md:w-full"
+      className="w-[70%] text-center font-garamond text-lg uppercase text-specialRed underline underline-offset-2 md:col-span-5 md:w-full lg:text-base"
     >
       <p>Consulte nosso catálogo de lâminas</p>
     </a>
