@@ -11,17 +11,23 @@ function History() {
   const paragraphContent =
     "A Marmoraria o Coliseu (D.E. Salviano Mármores ME.) foi idealizada por Meire e Daniel Salviano (Du), um profissional com mais de 35 anos de experiência no ramo. Desde a sua inauguração em São Sebastião, em 2004, nosso objetivo tem sido alcançar um padrão de qualidade excepcional, capaz de superar as expectativas dos nossos clientes.";
 
+  const secondParagraphContent =
+    'Seguimos a filosofia de que "Criatividade e cuidado em todo o processo de trabalho garantem a perfeição desejada". Deixe o requinte e a beleza do mármore e granito completar a sua obra.';
+
   return (
     <SectionContainer selector={"historia"}>
       {isBiggerThanMobile ? (
-        <div className="grid grid-cols-6 items-center gap-10">
-          <div className="md:col-span-3 md:flex md:flex-col md:items-center md:justify-center md:gap-10 lg:gap-16">
-            <SectionTitle textSize="text-3xl md:text3xl">
-              Nossa história.
-            </SectionTitle>
-            <Paragraph textPosition=" text-justify md:text-sm">
-              {paragraphContent}
-            </Paragraph>
+        <div className="grid grid-cols-6 items-center gap-24">
+          <div className="md:col-span-3 md:flex md:flex-col md:items-center md:justify-center md:gap-10 lg:gap-10">
+            <SectionTitle textSize="text-3xl">Nossa história.</SectionTitle>
+            <div className="xl:space-y-4">
+              <Paragraph textPosition="text-justify">
+                {paragraphContent}
+              </Paragraph>
+              <Paragraph textPosition="text-justify">
+                {secondParagraphContent}
+              </Paragraph>
+            </div>
           </div>
           <ColiseuPiccture />
         </div>
@@ -30,7 +36,12 @@ function History() {
           <SectionTitle textSize="text-3xl md:text3xl">
             Nossa história.
           </SectionTitle>
-          <Paragraph>{paragraphContent}</Paragraph>
+          <div className="space-y-4">
+            <Paragraph>{paragraphContent}</Paragraph>
+            <Paragraph textPosition="text-justify">
+              {secondParagraphContent}
+            </Paragraph>
+          </div>
           <ColiseuPiccture />
         </>
       )}
@@ -48,10 +59,10 @@ function ColiseuPiccture() {
         className="rounded border border-specialRed shadow-lg lg:w-[80%]"
       />
       <div className="flex flex-col items-center justify-center">
-        <p className="font-bodoni text-lg font-bold uppercase text-specialRed md:text-base lg:text-sm">
+        <p className="font-bodoni text-lg font-bold uppercase text-specialRed md:text-base lg:text-sm xl:text-base">
           O Coliseu
         </p>
-        <address className="not-italic md:text-sm lg:text-xs">
+        <address className="not-italic md:text-sm lg:text-xs xl:text-sm">
           São Sebastião, SP
         </address>
       </div>
@@ -94,7 +105,7 @@ function Tabs() {
           />
         ))}
       </div>
-      <div className="flex min-h-[350px] flex-col items-center justify-center gap-4 rounded-b-md bg-stone-50 px-4 md:min-h-[200px] md:px-8 lg:min-h-[150px]">
+      <div className="flex min-h-[350px] flex-col items-center justify-center gap-4 rounded-b-md bg-stone-50 px-4 md:min-h-[200px] md:px-8 lg:min-h-[150px] xl:min-h-[200px]">
         <Paragraph textPosition="text-justify text-sm">
           {tabs[activeTab].content}
         </Paragraph>
@@ -106,7 +117,7 @@ function Tabs() {
 function TabButton({ tab, active, setter }) {
   return (
     <button
-      className={`col-span-1 font-garamond text-xl ${active ? "scale-105 bg-specialRed text-stone-50 shadow-md" : "text-stone-700"} p-2 drop-shadow-sm duration-150 md:text-lg lg:text-base`}
+      className={`col-span-1 font-garamond text-xl ${active ? "scale-105 bg-specialRed text-stone-50 shadow-md" : "text-stone-700"} p-2 drop-shadow-sm duration-150 md:text-lg lg:text-base xl:text-lg`}
       onClick={() => setter(tab.id)}
     >
       {tab.title}

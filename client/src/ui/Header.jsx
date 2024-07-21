@@ -21,14 +21,14 @@ function Header() {
   return (
     <header
       ref={headerRef}
-      className={`fixed z-10 flex w-full flex-row items-center justify-around ${isMarmoraria ? "bg-orange-50/90" : "bg-serralheria/90"} py-6 lg:grid lg:grid-cols-10 lg:px-[5%] lg:py-3`}
+      className={`fixed z-10 flex w-full flex-row items-center justify-around ${isMarmoraria ? "bg-orange-50/90" : "bg-serralheria/90"} py-6 lg:grid lg:grid-cols-10 lg:px-[5%] lg:py-3 xl:grid-cols-12 xl:py-6`}
     >
       <Logo
         width={
-          " w-[25%] md:w-[12%] lg:col-span-2  lg:w-[60%] lg:place-self-center"
+          " w-[25%] md:w-[12%] lg:col-span-2  lg:w-[60%] lg:place-self-center xl:w-[40%]"
         }
       />
-      <ColiseuTitle useCNPJ width=" lg:col-span-3" />
+      <ColiseuTitle useCNPJ width=" lg:col-span-3 xl:col-span-2" />
       <Navbar />
       <div className="centerX absolute bottom-0 w-[60%] border-b border-gray-400"></div>
     </header>

@@ -16,8 +16,8 @@ function About() {
       usePadding={false}
     >
       {isBiggerThanMobile ? (
-        <div className="md:grid md:grid-cols-7 md:gap-10 md:px-[10%]">
-          <div className="md:col-span-3 lg:flex lg:flex-col lg:items-center lg:justify-center lg:gap-10">
+        <div className="md:grid md:grid-cols-7 md:gap-10 md:px-[10%] xl:grid-cols-2 xl:gap-24 xl:px-[15%]">
+          <div className="md:col-span-3 lg:flex lg:flex-col lg:items-center lg:justify-center lg:gap-10 xl:col-span-1 xl:px-8">
             {isLarge && <Title />}
             <Paragraph>
               O Coliseu, combinando a tradição e excelência que nos define, está
@@ -30,7 +30,7 @@ function About() {
             </Paragraph>
           </div>
 
-          <div className="flex flex-col items-center justify-center gap-4 md:col-span-4 md:gap-10">
+          <div className="flex flex-col items-center justify-center gap-4 md:col-span-4 md:gap-10 xl:col-span-1">
             {!isLarge && <Title />}
             <div className="space-y-4">
               <InterativeImg src={"/esq-features.jpg"} className="shadow-lg" />

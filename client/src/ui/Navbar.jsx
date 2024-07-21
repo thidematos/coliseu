@@ -28,7 +28,7 @@ function Navbar() {
       {isMobile ? (
         <HambMenu />
       ) : (
-        <nav className="lg:col-span-5 lg:flex lg:flex-row lg:justify-center">
+        <nav className="lg:col-span-5 lg:flex lg:flex-row lg:justify-center xl:col-span-8 xl:items-center">
           <NavLinks />
         </nav>
       )}
@@ -79,7 +79,7 @@ function HambMenu() {
 
 function NavLinks() {
   return (
-    <ul className="flex h-full flex-col items-center justify-around text-lg lg:relative lg:w-full lg:flex-row lg:flex-wrap lg:justify-center lg:gap-x-5 lg:text-xs">
+    <ul className="flex h-full flex-col items-center justify-around text-lg lg:relative lg:w-full lg:flex-row lg:flex-wrap lg:justify-center lg:gap-x-5 lg:text-xs xl:gap-x-8">
       <ThemeLink />
       {pages.map((page) => (
         <NavButton page={page} key={page.to} />
@@ -94,7 +94,7 @@ function ThemeLink() {
   return (
     <Link
       to={`${isMarmoraria ? "/serralheria" : "/"}`}
-      className="relative flex w-full flex-col items-center justify-center gap-2 pb-2 lg:order-last lg:w-auto lg:flex-row"
+      className="relative flex w-full flex-col items-center justify-center gap-2 pb-2 lg:order-last lg:w-auto lg:flex-row xl:flex-col"
       onClick={() =>
         scrollTo({
           top: 0,
@@ -103,14 +103,14 @@ function ThemeLink() {
         })
       }
     >
-      <p className="font-garamond text-xs uppercase tracking-wide drop-shadow">
+      <p className="font-garamond text-xs uppercase tracking-wide drop-shadow xl:hidden">
         Ir para
       </p>
       <div className="flex flex-row items-center justify-center gap-1">
-        <h1 className="text-nowrap font-bodoni text-xl font-bold uppercase tracking-wider text-specialRed drop-shadow lg:text-base">
+        <h1 className="text-nowrap font-bodoni text-xl font-bold uppercase tracking-wider text-specialRed drop-shadow lg:text-base xl:text-sm">
           O Coliseu
         </h1>
-        <h2 className="scale-105 bg-stone-50 px-2 py-1 font-bodoni text-sm tracking-wide text-stone-800 shadow-lg">
+        <h2 className="scale-105 bg-stone-50 px-2 py-1 font-bodoni text-sm tracking-wide text-stone-800 shadow-lg xl:text-xs">
           {isMarmoraria ? "Serralheria" : "Marmoraria"}
         </h2>
       </div>
@@ -123,7 +123,7 @@ function NavButton({ page }) {
 
   return (
     <button
-      className={`py-4 uppercase underline decoration-stone-400 underline-offset-4 duration-200 hover:text-red-700`}
+      className={`py-4 uppercase underline decoration-stone-400 underline-offset-4 duration-200 hover:text-red-700 xl:no-underline`}
       to={page.to}
       onClick={handler}
     >

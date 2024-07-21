@@ -22,7 +22,7 @@ function SectionContainer({
   return (
     <section
       id={selector}
-      className={`${useWhite ? (isMarmoraria ? marmoraria.withoutContrast : serralheria.withoutContrast) : isMarmoraria ? marmoraria.onContrast : serralheria.onContrast} ${usePadding ? "px-8 md:px-[10%]" : ""} flex ${isTablet ? "h-auto" : "min-h-dvh"} w-full flex-col items-center justify-start gap-10 py-20 md:gap-16 lg:justify-center lg:gap-10`}
+      className={`${useWhite ? (isMarmoraria ? marmoraria.withoutContrast : serralheria.withoutContrast) : isMarmoraria ? marmoraria.onContrast : serralheria.onContrast} ${usePadding ? "px-8 md:px-[10%] xl:px-[15%]" : ""} flex ${isTablet ? "h-auto" : "min-h-dvh"} w-full flex-col items-center justify-start gap-10 py-20 md:gap-16 lg:justify-center lg:gap-10`}
     >
       {children}
     </section>

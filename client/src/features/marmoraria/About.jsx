@@ -16,7 +16,7 @@ function About() {
   return (
     <SectionContainer selector={"apresentacao"} useWhite={true}>
       {isBiggerThanMobile ? (
-        <div className="md:grid md:grid-cols-2 md:items-center md:gap-10">
+        <div className="md:grid md:grid-cols-2 md:items-center md:gap-10 xl:gap-24">
           <div className="md:col-span-1 md:space-y-10">
             <Title />
             <Paragraphs useSecond={isLarge ? true : false} />
@@ -69,10 +69,10 @@ function AboutSwiper() {
 function Title() {
   return (
     <TitleContainer>
-      <SectionSubtitle textSize="text-2xl md:text-xl">
+      <SectionSubtitle textSize="text-2xl md:text-xl ">
         Lapidamos sonhos,
       </SectionSubtitle>
-      <SectionTitle useWhiteContrast={true} textSize="text-3xl md:text-2xl">
+      <SectionTitle useWhiteContrast={true} textSize="text-3xl md:text-2xl ">
         Damos vida a projetos.
       </SectionTitle>
     </TitleContainer>

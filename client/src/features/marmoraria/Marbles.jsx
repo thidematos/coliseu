@@ -4,7 +4,6 @@ import SectionContainer from "../../ui/SectionContainer";
 import SectionSubtitle from "../../ui/SectionSubtitle";
 import SectionTitle from "../../ui/SectionTitle";
 import TitleContainer from "../../ui/TitleContainer";
-import Logo from "./../../ui/Logo";
 import InterativeImg from "../../ui/InterativeImg";
 import { useSelector } from "react-redux";
 
@@ -98,7 +97,7 @@ const marbles = [
 });
 
 function Marbles() {
-  const { isBiggerThanMobile, isLarge } = useSelector(
+  const { isBiggerThanMobile, isLarge, isExtraLarge } = useSelector(
     (store) => store.ui.verifyMobile,
   );
 
@@ -128,15 +127,17 @@ function Marbles() {
               </PaddingParagraph>
             )}
           </div>
+          <div className="md:order-first md:col-span-3 lg:place-self-center xl:flex xl:flex-col xl:items-center xl:justify-center xl:gap-5">
+            <MarblesTable />
+            {isExtraLarge && <DownloadCatalogo />}
+          </div>
 
-          <MarblesTable />
           {!isLarge && (
             <PaddingParagraph colSpan="md:col-span-5">
               {secondParagraphContent}
             </PaddingParagraph>
           )}
-
-          <DownloadCatalogo />
+          {!isExtraLarge && <DownloadCatalogo />}
         </div>
       ) : (
         <>
@@ -168,12 +169,12 @@ function PaddingParagraph({ children, colSpan = "" }) {
 
 function MarblesTable() {
   return (
-    <div className="flex h-[600px] w-full flex-col items-center justify-start bg-creme px-3 py-5 md:order-first md:col-span-3 md:h-[450px] lg:w-[75%] lg:place-self-center">
+    <div className="flex h-[600px] w-full flex-col items-center justify-start bg-creme px-3 py-5 md:h-[450px] lg:w-[75%]">
       <TitleContainer>
-        <SectionSubtitle textSize="text-lg md:text-base">
+        <SectionSubtitle textSize="text-lg md:text-base xl:text-lg">
           Transforme seus projetos em verdadeiras
         </SectionSubtitle>
-        <SectionTitle textSize="text-2xl md:text-xl">
+        <SectionTitle textSize="text-2xl md:text-xl xl:text-2xl">
           OBRAS DE ARTE
         </SectionTitle>
       </TitleContainer>
@@ -211,7 +212,7 @@ function DownloadCatalogo() {
     <a
       href="/catalogo-coliseu.pdf"
       target="_blank"
-      className="w-[70%] text-center font-garamond text-lg uppercase text-specialRed underline underline-offset-2 md:col-span-5 md:w-full lg:text-base"
+      className="w-[70%] text-center font-garamond text-lg uppercase text-specialRed underline underline-offset-2 md:col-span-5 md:w-full lg:text-base xl:text-lg"
     >
       <p>Consulte nosso catálogo de lâminas</p>
     </a>

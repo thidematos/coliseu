@@ -1,7 +1,7 @@
 function ColiseuTitle({
   useCNPJ = false,
   width = "w-auto",
-  titleSize = "text-3xl md:text-2xl",
+  titleSize = "text-3xl md:text-2xl lg:text-xl",
   cnpjSize = "text-sm md:text-xs",
 }) {
   return (

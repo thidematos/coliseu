@@ -11,15 +11,17 @@ import Projects from "./../../ui/Projects";
 import { useSelector } from "react-redux";
 
 function Services() {
-  const { isBiggerThanMobile } = useSelector((store) => store.ui.verifyMobile);
+  const { isBiggerThanMobile, isExtraLarge } = useSelector(
+    (store) => store.ui.verifyMobile,
+  );
   const paragraphContent =
     "Na Marmoraria O Coliseu, oferecemos uma ampla variedade de opções em pedras naturais, desde mármores elegantes e sofisticados até granitos exóticos e quartzitos de beleza singular. Cada peça é cuidadosamente selecionada para garantir a mais alta qualidade e estética impressionante em cada projeto.";
 
   return (
     <SectionContainer selector={"projetos"} usePadding={false}>
       {isBiggerThanMobile ? (
-        <div className="md:grid md:w-full md:grid-cols-5 md:items-center md:pl-[5%] lg:px-[10%]">
-          <div className="px-8 md:col-span-2 md:space-y-10 md:px-0">
+        <div className="md:grid md:w-full md:grid-cols-5 md:items-center md:pl-[5%] lg:px-[10%] xl:gap-y-20">
+          <div className="px-8 md:col-span-2 md:space-y-10 md:px-0 xl:flex xl:w-full xl:flex-col xl:items-center xl:justify-center">
             <TitleContainer>
               <SectionSubtitle textSize="text-2xl md:text-xl">
                 Nossos trabalhos:
@@ -29,9 +31,11 @@ function Services() {
               </SectionTitle>
             </TitleContainer>
             <Paragraph>{paragraphContent}</Paragraph>
+            {isExtraLarge && <ParagraphTile />}
           </div>
           <SwiperOverflow />
-          <ParagraphTile />
+          {!isExtraLarge && <ParagraphTile />}
+
           <div className="col-span-5 flex w-full flex-col items-center justify-center">
             <p className="font-garamond font-bold uppercase text-specialRed drop-shadow-sm">
               confira os nossos projetos:
@@ -119,7 +123,7 @@ function SwiperOverflow() {
 
 function ParagraphTile() {
   return (
-    <p className="mx-8 bg-stone-50 p-4 text-center shadow-xl drop-shadow-sm md:col-span-5 md:my-10 md:w-[65%] md:place-self-center lg:w-[50%] lg:text-sm">
+    <p className="mx-8 bg-stone-50 p-4 text-center shadow-xl drop-shadow-sm md:col-span-5 md:my-10 md:w-[65%] md:place-self-center lg:w-[50%] lg:text-sm xl:w-full">
       Exploramos as veias e os padrões únicos da pedra, trazendo à tona formas{" "}
       <strong className="font-garamond text-specialRed">DELICADAS</strong> ou{" "}
       <strong className="font-garamond text-specialRed">IMPONENTES</strong>
