@@ -4,45 +4,92 @@ import SectionContainer from "../../ui/SectionContainer";
 import SectionSubtitle from "../../ui/SectionSubtitle";
 import SectionTitle from "../../ui/SectionTitle";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import InterativeImg from "../../ui/InterativeImg";
 import Projects from "../../ui/Projects";
 import ColiseuTitle from "../../ui/ColiseuTitle";
+import { useSelector } from "react-redux";
 
 function Services() {
+  const { isBiggerThanMobile } = useSelector((store) => store.ui.verifyMobile);
+
   return (
     <SectionContainer selector={"projetos"} useWhite={false} usePadding={false}>
-      <div className="space-y-2">
-        <SectionSubtitle textSize="text-xl">Esquadrias</SectionSubtitle>
-        <SectionTitle
-          fontFamily="font-bodoni"
-          textSize="text-xl text-wide"
-          useWhiteContrast={true}
-        >
-          ELEGÂNCIA & QUALIDADE
-        </SectionTitle>
-      </div>
-      <div className="px-10">
-        <Paragraph>
-          Trabalhamos com o uso de alumínio - linha{" "}
-          <span className="font-bodoni font-bold text-sky-700 drop-shadow-sm">
-            GOLD
-          </span>{" "}
-          e{" "}
-          <span className="font-bodoni font-bold text-sky-700 drop-shadow-sm">
-            SUPREMA
-          </span>{" "}
-          , um material versátil, durável e de baixa manutenção, combinado com
-          vidros de qualidade, que proporcionam transparência, iluminação
-          natural e isolamento térmico eficiente.
-        </Paragraph>
-      </div>
-      <SwiperOverflow />
-      <SerralheriaLogo />
-      <p className="font-garamond font-bold uppercase tracking-wider drop-shadow">
-        Confira nossos projetos:
-      </p>
-      <Projects isMarmoraria={false} />
+      {isBiggerThanMobile ? (
+        <div className="md:grid md:grid-cols-7 md:items-center md:gap-10 md:pl-[5%]">
+          <div className="md:col-span-3 md:flex md:flex-col md:items-center md:justify-center md:space-y-10">
+            <div className="space-y-2">
+              <SectionSubtitle textSize="text-xl">Esquadrias</SectionSubtitle>
+              <SectionTitle
+                fontFamily="font-bodoni"
+                textSize="text-xl text-wide "
+                useWhiteContrast={true}
+              >
+                ELEGÂNCIA & QUALIDADE
+              </SectionTitle>
+            </div>
+            <div className="">
+              <Paragraph>
+                Trabalhamos com o uso de alumínio - linha{" "}
+                <span className="font-bodoni font-bold text-sky-700 drop-shadow-sm">
+                  GOLD
+                </span>{" "}
+                e{" "}
+                <span className="font-bodoni font-bold text-sky-700 drop-shadow-sm">
+                  SUPREMA
+                </span>{" "}
+                , um material versátil, durável e de baixa manutenção, combinado
+                com vidros de qualidade, que proporcionam transparência,
+                iluminação natural e isolamento térmico eficiente.
+              </Paragraph>
+            </div>
+          </div>
+          <div className="md:col-span-4 md:flex md:flex-col md:items-center md:justify-center md:space-y-5">
+            <SwiperOverflow />
+            <SerralheriaLogo />
+          </div>
+
+          <div className="md:col-span-7 md:flex md:flex-col md:items-center md:justify-center">
+            <p className="text-center font-garamond font-bold uppercase tracking-wider drop-shadow">
+              Confira nossos projetos:
+            </p>
+            <Projects isMarmoraria={false} />
+          </div>
+        </div>
+      ) : (
+        <>
+          <div className="space-y-2">
+            <SectionSubtitle textSize="text-xl">Esquadrias</SectionSubtitle>
+            <SectionTitle
+              fontFamily="font-bodoni"
+              textSize="text-xl text-wide"
+              useWhiteContrast={true}
+            >
+              ELEGÂNCIA & QUALIDADE
+            </SectionTitle>
+          </div>
+          <div className="px-10">
+            <Paragraph>
+              Trabalhamos com o uso de alumínio - linha{" "}
+              <span className="font-bodoni font-bold text-sky-700 drop-shadow-sm">
+                GOLD
+              </span>{" "}
+              e{" "}
+              <span className="font-bodoni font-bold text-sky-700 drop-shadow-sm">
+                SUPREMA
+              </span>{" "}
+              , um material versátil, durável e de baixa manutenção, combinado
+              com vidros de qualidade, que proporcionam transparência,
+              iluminação natural e isolamento térmico eficiente.
+            </Paragraph>
+          </div>
+          <SwiperOverflow />
+          <SerralheriaLogo />
+          <p className="font-garamond font-bold uppercase tracking-wider drop-shadow">
+            Confira nossos projetos:
+          </p>
+          <Projects isMarmoraria={false} />
+        </>
+      )}
     </SectionContainer>
   );
 }

@@ -1,34 +1,65 @@
+import { useSelector } from "react-redux";
 import Paragraph from "../../ui/Paragraph";
 import SectionContainer from "../../ui/SectionContainer";
 import SectionSubtitle from "../../ui/SectionSubtitle";
 import InterativeImg from "./../../ui/InterativeImg";
 
 function About() {
+  const { isBiggerThanMobile } = useSelector((store) => store.ui.verifyMobile);
+
   return (
     <SectionContainer
       selector={"apresentacao"}
       useWhite={true}
       usePadding={false}
     >
-      <Title />
-      <div className="px-8">
-        <Paragraph>
-          O Coliseu, combinando a tradição e excelência que nos define, está
-          pronto para fornecer soluções personalizadas e de alta qualidade para
-          as suas necessidades em esquadrias. Nossa equipe especializada, com
-          expertise tanto em serralheria quanto em vidraçaria, oferece uma ampla
-          gama de opções para portas, janelas, fachadas e estruturas metálicas,
-          cuidadosamente projetadas para atender aos mais altos padrões
-          estéticos e funcionais.
-        </Paragraph>
-      </div>
+      {isBiggerThanMobile ? (
+        <div className="md:grid md:grid-cols-7 md:gap-10 md:px-[10%]">
+          <div className="md:col-span-3">
+            <Paragraph>
+              O Coliseu, combinando a tradição e excelência que nos define, está
+              pronto para fornecer soluções personalizadas e de alta qualidade
+              para as suas necessidades em esquadrias. Nossa equipe
+              especializada, com expertise tanto em serralheria quanto em
+              vidraçaria, oferece uma ampla gama de opções para portas, janelas,
+              fachadas e estruturas metálicas, cuidadosamente projetadas para
+              atender aos mais altos padrões estéticos e funcionais.
+            </Paragraph>
+          </div>
 
-      <div className="flex flex-col items-center justify-center gap-4">
-        <InterativeImg src={"/esq-features.jpg"} className="shadow-lg" />
-        <p className="font-bodoni italic drop-shadow">
-          Transformamos ideias em realidade
-        </p>
-      </div>
+          <div className="flex flex-col items-center justify-center gap-4 md:col-span-4 md:gap-10">
+            <Title />
+            <div className="space-y-4">
+              <InterativeImg src={"/esq-features.jpg"} className="shadow-lg" />
+              <p className="text-center font-bodoni italic drop-shadow">
+                Transformamos ideias em realidade
+              </p>
+            </div>
+          </div>
+        </div>
+      ) : (
+        <>
+          <Title />
+          <div className="px-8">
+            <Paragraph>
+              O Coliseu, combinando a tradição e excelência que nos define, está
+              pronto para fornecer soluções personalizadas e de alta qualidade
+              para as suas necessidades em esquadrias. Nossa equipe
+              especializada, com expertise tanto em serralheria quanto em
+              vidraçaria, oferece uma ampla gama de opções para portas, janelas,
+              fachadas e estruturas metálicas, cuidadosamente projetadas para
+              atender aos mais altos padrões estéticos e funcionais.
+            </Paragraph>
+          </div>
+
+          <div className="flex flex-col items-center justify-center gap-4">
+            <InterativeImg src={"/esq-features.jpg"} className="shadow-lg" />
+            <p className="font-bodoni italic drop-shadow">
+              Transformamos ideias em realidade
+            </p>
+          </div>
+        </>
+      )}
     </SectionContainer>
   );
 }
@@ -36,8 +67,10 @@ function About() {
 function Title() {
   return (
     <div className="space-y-3">
-      <SectionSubtitle textSize="text-xl">A segurança de uma</SectionSubtitle>
-      <h3 className="bg-serralheria p-3 font-bodoni text-2xl font-bold text-sky-700 shadow-xl">
+      <SectionSubtitle textSize="text-xl md:text-lg">
+        A segurança de uma
+      </SectionSubtitle>
+      <h3 className="bg-serralheria p-3 font-bodoni text-2xl font-bold text-sky-700 shadow-xl md:text-xl">
         MARCA RENOMADA
       </h3>
     </div>
