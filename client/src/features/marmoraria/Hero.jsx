@@ -11,29 +11,32 @@ function Hero() {
 
   return (
     <section
-      className={`flex ${isTablet ? "h-auto py-10" : "h-dvh"} flex-col items-center justify-start gap-10`}
+      className={`flex ${isTablet ? "h-auto pb-20 pt-10" : "h-dvh"} flex-col items-center justify-start gap-10`}
     >
       <NavDummy />
       {isBiggerThanMobile ? (
         <div className="mx-[10%] grid grid-cols-5 gap-6">
-          <Impact />
+          <div className="order-2 flex w-full flex-col items-center justify-center gap-6 md:col-span-2">
+            <Impact />
+            <Button href={"#apresentacao"}>Saiba mais</Button>
+          </div>
+
           <img src="/hero.jpg" className="col-span-3" />
         </div>
       ) : (
         <>
           <Impact />
           <img src="/hero.jpg" />
+          <Button href={"#apresentacao"}>Saiba mais</Button>
         </>
       )}
-
-      <Button href={"#apresentacao"}>Saiba mais</Button>
     </section>
   );
 }
 
 function Impact() {
   return (
-    <div className="flex flex-col items-center justify-center gap-6 font-garamond md:col-span-2">
+    <div className="flex flex-col items-center justify-center gap-6 font-garamond">
       <SectionSubtitle uppercase={true}>tradição,</SectionSubtitle>
       <SectionSubtitle uppercase={true}>qualidade,</SectionSubtitle>
       <SectionTitle>Perfeição Atemporal.</SectionTitle>

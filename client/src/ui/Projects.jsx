@@ -1,16 +1,25 @@
 import { useLoaderData } from "react-router-dom";
 import ProjectCard from "./ProjectCard";
+import { useSelector } from "react-redux";
 
 function Projects({ isMarmoraria = true }) {
   const projects = useLoaderData();
 
-  const marmorariaProjects = projects.filter(
+  const filteredProjects = projects.filter(
     (project) => project.isMarmoraria === isMarmoraria,
   );
 
+  const { isBiggerThanMobile } = useSelector((store) => store.ui.verifyMobile);
+
+  const mobileStyles =
+    "flex w-full flex-row flex-nowrap items-center justify-start gap-6 overflow-x-scroll px-8 pb-10";
+
+  const notMobileStyle =
+    "md:grid md:grid-flow-col md:w-[90vw] md:px-10 md:overflow-x-scroll md:py-10 md:gap-6";
+
   return (
-    <div className="flex w-full flex-row flex-nowrap items-center justify-start gap-6 overflow-x-scroll px-8 pb-10">
-      {marmorariaProjects.map((project) => (
+    <div className={isBiggerThanMobile ? notMobileStyle : mobileStyles}>
+      {filteredProjects.map((project) => (
         <ProjectCard key={project.createdAt} project={project} />
       ))}
     </div>

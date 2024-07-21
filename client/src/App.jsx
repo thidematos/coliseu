@@ -27,7 +27,6 @@ const router = createBrowserRouter([
         <AppLayout />
       </Provider>
     ),
-    loader: projectsLoader,
     children: [
       {
         path: "/",

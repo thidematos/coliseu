@@ -9,7 +9,7 @@ function ProjectCard({ project, renderEdition = false }) {
 
   return (
     <div
-      className="flex w-[90%] flex-shrink-0 flex-col items-center justify-center gap-4 border border-gray-100 bg-stone-100 px-4 py-4 shadow-xl"
+      className="flex w-[90%] flex-shrink-0 flex-col items-center justify-center gap-4 border border-gray-100 bg-stone-100 px-4 py-4 shadow-xl md:col-span-2 md:w-[250px]"
       onClick={() => {
         if (!renderEdition) return;
         navigate(project?._id ? "asdasd" : "oi");
@@ -45,16 +45,18 @@ function ProjectCard({ project, renderEdition = false }) {
 
       <div className={`flex w-full flex-col items-center justify-center gap-2`}>
         <p
-          className={`text-center font-garamond text-lg font-bold uppercase ${project.isMarmoraria ? "text-specialRed" : "text-sky-700"} drop-shadow-sm`}
+          className={`text-center font-garamond text-lg font-bold uppercase ${project.isMarmoraria ? "text-specialRed" : "text-sky-700"} drop-shadow-sm md:text-base`}
         >
           {project.material}
         </p>
-        <p className={`text-center font-garamond text-xl drop-shadow-sm`}>
+        <p
+          className={`text-center font-garamond text-xl drop-shadow-sm md:text-lg`}
+        >
           {project.title}
         </p>
       </div>
       <div>
-        <p className="font-garamond text-stone-500 drop-shadow">
+        <p className="font-garamond text-stone-500 drop-shadow md:text-sm">
           Publicado em {format(project.createdAt, "dd/MM/yyyy")}
         </p>
       </div>

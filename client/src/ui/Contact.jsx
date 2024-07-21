@@ -2,29 +2,71 @@ import SectionContainer from "./../ui/SectionContainer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { AdvancedMarker, APIProvider, Map } from "@vis.gl/react-google-maps";
+import { useSelector } from "react-redux";
 
 function Contact() {
+  const { isBiggerThanMobile } = useSelector((store) => store.ui.verifyMobile);
+
   return (
-    <SectionContainer selector={"contato"} useWhite={true}>
-      <Heading />
-      <div className="flex flex-col items-start justify-center gap-8">
-        <Anchor
-          label={"Endereço"}
-          href={"https://goo.gl/maps/iec2MGTLKrw71iRNA"}
-        >
-          <address>
-            Av. Emilio Granato, nº 6274 - Enseada, São Sebastião, São Paulo
-          </address>
-        </Anchor>
-        <Anchor label={"Telefone"} href="tel:012991592479">
-          <p>(12) 99159-2479</p>
-        </Anchor>
-        <Anchor label={"Email"} href="mailto:marmorariaocoliseu@hotmail.com">
-          <p>marmorariaocoliseu@hotmail.com</p>
-        </Anchor>
-        <Social />
-        <GoogleMaps />
-      </div>
+    <SectionContainer
+      selector={"contato"}
+      useWhite={true}
+      usePadding={!isBiggerThanMobile}
+    >
+      {isBiggerThanMobile ? (
+        <div className="md:grid md:grid-cols-2 md:items-center md:gap-10 md:px-[5%]">
+          <div className="md:col-span-1">
+            <Heading />
+            <div className="flex flex-col items-start justify-center gap-8">
+              <Anchor
+                label={"Endereço"}
+                href={"https://goo.gl/maps/iec2MGTLKrw71iRNA"}
+              >
+                <address>
+                  Av. Emilio Granato, nº 6274 - Enseada, São Sebastião, São
+                  Paulo
+                </address>
+              </Anchor>
+              <Anchor label={"Telefone"} href="tel:012991592479">
+                <p>(12) 99159-2479</p>
+              </Anchor>
+              <Anchor
+                label={"Email"}
+                href="mailto:marmorariaocoliseu@hotmail.com"
+              >
+                <p>marmorariaocoliseu@hotmail.com</p>
+              </Anchor>
+              <Social />
+            </div>
+          </div>
+          <GoogleMaps />
+        </div>
+      ) : (
+        <>
+          <Heading />
+          <div className="flex flex-col items-start justify-center gap-8">
+            <Anchor
+              label={"Endereço"}
+              href={"https://goo.gl/maps/iec2MGTLKrw71iRNA"}
+            >
+              <address>
+                Av. Emilio Granato, nº 6274 - Enseada, São Sebastião, São Paulo
+              </address>
+            </Anchor>
+            <Anchor label={"Telefone"} href="tel:012991592479">
+              <p>(12) 99159-2479</p>
+            </Anchor>
+            <Anchor
+              label={"Email"}
+              href="mailto:marmorariaocoliseu@hotmail.com"
+            >
+              <p>marmorariaocoliseu@hotmail.com</p>
+            </Anchor>
+            <Social />
+            <GoogleMaps />
+          </div>
+        </>
+      )}
     </SectionContainer>
   );
 }
@@ -36,7 +78,7 @@ function GoogleMaps() {
   };
 
   return (
-    <div className="h-96 w-full">
+    <div className="h-96 w-full md:col-span-1 md:h-[26rem]">
       <APIProvider apiKey="AIzaSyAxnC7LpVP2B00wC6eJpUIB16RzKeinV_4">
         <Map defaultZoom={18} defaultCenter={position} mapId={"thigas"}>
           <AdvancedMarker position={position} />

@@ -6,6 +6,7 @@ import SectionTitle from "../../ui/SectionTitle";
 import TitleContainer from "../../ui/TitleContainer";
 import Logo from "./../../ui/Logo";
 import InterativeImg from "../../ui/InterativeImg";
+import { useSelector } from "react-redux";
 
 const marbles = [
   {
@@ -97,44 +98,59 @@ const marbles = [
 });
 
 function Marbles() {
+  const { isBiggerThanMobile } = useSelector((store) => store.ui.verifyMobile);
+
+  const firstParagraphContent =
+    "O mármore é formado a partir do calcário, uma rocha composta por minerais de calcita. Ao longo de milhões de anos, o calcário é submetido a altas temperaturas e pressões, o que provoca transformações em sua estrutura. Essas mudanças levam à recristalização dos mineiras de calcita, resultando no mármore, uma rocha metamórfica com textura cristalina e brilho característico.";
+
+  const secondParagraphContent =
+    "Os mármores oferecem uma combinação perfeita entre elegância, estética e durabilidade. A ampla variedade de cores, veios e padrões permite que os mármores se adequem a todo tipo de espaço, valorizando as características únicas de cada projeto. Além de versáteis, os mármores são altamente duráveis e de fácil manutenção.";
+
   return (
     <SectionContainer selector={"marmores"} useWhite usePadding={false}>
-      <TitleContainer>
-        <SectionSubtitle textSize="text-2xl md:text-xl">
-          O mármore e a sua
-        </SectionSubtitle>
-        <SectionTitle textSize="text-3xl md:text-2xl" useWhiteContrast>
-          Beleza inspiradora.
-        </SectionTitle>
-      </TitleContainer>
+      {isBiggerThanMobile ? (
+        <div className="md:grid md:grid-cols-5 md:items-center md:gap-10 md:px-[10%]">
+          <div className="col-span-2 space-y-10">
+            <TitleContainer>
+              <SectionSubtitle textSize="text-2xl md:text-xl">
+                O mármore e a sua
+              </SectionSubtitle>
+              <SectionTitle textSize="text-3xl md:text-2xl" useWhiteContrast>
+                Beleza inspiradora.
+              </SectionTitle>
+            </TitleContainer>
+            <PaddingParagraph>{firstParagraphContent}</PaddingParagraph>
+          </div>
 
-      <PaddingParagraph>
-        O mármore é formado a partir do calcário, uma rocha composta por
-        minerais de calcita. Ao longo de milhões de anos, o calcário é submetido
-        a altas temperaturas e pressões, o que provoca transformações em sua
-        estrutura. Essas mudanças levam à recristalização dos mineiras de
-        calcita, resultando no mármore, uma rocha metamórfica com textura
-        cristalina e brilho característico.
-      </PaddingParagraph>
-
-      <MarblesTable />
-
-      <PaddingParagraph>
-        Os mármores oferecem uma combinação perfeita entre elegância, estética e
-        durabilidade. A ampla variedade de cores, veios e padrões permite que os
-        mármores se adequem a todo tipo de espaço, valorizando as
-        características únicas de cada projeto. Além de versáteis, os mármores
-        são altamente duráveis e de fácil manutenção.
-      </PaddingParagraph>
-
-      <DownloadCatalogo />
+          <MarblesTable />
+          <PaddingParagraph colSpan="md:col-span-5">
+            {secondParagraphContent}
+          </PaddingParagraph>
+          <DownloadCatalogo />
+        </div>
+      ) : (
+        <>
+          <TitleContainer>
+            <SectionSubtitle textSize="text-2xl md:text-xl">
+              O mármore e a sua
+            </SectionSubtitle>
+            <SectionTitle textSize="text-3xl md:text-2xl" useWhiteContrast>
+              Beleza inspiradora.
+            </SectionTitle>
+          </TitleContainer>
+          <PaddingParagraph>{firstParagraphContent}</PaddingParagraph>
+          <MarblesTable />
+          <PaddingParagraph>{secondParagraphContent}</PaddingParagraph>
+          <DownloadCatalogo />
+        </>
+      )}
     </SectionContainer>
   );
 }
 
-function PaddingParagraph({ children }) {
+function PaddingParagraph({ children, colSpan = "" }) {
   return (
-    <div className="px-8 md:text-sm">
+    <div className={`px-8 md:px-0 md:text-sm ${colSpan}`}>
       <Paragraph>{children}</Paragraph>
     </div>
   );
@@ -142,12 +158,14 @@ function PaddingParagraph({ children }) {
 
 function MarblesTable() {
   return (
-    <div className="flex h-[600px] w-full flex-col items-center justify-start bg-creme px-3 py-5">
+    <div className="flex h-[600px] w-full flex-col items-center justify-start bg-creme px-3 py-5 md:order-first md:col-span-3 md:h-[450px]">
       <TitleContainer>
-        <SectionSubtitle textSize="text-lg">
+        <SectionSubtitle textSize="text-lg md:text-base">
           Transforme seus projetos em verdadeiras
         </SectionSubtitle>
-        <SectionTitle textSize="text-2xl">OBRAS DE ARTE</SectionTitle>
+        <SectionTitle textSize="text-2xl md:text-xl">
+          OBRAS DE ARTE
+        </SectionTitle>
       </TitleContainer>
       <div className="mt-6 grid grid-cols-2 gap-2 overflow-y-scroll px-1">
         {marbles.map((marble) => (
@@ -183,7 +201,7 @@ function DownloadCatalogo() {
     <a
       href="/catalogo-coliseu.pdf"
       target="_blank"
-      className="w-[70%] text-center font-garamond text-lg uppercase text-specialRed underline underline-offset-2"
+      className="w-[70%] text-center font-garamond text-lg uppercase text-specialRed underline underline-offset-2 md:col-span-5 md:w-full"
     >
       <p>Consulte nosso catálogo de lâminas</p>
     </a>

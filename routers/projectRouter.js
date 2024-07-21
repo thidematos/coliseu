@@ -5,6 +5,8 @@ import upload from '../utils/multerUpload.js';
 
 const router = express.Router();
 
+router.get('/', projectController.getAllProjects);
+
 router.use(
   authController.protect,
   authController.restrictTo('MASTER', 'admin')
@@ -12,7 +14,6 @@ router.use(
 
 router
   .route('/')
-  .get(projectController.getAllProjects)
   .post(
     upload.array('photo'),
     projectController.resizeAndSavePhoto,

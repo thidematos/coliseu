@@ -1,6 +1,12 @@
-function Paragraph({ children, textPosition = "text-justify" }) {
+function Paragraph({
+  children,
+  textPosition = "text-justify",
+  textSize = "text-base md:text-sm",
+}) {
   return (
-    <p className={`${textPosition} indent-6 tracking-wide drop-shadow-sm`}>
+    <p
+      className={`${textPosition} ${textSize} indent-6 tracking-wide drop-shadow-sm`}
+    >
       {children}
     </p>
   );

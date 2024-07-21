@@ -13,18 +13,23 @@ function History() {
 
   return (
     <SectionContainer selector={"historia"}>
-      <SectionTitle textSize="text-3xl md:text3xl">
-        Nossa história.
-      </SectionTitle>
       {isBiggerThanMobile ? (
         <div className="grid grid-cols-6 items-center gap-10">
-          <Paragraph textPosition="col-span-3 text-justify md:text-sm">
-            {paragraphContent}
-          </Paragraph>
+          <div className="md:col-span-3 md:flex md:flex-col md:items-center md:justify-center md:gap-10">
+            <SectionTitle textSize="text-3xl md:text3xl">
+              Nossa história.
+            </SectionTitle>
+            <Paragraph textPosition=" text-justify md:text-sm">
+              {paragraphContent}
+            </Paragraph>
+          </div>
           <ColiseuPiccture />
         </div>
       ) : (
         <>
+          <SectionTitle textSize="text-3xl md:text3xl">
+            Nossa história.
+          </SectionTitle>
           <Paragraph>{paragraphContent}</Paragraph>
           <ColiseuPiccture />
         </>
@@ -43,10 +48,10 @@ function ColiseuPiccture() {
         className="rounded border border-specialRed shadow-lg"
       />
       <div className="flex flex-col items-center justify-center">
-        <p className="font-bodoni text-lg font-bold uppercase text-specialRed">
+        <p className="font-bodoni text-lg font-bold uppercase text-specialRed md:text-base">
           O Coliseu
         </p>
-        <address className="not-italic">São Sebastião, SP</address>
+        <address className="not-italic md:text-sm">São Sebastião, SP</address>
       </div>
     </div>
   );
