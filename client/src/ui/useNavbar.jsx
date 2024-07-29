@@ -1,5 +1,6 @@
 import { useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { toggleHamb } from "./uiSlice";
 
 function useNavbar(hambRef) {
   const { isOpenHamb } = useSelector((store) => store.ui);
@@ -32,6 +33,5 @@ function useNavbar(hambRef) {
 
   return [isOpenHamb, setIsOpenHamb];
 }
-import { toggleHamb } from "./uiSlice";
 
 export { useNavbar };

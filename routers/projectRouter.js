@@ -12,13 +12,13 @@ router.use(
   authController.restrictTo('MASTER', 'admin')
 );
 
-router
-  .route('/')
-  .post(
-    upload.array('photo'),
-    projectController.resizeAndSavePhoto,
-    projectController.createProject
-  );
+router.route('/').post(
+  upload.array('photo'),
+  projectController.resizeAndSavePhoto,
+  projectController.setNewProject,
+  // projectController.postOnInstagram,
+  projectController.createProject
+);
 
 router
   .route('/:projectId')

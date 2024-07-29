@@ -20,10 +20,10 @@ function Services() {
   return (
     <SectionContainer selector={"projetos"} usePadding={false}>
       {isBiggerThanMobile ? (
-        <div className="md:grid md:w-full md:grid-cols-5 md:items-center md:pl-[5%] lg:px-[10%] xl:gap-y-20">
-          <div className="px-8 md:col-span-2 md:space-y-10 md:px-0 xl:flex xl:w-full xl:flex-col xl:items-center xl:justify-center">
+        <div className="md:grid md:w-full md:grid-cols-5 md:items-center md:pl-[5%] lg:px-[10%] xl:gap-y-20 2xl:grid-cols-6">
+          <div className="px-8 md:col-span-2 md:space-y-10 md:px-0 xl:flex xl:w-full xl:flex-col xl:items-center xl:justify-center 2xl:col-span-3 2xl:px-8">
             <TitleContainer>
-              <SectionSubtitle textSize="text-2xl md:text-xl">
+              <SectionSubtitle textSize="text-2xl md:text-xl ">
                 Nossos trabalhos:
               </SectionSubtitle>
               <SectionTitle textSize="text-3xl md:text-2xl">
@@ -36,7 +36,7 @@ function Services() {
           <SwiperOverflow />
           {!isExtraLarge && <ParagraphTile />}
 
-          <div className="col-span-5 flex w-full flex-col items-center justify-center">
+          <div className="col-span-6 flex w-full flex-col items-center justify-center">
             <p className="font-garamond font-bold uppercase text-specialRed drop-shadow-sm">
               confira os nossos projetos:
             </p>
@@ -72,13 +72,13 @@ function Services() {
 
 function SwiperOverflow() {
   return (
-    <div className="w-full overflow-hidden md:col-span-3">
+    <div className="w-full overflow-hidden md:col-span-3 2xl:col-span-3">
       <Swiper
         effect={"cards"}
         pagination={true}
         modules={[EffectCards, Pagination]}
         loop={true}
-        className="h-full w-[70%] lg:w-[60%]"
+        className="3xl:w-[40%] h-full w-[70%] lg:w-[60%]"
       >
         <SwiperSlide>
           <InterativeImg

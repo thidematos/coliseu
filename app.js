@@ -11,6 +11,7 @@ import globalErrorHandler from './controllers/errorController.js';
 
 import authRouter from './routers/authRouter.js';
 import projectRouter from './routers/projectRouter.js';
+import { Client, GetUserLongLivedTokenRequest } from 'instagram-graph-api';
 
 const limiter = rateLimit({
   max: 200,
@@ -35,6 +36,28 @@ app.use(xssClean());
 app.use(express.static('./public'));
 
 if (process.env.NODE_ENV === 'production') app.use('/api', limiter);
+/*
+app.get('/teste', async (req, res, next) => {
+  const client = new Client(
+    process.env.GRAPH_ACCESS_TOKEN,
+    process.env.INSTAGRAM_PAGE_ID
+  );
+
+  //const infoRequest = client.newGetMediaCommentsRequest();
+  const infoRequest = client.newGetSimplePostMediaInsightsRequest();
+
+  const info = await infoRequest.execute();
+
+  console.log(info);
+
+  res.status(200).json({
+    status: 'success',
+    data: {
+      info,
+    },
+  });
+});
+*/
 
 app.use('/api/v1/authentication', authRouter);
 

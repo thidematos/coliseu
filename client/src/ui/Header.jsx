@@ -25,10 +25,10 @@ function Header() {
     >
       <Logo
         width={
-          " w-[25%] md:w-[12%] lg:col-span-2  lg:w-[60%] lg:place-self-center xl:w-[40%]"
+          "w-[25%] md:w-[12%] lg:col-span-2  lg:w-[50%] lg:place-self-center lg:w-[40%] "
         }
       />
-      <ColiseuTitle useCNPJ width=" lg:col-span-3 xl:col-span-2" />
+      <ColiseuTitle useCNPJ width=" lg:col-span-2 " />
       <Navbar />
       <div className="centerX absolute bottom-0 w-[60%] border-b border-gray-400"></div>
     </header>

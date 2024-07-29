@@ -12,7 +12,7 @@ function ProjectCard({ project, renderEdition = false }) {
       className="flex w-[90%] flex-shrink-0 flex-col items-center justify-center gap-4 border border-gray-100 bg-stone-100 px-4 py-4 shadow-xl md:col-span-2 md:w-[250px]"
       onClick={() => {
         if (!renderEdition) return;
-        navigate(project?._id ? "asdasd" : "oi");
+        navigate(`/admin/overview/${project._id}`);
       }}
     >
       {renderEdition && (

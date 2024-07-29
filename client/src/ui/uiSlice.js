@@ -7,7 +7,7 @@ const initialState = {
     innerHeight: window.innerHeight,
     isTablet: window.innerWidth > 480 && window.innerWidth < 1024,
     isLarge: window.innerWidth >= 1024,
-    isExtraLarge: window.innerWidth > 1024 && window.innerWidth <= 1280,
+    isExtraLarge: window.innerWidth > 1280,
     isBiggerThanMobile: window.innerWidth > 480,
   },
   isOpenHamb: false,
@@ -45,6 +45,17 @@ const slice = createSlice({
       state.isMarmoraria = action.payload;
       state.isOpenHamb = false;
     },
+    resize(state, action) {
+      state.verifyMobile = {
+        isMobile: window.innerWidth < 1024,
+        innerWidth: window.innerWidth,
+        innerHeight: window.innerHeight,
+        isTablet: window.innerWidth > 480 && window.innerWidth < 1024,
+        isLarge: window.innerWidth >= 1024,
+        isExtraLarge: window.innerWidth > 1024 && window.innerWidth <= 1280,
+        isBiggerThanMobile: window.innerWidth > 480,
+      };
+    },
   },
 });
 
@@ -55,4 +66,5 @@ export const {
   openModal,
   closeModal,
   changePageTheme,
+  resize,
 } = slice.actions;

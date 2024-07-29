@@ -5,8 +5,7 @@ import {
 } from "react-router-dom";
 import Marmoraria from "./features/marmoraria/Marmoraria";
 import AppLayout from "./ui/AppLayout";
-import { Provider } from "react-redux";
-import { store } from "./store";
+import { Provider, useDispatch } from "react-redux";
 import Serralheria from "./features/serralheria/Serralheria";
 import AdminLogin, { action as loginAction } from "./features/admin/AdminLogin";
 import AdminLayout, {
@@ -19,14 +18,15 @@ import AdminProjects, {
 import NovoProjeto, {
   action as newProjectAction,
 } from "./features/admin/NovoProjeto";
+import { useEffect } from "react";
+import { resize } from "./ui/uiSlice";
+import EditProject, {
+  loader as editProjectLoader,
+} from "./features/admin/EditProject";
 
 const router = createBrowserRouter([
   {
-    element: (
-      <Provider store={store}>
-        <AppLayout />
-      </Provider>
-    ),
+    element: <AppLayout />,
     children: [
       {
         path: "/",
@@ -46,11 +46,7 @@ const router = createBrowserRouter([
     action: loginAction,
   },
   {
-    element: (
-      <Provider store={store}>
-        <AdminLayout />
-      </Provider>
-    ),
+    element: <AdminLayout />,
     loader: authLoader,
     errorElement: <Navigate to={"/admin"} />,
     children: [
@@ -69,6 +65,11 @@ const router = createBrowserRouter([
             element: <NovoProjeto />,
             action: newProjectAction,
           },
+          {
+            path: ":projectId",
+            element: <EditProject />,
+            loader: editProjectLoader,
+          },
         ],
       },
     ],
@@ -76,6 +77,18 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    function handleResize() {
+      dispatch(resize());
+    }
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, [dispatch]);
+
   return <RouterProvider router={router} />;
 }
 

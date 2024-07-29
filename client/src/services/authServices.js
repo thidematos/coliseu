@@ -6,7 +6,7 @@ export async function authUser() {
       withCredentials: true,
     });
 
-    return user;
+    return user.data.data.user;
   } catch (err) {
     console.log(err);
     throw err;

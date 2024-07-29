@@ -3,12 +3,14 @@ import AdminHeader from "./AdminHeader";
 import Loader from "../../ui/Loader";
 import LoaderSpinner from "../../ui/LoaderSpinner";
 import { login } from "../../services/authServices";
+import { toast, ToastContainer } from "react-toastify";
 
 function AdminLogin() {
   return (
     <section className="flex min-h-[100dvh] flex-col items-center justify-center gap-8 bg-creme">
-      <AdminHeader />
+      <AdminHeader useControls={false} />
       <MyForm />
+      <ToastContainer position="bottom-center" theme="dark" />
     </section>
   );
 }
@@ -62,7 +64,9 @@ export async function action({ request }) {
 
   const credentials = Object.fromEntries(formData);
 
-  await login(credentials);
+  await toast.promise(login(credentials), {
+    pending: "Acessando...",
+  });
 
   return redirect("/admin/overview");
 }

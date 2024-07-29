@@ -155,3 +155,23 @@ input:checked + .slider:before {
     transform: rotate(360deg);
   }
 }
+
+/* width */
+::-webkit-scrollbar {
+  @apply size-[5px];
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  @apply bg-stone-300;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply bg-specialRed/65;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-stone-400;
+}

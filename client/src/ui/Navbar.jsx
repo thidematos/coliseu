@@ -4,13 +4,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRef } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useNavbar } from "./useNavbar";
 import { useScrollToView } from "./useScrollToView";
 import { Link } from "react-router-dom";
-import { changePageTheme } from "./uiSlice";
-import Logo from "./Logo";
-import ColiseuTitle from "./ColiseuTitle";
 
 const pages = [
   { label: "Apresentação", to: "#apresentacao" },
@@ -28,7 +25,7 @@ function Navbar() {
       {isMobile ? (
         <HambMenu />
       ) : (
-        <nav className="lg:col-span-5 lg:flex lg:flex-row lg:justify-center xl:col-span-8 xl:items-center">
+        <nav className="lg:col-span-6 lg:flex lg:flex-row lg:justify-center xl:col-span-8 xl:items-center">
           <NavLinks />
         </nav>
       )}
@@ -78,12 +75,18 @@ function HambMenu() {
 }
 
 function NavLinks() {
+  const { isMarmoraria } = useSelector((store) => store.ui);
   return (
-    <ul className="flex h-full flex-col items-center justify-around text-lg lg:relative lg:w-full lg:flex-row lg:flex-wrap lg:justify-center lg:gap-x-5 lg:text-xs xl:gap-x-8">
+    <ul className="flex h-full flex-col items-center justify-around text-lg lg:relative lg:w-full lg:flex-row lg:flex-wrap lg:items-baseline lg:justify-center lg:gap-x-5 lg:text-xs xl:gap-x-8">
       <ThemeLink />
-      {pages.map((page) => (
-        <NavButton page={page} key={page.to} />
-      ))}
+      {pages.map((page) => {
+        if (
+          (!isMarmoraria && page.to === "#historia") ||
+          page.to === "#marmores"
+        )
+          return;
+        return <NavButton page={page} key={page.to} />;
+      })}
     </ul>
   );
 }
@@ -94,7 +97,7 @@ function ThemeLink() {
   return (
     <Link
       to={`${isMarmoraria ? "/serralheria" : "/"}`}
-      className="relative flex w-full flex-col items-center justify-center gap-2 pb-2 lg:order-last lg:w-auto lg:flex-row xl:flex-col"
+      className="lg:flex--col relative flex w-full flex-col items-center justify-center gap-2 pb-2 lg:order-last lg:w-auto xl:flex-col"
       onClick={() =>
         scrollTo({
           top: 0,
@@ -103,7 +106,7 @@ function ThemeLink() {
         })
       }
     >
-      <p className="font-garamond text-xs uppercase tracking-wide drop-shadow xl:hidden">
+      <p className="font-garamond text-xs uppercase tracking-wide drop-shadow lg:hidden">
         Ir para
       </p>
       <div className="flex flex-row items-center justify-center gap-1">
@@ -123,7 +126,7 @@ function NavButton({ page }) {
 
   return (
     <button
-      className={`py-4 uppercase underline decoration-stone-400 underline-offset-4 duration-200 hover:text-red-700 xl:no-underline`}
+      className={`py-4 uppercase underline decoration-stone-400 underline-offset-4 duration-200 hover:text-red-700 lg:no-underline`}
       to={page.to}
       onClick={handler}
     >

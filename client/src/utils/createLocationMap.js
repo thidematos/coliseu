@@ -15,7 +15,6 @@ export function createLocationMap(location) {
       break;
 
     default:
-      console.log("Unhandled behavior");
       link.string = "Novo projeto";
       link.to = "/admin/overview/novo-projeto";
   }

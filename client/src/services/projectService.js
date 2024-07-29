@@ -11,3 +11,9 @@ export async function getAllProjects() {
 export async function createProject(formProject) {
   await axios.post("/api/v1/projects", formProject, { withCredentials: true });
 }
+
+export async function getProject(projectId) {
+  const res = await axios.get(`/api/v1/projects/${projectId}`);
+
+  return res.data.data.project;
+}

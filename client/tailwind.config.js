@@ -13,6 +13,9 @@ export default {
         creme: "rgb(255,244,224)",
         serralheria: "rgb(246,241,241)",
       },
+      screens: {
+        "3xl": "1920px",
+      },
     },
   },
   plugins: [],

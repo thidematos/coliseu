@@ -4,13 +4,25 @@ import LoaderSpinner from "../../ui/LoaderSpinner";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { createProject } from "../../services/projectService";
+import { toast, ToastContainer } from "react-toastify";
+import InputText from "./InputText";
+import InputSwitch from "./InputSwitch";
+import InputImg from "./InputImg";
 
 function NovoProjeto() {
   return (
     <div className="flex flex-col items-center justify-center gap-8">
-      <p className="text-center font-garamond text-xl uppercase drop-shadow-lg">
+      <p
+        className="text-center font-garamond text-xl uppercase drop-shadow-lg"
+        onClick={() => toast("Wow so easy")}
+      >
         Novo projeto
       </p>
+      <ToastContainer
+        autoClose={2000}
+        position="bottom-center"
+        className={"font-montserrat"}
+      />
       <MyForm />
     </div>
   );
@@ -37,7 +49,7 @@ function MyForm() {
         placeholder={"Alumínio, Granito Preto Escovado..."}
         idToLabel={"material"}
       />
-      <InputImg />
+      <InputImg photoNumber={1} />
       <InputSwitch />
       <button
         type="submit"
@@ -47,137 +59,6 @@ function MyForm() {
         {isSubmitting ? <LoaderSpinner /> : "Criar"}
       </button>
     </Form>
-  );
-}
-
-function InputText({ label, placeholder, idToLabel }) {
-  return (
-    <div className="flex w-[85%] flex-col items-start justify-center gap-1 font-garamond">
-      <label
-        htmlFor={idToLabel}
-        className="text-xl font-bold tracking-wide text-specialRed drop-shadow"
-      >
-        {label}
-      </label>
-      <input
-        id={idToLabel}
-        placeholder={placeholder}
-        name={idToLabel}
-        className="w-full rounded-sm border border-gray-300 p-3 shadow outline-none placeholder:text-sm"
-      />
-    </div>
-  );
-}
-
-function InputSwitch() {
-  const [isSerralheria, setIsSerralheria] = useState(false);
-
-  return (
-    <div className="flex flex-row items-center justify-center gap-5 font-garamond font-bold">
-      <p
-        className={`${isSerralheria ? "" : "rounded-sm bg-specialRed text-creme drop-shadow-2xl"} p-2 duration-200`}
-      >
-        Marmoraria
-      </p>
-      <label className="switch">
-        <input
-          type="checkbox"
-          checked={isSerralheria}
-          value={isSerralheria}
-          name="isSerralheria"
-          onChange={(e) => setIsSerralheria(e.target.checked)}
-        />
-
-        <span className="slider round"></span>
-      </label>
-      <input type="hidden" value={isSerralheria} name="isSerralheria" />
-      <p
-        className={`${isSerralheria ? "scale-105 rounded-sm bg-sky-700 text-stone-100 drop-shadow-2xl" : ""} p-2 duration-200`}
-      >
-        Serralheria
-      </p>
-    </div>
-  );
-}
-
-function InputImg({ label }) {
-  const [images, setImages] = useState(() =>
-    Array.from({ length: 3 }, (el, ind) => {
-      return {
-        id: ind + 1,
-        blob: null,
-      };
-    }),
-  );
-
-  return (
-    <>
-      {images.map((images) => (
-        <div className="w-full space-y-2" key={images.id}>
-          <p className="font-garamond text-xl font-bold tracking-wide text-specialRed drop-shadow">
-            Foto {images.id}{" "}
-            {images.id > 1 && (
-              <span className="text-base font-normal">(opcional)</span>
-            )}
-          </p>
-          <label
-            htmlFor={images.id}
-            className={`relative flex ${images.blob ? "max-h-[200px]" : "h-[200px]"} w-full flex-col items-center justify-center overflow-hidden border border-dashed border-gray-400 text-sm text-stone-400`}
-          >
-            {images.blob ? (
-              <>
-                <img src={images.blob} className="top-0 w-full" />
-                <FontAwesomeIcon
-                  icon={faTrash}
-                  className="drop-shadow-3xl absolute right-3 top-3 rounded-full bg-stone-50 p-3 text-xl text-specialRed"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setImages((state) =>
-                      state.map((el) => {
-                        if (el.id !== images.id) return el;
-
-                        window.URL.revokeObjectURL(el.blob);
-
-                        return {
-                          ...el,
-                          blob: null,
-                        };
-                      }),
-                    );
-                  }}
-                />
-              </>
-            ) : (
-              <span>Clique para selecionar uma foto!</span>
-            )}
-          </label>
-          <input
-            type="file"
-            className="hidden"
-            id={images.id}
-            name={`photo${images.id}`}
-            onChange={(e) => {
-              if (!e.target.files[0]) return;
-
-              const blob = window.URL.createObjectURL(e.target.files[0]);
-
-              setImages((state) =>
-                state.map((el) => {
-                  if (el.id !== images.id) return el;
-
-                  window.URL.revokeObjectURL(el.blob);
-
-                  return {
-                    ...el,
-                    blob: blob,
-                  };
-                }),
-              );
-            }}
-          />
-        </div>
-      ))}
-    </>
   );
 }
 
@@ -203,7 +84,13 @@ export async function action({ request }) {
 
   console.log(Object.fromEntries(form));
 
-  await createProject(form);
+  await toast.promise(createProject(form), {
+    pending: "Postando...",
+    success: "Postado com sucesso!",
+    error: "Algo deu errado... Tente novamente.",
+  });
+
+  setTimeout(() => console.log("Waiting...", 2000));
 
   return redirect(`/admin/overview`);
 }

@@ -5,6 +5,81 @@ import { useSelector } from "react-redux";
 function Projects({ isMarmoraria = true }) {
   const projects = useLoaderData();
 
+  const projectsTest = [
+    {
+      createdAt: "2024-07-19T23:24:34.219Z",
+      isMarmoraria: true,
+      material: "Granito Branco Pitaya",
+      photos: ["photo-1721431474199-0.jpg"],
+      title: "Bancada e kit pia",
+      user: "669a949e11269717a4d8c0d8",
+      __v: 0,
+      _id: "669af5b2eb25d4a4d9a3c714",
+    },
+    {
+      createdAt: "2024-07-19T23:24:34.219Z",
+      isMarmoraria: true,
+      material: "Granito Branco Pitaya",
+      photos: ["photo-1721431474199-0.jpg"],
+      title: "Bancada e kit pia",
+      user: "669a949e11269717a4d8c0d8",
+      __v: 0,
+      _id: "669af5b2eb25d4a4d9a3c714",
+    },
+    {
+      createdAt: "2024-07-19T23:24:34.219Z",
+      isMarmoraria: true,
+      material: "Granito Branco Pitaya",
+      photos: ["photo-1721431474199-0.jpg"],
+      title: "Bancada e kit pia",
+      user: "669a949e11269717a4d8c0d8",
+      __v: 0,
+      _id: "669af5b2eb25d4a4d9a3c714",
+    },
+    {
+      createdAt: "2024-07-19T23:24:34.219Z",
+      isMarmoraria: true,
+      material: "Granito Branco Pitaya",
+      photos: ["photo-1721431474199-0.jpg"],
+      title: "Bancada e kit pia",
+      user: "669a949e11269717a4d8c0d8",
+      __v: 0,
+      _id: "669af5b2eb25d4a4d9a3c714",
+    },
+    {
+      createdAt: "2024-07-19T23:24:34.219Z",
+      isMarmoraria: true,
+      material: "Granito Branco Pitaya",
+      photos: ["photo-1721431474199-0.jpg"],
+      title: "Bancada e kit pia",
+      user: "669a949e11269717a4d8c0d8",
+      __v: 0,
+      _id: "669af5b2eb25d4a4d9a3c714",
+    },
+    {
+      createdAt: "2024-07-19T23:24:34.219Z",
+      isMarmoraria: true,
+      material: "Granito Branco Pitaya",
+      photos: ["photo-1721431474199-0.jpg"],
+      title: "Bancada e kit pia",
+      user: "669a949e11269717a4d8c0d8",
+      __v: 0,
+      _id: "669af5b2eb25d4a4d9a3c714",
+    },
+    {
+      createdAt: "2024-07-19T23:24:34.219Z",
+      isMarmoraria: true,
+      material: "Granito Branco Pitaya",
+      photos: ["photo-1721431474199-0.jpg"],
+      title: "Bancada e kit pia",
+      user: "669a949e11269717a4d8c0d8",
+      __v: 0,
+      _id: "669af5b2eb25d4a4d9a3c714",
+    },
+  ];
+
+  console.log(projects);
+
   const filteredProjects = projects.filter(
     (project) => project.isMarmoraria === isMarmoraria,
   );

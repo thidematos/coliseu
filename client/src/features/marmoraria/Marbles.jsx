@@ -127,7 +127,7 @@ function Marbles() {
               </PaddingParagraph>
             )}
           </div>
-          <div className="md:order-first md:col-span-3 lg:place-self-center xl:flex xl:flex-col xl:items-center xl:justify-center xl:gap-5">
+          <div className="md:order-first md:col-span-3 lg:flex lg:flex-col lg:items-center lg:justify-center lg:gap-5 lg:place-self-center">
             <MarblesTable />
             {isExtraLarge && <DownloadCatalogo />}
           </div>
@@ -169,7 +169,7 @@ function PaddingParagraph({ children, colSpan = "" }) {
 
 function MarblesTable() {
   return (
-    <div className="flex h-[600px] w-full flex-col items-center justify-start bg-creme px-3 py-5 md:h-[450px] lg:w-[75%]">
+    <div className="flex h-[600px] w-full flex-col items-center justify-start bg-creme px-3 py-5 md:h-[450px] lg:h-[400px] lg:w-[65%]">
       <TitleContainer>
         <SectionSubtitle textSize="text-lg md:text-base xl:text-lg">
           Transforme seus projetos em verdadeiras
