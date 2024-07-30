@@ -1,21 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Form, redirect, useNavigation } from "react-router-dom";
 import LoaderSpinner from "../../ui/LoaderSpinner";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { createProject } from "../../services/projectService";
 import { toast, ToastContainer } from "react-toastify";
 import InputText from "./InputText";
 import InputSwitch from "./InputSwitch";
 import InputImg from "./InputImg";
+import AddNewPhoto from "./AddNewPhoto";
+import { useDispatch, useSelector } from "react-redux";
+import { addNewPhoto, clearPhotos, photosSelector } from "./adminSlice";
 
 function NovoProjeto() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(clearPhotos());
+  }, [dispatch]);
+
   return (
-    <div className="flex flex-col items-center justify-center gap-8">
-      <p
-        className="text-center font-garamond text-xl uppercase drop-shadow-lg"
-        onClick={() => toast("Wow so easy")}
-      >
+    <div className="flex flex-col items-center justify-center gap-6">
+      <p className="text-center font-garamond text-xl uppercase drop-shadow-lg">
         Novo projeto
       </p>
       <ToastContainer
@@ -33,6 +37,10 @@ function MyForm() {
 
   const isSubmitting = state === "submitting";
 
+  const photos = useSelector(photosSelector);
+
+  const dispatch = useDispatch();
+
   return (
     <Form
       method="POST"
@@ -49,7 +57,15 @@ function MyForm() {
         placeholder={"Alumínio, Granito Preto Escovado..."}
         idToLabel={"material"}
       />
-      <InputImg photoNumber={1} />
+      {photos.map((photo) => (
+        <InputImg currentPhotoIndex={photo.id} key={photo.id} />
+      ))}
+
+      {photos.at(-1).blob && (
+        <AddNewPhoto handler={() => dispatch(addNewPhoto())} />
+      )}
+
+      <input type="hidden" name="numPhotos" value={photos.length} />
       <InputSwitch />
       <button
         type="submit"
@@ -74,15 +90,13 @@ export async function action({ request }) {
     newFormData.isSerralheria === "true" ? false : true,
   );
 
-  [newFormData.photo1, newFormData.photo2, newFormData.photo3].forEach(
-    (photo) => {
-      if (!photo.name) return;
+  console.log("executou");
 
-      form.append("photo", photo);
-    },
-  );
-
-  console.log(Object.fromEntries(form));
+  for (let i = 0; i <= Number(newFormData.numPhotos); i++) {
+    if (newFormData[`photo${i}`] && newFormData[`photo${i}`].name) {
+      form.append("photo", newFormData[`photo${i}`]);
+    }
+  }
 
   await toast.promise(createProject(form), {
     pending: "Postando...",

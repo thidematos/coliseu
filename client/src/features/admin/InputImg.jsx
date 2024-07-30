@@ -1,37 +1,44 @@
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  createPhotoPreview,
+  photosSelector,
+  removePhotoBlob,
+  singlePhotoSelector,
+} from "./adminSlice";
+import { createImageBlob } from "../../utils/handleImageBlob";
 
-function InputImg({ photoNumber }) {
-  const [image, setImage] = useState({ blob: null });
+function InputImg({ currentPhotoIndex }) {
+  const photo = useSelector(singlePhotoSelector(currentPhotoIndex));
+  const dispatch = useDispatch();
 
   return (
     <div className="w-full space-y-2">
       <p className="font-garamond text-xl font-bold tracking-wide text-specialRed drop-shadow">
-        Foto
-        {photoNumber > 1 && (
-          <span className="text-base font-normal">(opcional)</span>
+        Foto{" "}
+        {photo.id + 1 === 1 ? (
+          ""
+        ) : (
+          <span className="text-base font-normal">
+            {photo.id + 1} (opcional)
+          </span>
         )}
       </p>
       <label
-        htmlFor={photoNumber}
-        className={`relative flex ${image.blob ? "max-h-[200px]" : "h-[200px]"} w-full flex-col items-center justify-center overflow-hidden border border-dashed border-gray-400 text-sm text-stone-400`}
+        htmlFor={photo.id + 1}
+        className={`relative flex ${photo.blob ? "max-h-[200px]" : "h-[200px]"} w-full flex-col items-center justify-center overflow-hidden border border-dashed border-gray-400 text-sm text-stone-400`}
       >
-        {image.blob ? (
+        {photo.blob ? (
           <>
-            <img src={image.blob} className="top-0 w-full" />
+            <img src={photo.blob} className="top-0 w-full" />
             <FontAwesomeIcon
               icon={faTrash}
               className="drop-shadow-3xl absolute right-3 top-3 rounded-full bg-stone-50 p-3 text-xl text-specialRed"
               onClick={(e) => {
                 e.preventDefault();
-                setImage((state) => {
-                  window.URL.revokeObjectURL(state.blob);
-
-                  return {
-                    blob: null,
-                  };
-                });
+                dispatch(removePhotoBlob(photo.id));
               }}
             />
           </>
@@ -42,21 +49,16 @@ function InputImg({ photoNumber }) {
       <input
         type="file"
         className="hidden"
-        id={photoNumber}
-        name={`photo${photoNumber}`}
-        onChange={(e) => {
-          if (!e.target.files[0]) return;
-
-          const blob = window.URL.createObjectURL(e.target.files[0]);
-
-          setImage((state) => {
-            window.URL.revokeObjectURL(state.blob);
-
-            return {
-              blob: blob,
-            };
-          });
-        }}
+        id={photo.id + 1}
+        name={`photo${photo.id + 1}`}
+        onChange={(e) =>
+          dispatch(
+            createPhotoPreview({
+              selectedPhoto: photo.id,
+              blob: createImageBlob(e.target.files[0]),
+            }),
+          )
+        }
       />
     </div>
   );

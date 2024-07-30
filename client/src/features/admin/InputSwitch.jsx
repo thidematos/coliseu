@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function InputSwitch({ defaultIsSerralheria }) {
+function InputSwitch({ defaultIsSerralheria = false }) {
   const [isSerralheria, setIsSerralheria] = useState(defaultIsSerralheria);
 
   return (
