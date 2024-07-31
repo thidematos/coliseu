@@ -22,6 +22,7 @@ import { useEffect } from "react";
 import { resize } from "./ui/uiSlice";
 import EditProject, {
   loader as editProjectLoader,
+  action as editProjectAction,
 } from "./features/admin/EditProject";
 
 const router = createBrowserRouter([
@@ -69,6 +70,7 @@ const router = createBrowserRouter([
             path: ":projectId",
             element: <EditProject />,
             loader: editProjectLoader,
+            action: editProjectAction,
           },
         ],
       },

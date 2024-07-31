@@ -17,3 +17,17 @@ export async function getProject(projectId) {
 
   return res.data.data.project;
 }
+
+export async function deleteProject(projectId) {
+  await axios.delete(`/api/v1/projects/${projectId}`);
+
+  return null;
+}
+
+export async function updateProject(projectId, updateForm) {
+  await axios.patch(`/api/v1/projects/${projectId}`, updateForm, {
+    withCredentials: true,
+  });
+
+  return null;
+}

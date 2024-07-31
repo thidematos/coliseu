@@ -25,3 +25,9 @@ export async function login(credentials) {
     throw err;
   }
 }
+
+export async function logoutHandler() {
+  await axios.get("/api/v1/authentication/logout", {
+    withCredentials: true,
+  });
+}

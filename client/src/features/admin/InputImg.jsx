@@ -1,6 +1,5 @@
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   createPhotoPreview,
@@ -9,6 +8,7 @@ import {
   singlePhotoSelector,
 } from "./adminSlice";
 import { createImageBlob } from "../../utils/handleImageBlob";
+import { useEffect } from "react";
 
 function InputImg({ currentPhotoIndex }) {
   const photo = useSelector(singlePhotoSelector(currentPhotoIndex));

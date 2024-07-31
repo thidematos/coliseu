@@ -1,16 +1,19 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import { createLocationMap } from "../../utils/createLocationMap";
 import { useDispatch, useSelector } from "react-redux";
 import User from "./User";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
-import { toggleSidebar } from "./adminSlice";
+import { logout, toggleAsyncHandlerState, toggleSidebar } from "./adminSlice";
 import { useEffect } from "react";
+import { logoutHandler } from "../../services/authServices";
 
 function Sidebar() {
   const location = useLocation();
   const { isBiggerThanMobile } = useSelector((store) => store.ui.verifyMobile);
   const { isActiveSidebar } = useSelector((store) => store.admin);
+
+  const { projectId } = useParams();
 
   const dispatch = useDispatch();
 
@@ -34,7 +37,7 @@ function Sidebar() {
 
   return (
     <nav
-      className={`${isActiveSidebar ? "visible scale-x-[100%] opacity-100" : "collapse scale-x-0 opacity-0"} fixed right-0 z-20 flex h-full w-[60%] origin-right flex-col items-center justify-start gap-4 bg-orange-200 p-8 duration-500`}
+      className={`${isActiveSidebar ? "visible scale-x-[100%] opacity-100" : "collapse scale-x-0 opacity-0"} fixed right-0 z-20 flex h-full w-[60%] origin-right flex-col items-center justify-start gap-4 bg-orange-100 p-8 duration-500`}
       id="nav"
     >
       <>
@@ -44,16 +47,46 @@ function Sidebar() {
           onClick={() => dispatch(toggleSidebar(false))}
         />
         <User />
+        {location.pathname === `/admin/overview/${projectId}` && (
+          <NavButton
+            to={"/admin/overview"}
+            action={() => dispatch(toggleSidebar(false))}
+          >
+            Visão geral
+          </NavButton>
+        )}
+
         <NavButton to={map.to} action={() => dispatch(toggleSidebar(false))}>
           {map.string}
         </NavButton>
-        <NavButton>Sair</NavButton>
+        <NavButton isLogout>Sair</NavButton>
       </>
     </nav>
   );
 }
 
-function NavButton({ children, to, action = null }) {
+function NavButton({ children, to, action = null, isLogout = false }) {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  if (isLogout)
+    return (
+      <button
+        className="w-full bg-stone-50 py-2 text-center font-garamond font-bold uppercase text-specialRed shadow-md drop-shadow"
+        onClick={async () => {
+          dispatch(toggleAsyncHandlerState(true));
+
+          await logoutHandler();
+
+          dispatch(logout());
+
+          navigate("/admin");
+        }}
+      >
+        {children}
+      </button>
+    );
+
   return (
     <Link
       to={to}

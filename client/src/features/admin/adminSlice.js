@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { removeImageBlob } from "../../utils/handleImageBlob";
 
 const initialState = {
   user: null,
@@ -10,12 +9,28 @@ const initialState = {
       blob: null,
     },
   ],
+  isOpenModal: false,
+  isAsyncHandlerLoading: false,
 };
 
 const slice = createSlice({
   name: "admin",
   initialState,
   reducers: {
+    logout(state) {
+      state = {
+        user: null,
+        isActiveSidebar: false,
+        photos: [
+          {
+            id: 0,
+            blob: null,
+          },
+        ],
+        isOpenModal: false,
+        isAsyncHandlerLoading: false,
+      };
+    },
     authenticatedUser(state, action) {
       state.user = action.payload;
     },
@@ -25,7 +40,7 @@ const slice = createSlice({
     addNewPhoto(state, action) {
       state.photos.push({
         id: state.photos.length,
-        blob: null,
+        blob: action.payload ? action.payload : null,
       });
     },
     createPhotoPreview(state, action) {
@@ -34,8 +49,6 @@ const slice = createSlice({
       currentPhoto.blob = action.payload.blob || null;
     },
     removePhotoBlob(state, action) {
-      removeImageBlob();
-
       if (action.payload > 0) {
         state.photos = state.photos.filter(
           (photo) => photo.id !== action.payload,
@@ -51,6 +64,9 @@ const slice = createSlice({
       currentPhoto.blob = null;
     },
     clearPhotos(state) {
+      state.photos.forEach((photo) => {
+        if (photo.blob) window.URL.revokeObjectURL(photo.blob);
+      });
       state.photos = [
         {
           id: 0,
@@ -58,12 +74,21 @@ const slice = createSlice({
         },
       ];
     },
+    toggleModal(state, action) {
+      state.isOpenModal = action.payload;
+    },
+    toggleAsyncHandlerState(state, action) {
+      state.isAsyncHandlerLoading = action.payload;
+    },
   },
 });
 
 export const photosSelector = (store) => store.admin.photos;
 export const singlePhotoSelector = (currentPhotoIndex) => (store) =>
   store.admin.photos.at(currentPhotoIndex);
+export const isAsyncHandlerLoadingSelector = (store) =>
+  store.admin.isAsyncHandlerLoading;
+export const isOpenModalSelector = (store) => store.admin.isOpenModal;
 
 export default slice.reducer;
 
@@ -74,4 +99,7 @@ export const {
   createPhotoPreview,
   removePhotoBlob,
   clearPhotos,
+  toggleModal,
+  toggleAsyncHandlerState,
+  logout,
 } = slice.actions;

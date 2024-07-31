@@ -23,7 +23,11 @@ router.route('/').post(
 router
   .route('/:projectId')
   .get(projectController.getSingleProject)
-  .patch(projectController.patchProject)
+  .patch(
+    upload.array('photo'),
+    projectController.resizeAndSavePhoto,
+    projectController.patchProject
+  )
   .delete(projectController.deleteProject);
 
 export default router;

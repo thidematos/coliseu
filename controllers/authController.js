@@ -34,6 +34,21 @@ const createSendCookie = (user, statusCode, res) => {
   });
 };
 
+export const logout = catchAsync(async (req, res, next) => {
+  res.cookie('jwt', '', {
+    expires: new Date(
+      Date.now() + process.env.JWT_COOKIE_EXPIRES * 60 * 60 * 1000
+    ),
+    httpOnly: process.env.NODE_ENV === 'development' ? false : true,
+    secure: process.env.NODE_ENV === 'development' ? true : true,
+    sameSite: 'Strict',
+  });
+
+  res.status(200).json({
+    status: 'success',
+  });
+});
+
 export const signup = catchAsync(async (req, res, next) => {
   const { email, password, passwordConfirm, photo, name } = req.body;
 

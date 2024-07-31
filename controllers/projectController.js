@@ -144,25 +144,29 @@ export const createProject = catchAsync(async (req, res, next) => {
 });
 
 export const patchProject = catchAsync(async (req, res, next) => {
-  const patchedProject = await Project.findByIdAndUpdate(
-    req.params.id,
-    req.body,
-    {
-      new: true,
-      runValidators: true,
-    }
-  );
+  const { title, material, isMarmoraria } = req.body;
+
+  const project = await Project.findById(req.params.projectId);
+
+  project.title = title;
+  project.material = material;
+  project.isMarmoraria = isMarmoraria;
+
+  if (req.photos?.length) {
+    project.photos = req.photos;
+  }
+
+  await project.save();
 
   res.status(200).json({
     status: 'success',
-    data: {},
   });
 });
 
 export const deleteProject = catchAsync(async (req, res, next) => {
   const { projectId } = req.params;
 
-  await Project.findOneAndDelete(projectId);
+  await Project.findByIdAndDelete(projectId);
 
   res.status(204).json({
     status: 'success',
@@ -170,10 +174,7 @@ export const deleteProject = catchAsync(async (req, res, next) => {
 });
 
 export const resizeAndSavePhoto = catchAsync(async (req, res, next) => {
-  if (!req.files.length)
-    return next(
-      new AppError('Um projeto precisa de pelo menos uma foto.', 400)
-    );
+  if (!req.files.length) return next();
 
   const sizes = {
     width: 750,

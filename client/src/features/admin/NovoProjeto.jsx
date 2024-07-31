@@ -23,7 +23,7 @@ function NovoProjeto() {
         Novo projeto
       </p>
       <ToastContainer
-        autoClose={2000}
+        autoClose={1500}
         position="bottom-center"
         className={"font-montserrat"}
       />
@@ -104,7 +104,9 @@ export async function action({ request }) {
     error: "Algo deu errado... Tente novamente.",
   });
 
-  setTimeout(() => console.log("Waiting...", 2000));
+  setTimeout(() => {
+    console.log("Waiting...");
+  }, 1500);
 
   return redirect(`/admin/overview`);
 }
