@@ -32,7 +32,7 @@ function AdminLayout() {
 
   return (
     <main
-      className={`relative min-h-[100dvh] w-[100dvw] bg-orange-50 font-montserrat text-stone-700`}
+      className={`relative min-h-[100dvh] w-[100dvw] overflow-x-hidden bg-orange-50 font-montserrat text-stone-700`}
     >
       {isLoading || (isAsyncLoading && <Loader />)}
 

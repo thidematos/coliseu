@@ -24,6 +24,7 @@ import EditProject, {
   loader as editProjectLoader,
   action as editProjectAction,
 } from "./features/admin/EditProject";
+import Error from "./ui/Error";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,7 @@ const router = createBrowserRouter([
         loader: projectsLoader,
       },
     ],
+    errorElement: <Error />,
   },
   {
     path: "/admin",

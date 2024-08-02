@@ -20,11 +20,11 @@ function History() {
         <div className="grid grid-cols-6 items-center gap-24">
           <div className="md:col-span-3 md:flex md:flex-col md:items-center md:justify-center md:gap-10 lg:gap-10">
             <SectionTitle textSize="text-3xl">Nossa história.</SectionTitle>
-            <div className="xl:space-y-4">
+            <div className="md:space-y-4">
               <Paragraph textPosition="text-justify">
                 {paragraphContent}
               </Paragraph>
-              <Paragraph textPosition="text-justify">
+              <Paragraph textPosition="text-justify md:hidden">
                 {secondParagraphContent}
               </Paragraph>
             </div>
@@ -105,7 +105,7 @@ function Tabs() {
           />
         ))}
       </div>
-      <div className="flex min-h-[350px] flex-col items-center justify-center gap-4 rounded-b-md bg-stone-50 px-4 md:min-h-[200px] md:px-8 lg:min-h-[150px] xl:min-h-[200px]">
+      <div className="flex min-h-[300px] flex-col items-center justify-center gap-4 rounded-b-md bg-stone-50 px-4 md:min-h-[200px] md:px-8 lg:min-h-[150px] xl:min-h-[200px]">
         <Paragraph textPosition="text-justify text-sm">
           {tabs[activeTab].content}
         </Paragraph>

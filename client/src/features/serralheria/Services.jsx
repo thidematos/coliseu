@@ -43,7 +43,7 @@ function Services() {
                 com vidros de qualidade, que proporcionam transparência,
                 iluminação natural e isolamento térmico eficiente.
               </Paragraph>
-              <Paragraph textPosition="hidden xl:block text-justify">
+              <Paragraph textPosition="hidden lg:block text-justify">
                 Acreditamos que uma abordagem personalizada e um compromisso com
                 a satisfação do cliente, estamos prontos para realizar seus
                 projetos, agregando valor estético e funcional à sua construção.
@@ -51,15 +51,14 @@ function Services() {
                 que unem tradição, qualidade e a expertise de uma marca
                 renomada.
               </Paragraph>
-              {isLarge && !isExtraLarge && <SerralheriaLogo />}
             </div>
           </div>
           <div className="md:col-span-4 md:flex md:flex-col md:items-center md:justify-center md:space-y-5 xl:col-span-1">
             <SwiperOverflow />
-            {(!isLarge && isExtraLarge) || <SerralheriaLogo />}
+            {isLarge && <SerralheriaLogo />}
           </div>
 
-          <div className="md:col-span-7 md:flex md:flex-col md:items-center md:justify-center lg:mt-10 xl:col-span-2">
+          <div className="md:col-span-7 md:flex md:flex-col md:items-center md:justify-center md:gap-10 lg:mt-10 xl:col-span-2">
             <p className="text-center font-garamond font-bold uppercase tracking-wider drop-shadow lg:text-sm">
               Confira nossos projetos:
             </p>
@@ -124,7 +123,7 @@ function SwiperOverflow() {
         pagination={true}
         modules={[EffectCards, Pagination]}
         loop={true}
-        className="h-full w-[70%] xl:w-[80%]"
+        className="h-full w-[70%] lg:w-[50%]"
       >
         <SwiperSlide>
           <InterativeImg

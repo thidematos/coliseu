@@ -37,7 +37,7 @@ function Modal() {
         className="fixed left-0 top-0 z-[9990] h-full w-dvw bg-gray-900/80"
         onClick={handler}
       ></div>
-      <div className="center showModal fixed z-[9991] w-[85%] rounded-lg border-2 border-specialRed md:w-[60%] lg:w-[40%] xl:w-[30%]">
+      <div className="center showModal fixed z-[9991] w-[85%] rounded-lg border-2 border-specialRed md:w-[50%] lg:w-[40%] xl:w-[30%]">
         <FontAwesomeIcon
           icon={faXmark}
           className="absolute right-3 top-3 text-4xl text-stone-300 lg:text-2xl"

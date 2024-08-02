@@ -52,7 +52,7 @@ function EditProject() {
   }, [dispatch, project.photos]);
 
   return (
-    <div className="space-y-6 px-8">
+    <div className="space-y-6 px-8 md:px-[10%]">
       <ToastContainer
         autoClose={1500}
         position="bottom-center"
@@ -89,7 +89,7 @@ function EditProject() {
               para o projeto.
             </p>
             <button
-              className="uppercase text-sky-700 underline underline-offset-2"
+              className="uppercase text-sky-700 underline underline-offset-2 lg:text-sm"
               onClick={() => setReselectPhotos(true)}
             >
               Novas fotos
@@ -108,7 +108,7 @@ function EditProject() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="rounded-sm bg-creme px-8 py-3 font-garamond text-xl font-bold text-specialRed shadow-lg"
+          className="rounded-sm bg-creme px-8 py-3 font-garamond text-xl font-bold text-specialRed shadow-lg lg:px-6 lg:py-2 lg:text-lg"
         >
           {isSubmitting ? <LoaderSpinner /> : "Atualizar"}
         </button>
@@ -116,10 +116,10 @@ function EditProject() {
       <div className="flex w-full flex-row items-center justify-center gap-3">
         <FontAwesomeIcon
           icon={faTrash}
-          className="text-2xl text-red-500 drop-shadow-lg"
+          className="text-2xl text-red-500 drop-shadow-lg lg:text-lg"
         />
         <button
-          className="text-lg uppercase text-red-500 underline underline-offset-2 drop-shadow-sm"
+          className="text-lg uppercase text-red-500 underline underline-offset-2 drop-shadow-sm lg:text-sm"
           onClick={() => dispatch(toggleModal(true))}
         >
           Excluir projeto

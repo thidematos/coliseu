@@ -18,8 +18,8 @@ function NovoProjeto() {
   }, [dispatch]);
 
   return (
-    <div className="flex flex-col items-center justify-center gap-6">
-      <p className="text-center font-garamond text-xl uppercase drop-shadow-lg">
+    <div className="flex flex-col items-center justify-center gap-6 md:px-[10%] lg:w-full">
+      <p className="text-center font-garamond text-xl uppercase drop-shadow-lg lg:text-base">
         Novo projeto
       </p>
       <ToastContainer
@@ -47,16 +47,18 @@ function MyForm() {
       encType="multipart/form-data"
       className="flex w-[85%] flex-col items-center justify-center gap-8 bg-stone-50 p-8"
     >
-      <InputText
-        label={"Projeto"}
-        placeholder={"Bancada, pia, portão..."}
-        idToLabel={"projeto"}
-      />
-      <InputText
-        label={"Material"}
-        placeholder={"Alumínio, Granito Preto Escovado..."}
-        idToLabel={"material"}
-      />
+      <div className="flex flex-col items-center justify-center gap-8 lg:w-[85%] lg:flex-row">
+        <InputText
+          label={"Projeto"}
+          placeholder={"Bancada, pia, portão..."}
+          idToLabel={"projeto"}
+        />
+        <InputText
+          label={"Material"}
+          placeholder={"Alumínio, Granito Preto Escovado..."}
+          idToLabel={"material"}
+        />
+      </div>
       {photos.map((photo) => (
         <InputImg currentPhotoIndex={photo.id} key={photo.id} />
       ))}
@@ -70,7 +72,7 @@ function MyForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="rounded-sm bg-creme px-8 py-3 font-garamond text-xl font-bold text-specialRed shadow-lg"
+        className="rounded-sm bg-creme px-8 py-3 font-garamond text-xl font-bold text-specialRed shadow-lg lg:px-6 lg:py-2 lg:text-lg"
       >
         {isSubmitting ? <LoaderSpinner /> : "Criar"}
       </button>

@@ -6,11 +6,11 @@ function Projects() {
   const projects = useLoaderData();
 
   return (
-    <div className="flex w-full flex-col items-center justify-center gap-8">
-      <h4 className="font-garamond text-xl uppercase drop-shadow">
+    <div className="flex w-full flex-col items-center justify-center gap-8 lg:w-[90%]">
+      <h4 className="font-garamond text-xl uppercase drop-shadow lg:text-lg">
         Visão geral
       </h4>
-      <div className="flex w-full flex-col items-center justify-center gap-4">
+      <div className="flex w-full flex-col items-center justify-center gap-4 md:flex-row md:flex-wrap lg:gap-10">
         {projects.map((project) => (
           <ProjectCard
             renderEdition={true}

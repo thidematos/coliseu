@@ -15,8 +15,8 @@ function InputImg({ currentPhotoIndex }) {
   const dispatch = useDispatch();
 
   return (
-    <div className="w-full space-y-2">
-      <p className="font-garamond text-xl font-bold tracking-wide text-specialRed drop-shadow">
+    <div className="w-full space-y-2 lg:w-[60%]">
+      <p className="font-garamond text-xl font-bold tracking-wide text-specialRed drop-shadow lg:text-base">
         Foto{" "}
         {photo.id + 1 === 1 ? (
           ""

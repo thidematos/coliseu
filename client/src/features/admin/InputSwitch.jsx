@@ -4,7 +4,7 @@ function InputSwitch({ defaultIsSerralheria = false }) {
   const [isSerralheria, setIsSerralheria] = useState(defaultIsSerralheria);
 
   return (
-    <div className="flex flex-row items-center justify-center gap-5 font-garamond font-bold">
+    <div className="flex flex-row items-center justify-center gap-5 font-garamond font-bold lg:text-sm">
       <p
         className={`${isSerralheria ? "" : "rounded-sm bg-specialRed text-creme drop-shadow-2xl"} p-2 duration-200`}
       >

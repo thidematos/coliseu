@@ -5,7 +5,6 @@ const userSchema = new mongoose.Schema({
   email: {
     type: String,
     required: true,
-    unique: true,
   },
   name: String,
   password: {
@@ -18,7 +17,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
     select: false,
-    minlength: [8, 'A password confirm should be longer than 8 characters'],
+    minlength: [7, 'A password confirm should be longer than 8 characters'],
     validate: {
       validator: function (field) {
         return field === this.password;

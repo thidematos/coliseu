@@ -22,12 +22,12 @@ function About() {
             <Paragraphs useSecond={isLarge ? true : false} />
           </div>
           <AboutSwiper />
-          <Paragraph textPosition="md:col-span-2 lg:hidden">
+          <Paragraph textPosition="md:text-center md:col-span-2 lg:hidden">
             Seja para projetos residencias ou comerciais, conte com a Marmoraria
             O Coliseu para oferecer soluções personalizadas e de alta qualidade
             em pedras naturais e lâminas. Estamos aqui para transformar suas
             ideias em realidade, de acordo com a tradição, requintes de
-            modernidade, qualidade e perfeição atemporal
+            modernidade, qualidade e perfeição atemporal.
           </Paragraph>
         </div>
       ) : (

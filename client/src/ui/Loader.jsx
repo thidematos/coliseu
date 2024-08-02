@@ -12,7 +12,7 @@ function Loader() {
     <div className="fixed inset-0 z-[9998] flex flex-col items-center justify-center bg-slate-800/60 backdrop-blur-sm">
       <img
         src="/logo.png"
-        className="w-1/2 animate-pulse drop-shadow-2xl lg:w-[15%]"
+        className="w-1/2 animate-pulse drop-shadow-2xl md:w-[30%] lg:w-[15%]"
       />
     </div>
   );

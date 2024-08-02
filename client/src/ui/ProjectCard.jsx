@@ -9,25 +9,21 @@ function ProjectCard({ project, renderEdition = false }) {
 
   return (
     <div
-      className="flex w-[90%] flex-shrink-0 flex-col items-center justify-center gap-4 border border-gray-100 bg-stone-100 px-4 py-4 shadow-xl md:col-span-2 md:w-[250px]"
+      className={`${renderEdition ? "cursor-pointer" : ""} flex w-[90%] flex-col items-center justify-center gap-4 border border-gray-100 bg-stone-100 px-4 py-4 shadow-xl md:col-span-2 md:w-[250px]`}
       onClick={() => {
         if (!renderEdition) return;
         navigate(`/admin/overview/${project._id}`);
       }}
     >
       {renderEdition && (
-        <p className="font-garamond text-base text-specialRed underline underline-offset-2 drop-shadow-sm">
+        <p className="font-garamond text-base text-specialRed underline underline-offset-2 drop-shadow-sm md:text-sm">
           Clique para editar ou excluir a postagem
         </p>
       )}
       <Swiper
         pagination={true}
-        autoplay={{
-          delay: 3000,
-          disableOnInteraction: true,
-        }}
         spaceBetween={20}
-        modules={[Pagination, Autoplay]}
+        modules={[Pagination]}
         className="w-full"
       >
         {project.photos.map((img) => (
@@ -45,18 +41,18 @@ function ProjectCard({ project, renderEdition = false }) {
 
       <div className={`flex w-full flex-col items-center justify-center gap-2`}>
         <p
-          className={`text-center font-garamond text-lg font-bold uppercase ${project.isMarmoraria ? "text-specialRed" : "text-sky-700"} drop-shadow-sm md:text-base`}
+          className={`text-center font-garamond text-lg font-bold uppercase ${project.isMarmoraria ? "text-specialRed" : "text-sky-700"} drop-shadow-sm md:text-base lg:text-sm`}
         >
           {project.material}
         </p>
         <p
-          className={`text-center font-garamond text-xl drop-shadow-sm md:text-lg`}
+          className={`text-center font-garamond text-xl drop-shadow-sm md:text-lg lg:text-base`}
         >
           {project.title}
         </p>
       </div>
       <div>
-        <p className="font-garamond text-stone-500 drop-shadow md:text-sm">
+        <p className="font-garamond text-stone-500 drop-shadow md:text-sm lg:text-xs">
           Publicado em {format(project.createdAt, "dd/MM/yyyy")}
         </p>
       </div>

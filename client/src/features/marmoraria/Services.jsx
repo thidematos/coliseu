@@ -36,7 +36,7 @@ function Services() {
           <SwiperOverflow />
           {!isExtraLarge && <ParagraphTile />}
 
-          <div className="col-span-6 flex w-full flex-col items-center justify-center">
+          <div className="col-span-6 flex w-full flex-col items-center justify-center md:gap-10">
             <p className="font-garamond font-bold uppercase text-specialRed drop-shadow-sm">
               confira os nossos projetos:
             </p>
@@ -78,7 +78,7 @@ function SwiperOverflow() {
         pagination={true}
         modules={[EffectCards, Pagination]}
         loop={true}
-        className="3xl:w-[40%] h-full w-[70%] lg:w-[60%]"
+        className="h-full w-[70%] lg:w-[60%] 3xl:w-[40%]"
       >
         <SwiperSlide>
           <InterativeImg
