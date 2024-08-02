@@ -65,7 +65,7 @@ app.use('/api/v1/projects', projectRouter);
 
 //Routing react-route-dom
 app.all('/*', (req, res, next) => {
-  res.sendFile('/public/index.html');
+  res.sendFile('./public/index.html');
 });
 
 app.all('/api/v1/*', (req, res, next) => {
