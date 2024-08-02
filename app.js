@@ -13,6 +13,10 @@ import authRouter from './routers/authRouter.js';
 import projectRouter from './routers/projectRouter.js';
 import { Client, GetUserLongLivedTokenRequest } from 'instagram-graph-api';
 
+import * as url from 'url';
+const __filename = url.fileURLToPath(import.meta.url);
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+
 const limiter = rateLimit({
   max: 200,
   windowMs: 60 * 60 * 1000,
@@ -65,7 +69,7 @@ app.use('/api/v1/projects', projectRouter);
 
 //Routing react-route-dom
 app.all('/*', (req, res, next) => {
-  res.sendFile('public/index.html');
+  res.sendFile(`${__dirname}/public/index.html`);
 });
 
 app.all('/api/v1/*', (req, res, next) => {
