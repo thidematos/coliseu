@@ -27,7 +27,6 @@ function Hero() {
         <>
           <Impact />
           <img src="/hero.jpg" />
-          <Button href={"#apresentacao"}>Saiba mais</Button>
         </>
       )}
     </section>
