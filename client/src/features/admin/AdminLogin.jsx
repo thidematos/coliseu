@@ -4,6 +4,7 @@ import Loader from "../../ui/Loader";
 import LoaderSpinner from "../../ui/LoaderSpinner";
 import { login } from "../../services/authServices";
 import { toast, ToastContainer } from "react-toastify";
+import { useEffect, useRef } from "react";
 
 function AdminLogin() {
   return (
@@ -17,8 +18,21 @@ function AdminLogin() {
 
 function MyForm() {
   const { state } = useNavigation();
+  const teste = useNavigation();
 
   const isSubmitting = state === "submitting";
+
+  const inputEmailRef = useRef();
+  const passwordRef = useRef();
+
+  useEffect(() => {
+    if (!isSubmitting) return;
+    inputEmailRef.current.value = "";
+    passwordRef.current.value = "";
+  }, [isSubmitting]);
+
+  console.log(teste);
+
   return (
     <Form
       method="POST"
@@ -34,6 +48,7 @@ function MyForm() {
           placeholder="Insira seu usuário"
           required
           name="email"
+          ref={inputEmailRef}
         />
       </div>
       <div className="flex flex-col items-start justify-center gap-2">
@@ -46,6 +61,7 @@ function MyForm() {
           placeholder="*******"
           required
           name="password"
+          ref={passwordRef}
         />
       </div>
       <button
@@ -64,9 +80,11 @@ export async function action({ request }) {
 
   const credentials = Object.fromEntries(formData);
 
-  await toast.promise(login(credentials), {
+  const response = await toast.promise(login(credentials), {
     pending: "Acessando...",
   });
+
+  if (response.response.data.status === "fail") return null;
 
   return redirect("/admin/overview");
 }

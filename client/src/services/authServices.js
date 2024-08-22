@@ -1,4 +1,5 @@
 import axios from "axios";
+import { toast } from "react-toastify";
 
 export async function authUser() {
   try {
@@ -22,7 +23,8 @@ export async function login(credentials) {
     return res.data.data.user;
   } catch (err) {
     console.log(err);
-    throw err;
+    toast.error("Usuário ou senha incorretos!");
+    return err;
   }
 }
 
