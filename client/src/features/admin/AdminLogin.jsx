@@ -84,7 +84,9 @@ export async function action({ request }) {
     pending: "Acessando...",
   });
 
-  if (response.response.data.status === "fail") return null;
+  console.log(response);
+
+  if (response?.response?.data?.status === "fail") return null;
 
   return redirect("/admin/overview");
 }
