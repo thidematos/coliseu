@@ -3,7 +3,7 @@ import axios from "axios";
 const defaultUrl = "";
 
 export async function getAllProjects() {
-  const res = await axios.get("/api/v1/projects");
+  //const res = await axios.get("/api/v1/projects");
 
   const projects = [
     {
@@ -13,7 +13,7 @@ export async function getAllProjects() {
       title: "Bancada",
       material: "Granito Preto Escovado",
       isMarmoraria: true,
-      createdAt: "1722629502125",
+      createdAt: new Date(1722629502125),
       __v: "0",
     },
     {
@@ -23,7 +23,7 @@ export async function getAllProjects() {
       title: "Bancada e kit pia",
       material: "Granito Branco Pitaya",
       isMarmoraria: true,
-      createdAt: "1722401259632",
+      createdAt: new Date(1722401259632),
       __v: "0",
     },
     {
@@ -33,7 +33,7 @@ export async function getAllProjects() {
       title: "Pergolado policarbonato",
       material: "Alumínio Preto",
       isMarmoraria: false,
-      createdAt: "1721436948865",
+      createdAt: new Date(1721436948865),
       __v: "0",
     },
     {
@@ -43,7 +43,7 @@ export async function getAllProjects() {
       title: "Portão",
       material: "Alumínio Preto",
       isMarmoraria: false,
-      createdAt: "1721436908130",
+      createdAt: new Date(1721436908130),
       __v: "2",
     },
   ];
